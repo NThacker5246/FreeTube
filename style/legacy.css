@@ -1,0 +1,33 @@
+html, body, .container {
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.header {
+	width: 100% !important;
+	height: 50px;
+}
+
+.video-seen {
+	width: 75%;
+	height: 80%;
+}
+
+.video-seen > video {
+	width: 100%;
+	left: 0%;
+}
+
+.next-videos {
+	width: 25%;
+	height: 100%;
+	right: 0%;
+	position: absolute;
+	top: 50px;
+}
+
+.container {
+	position: absolute;
+
+}
