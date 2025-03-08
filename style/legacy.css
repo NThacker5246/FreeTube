@@ -8,6 +8,7 @@ html, body, .container {
 	width: 100% !important;
 	height: 50px;
 	z-index: -200;
+	display: flex;
 }
 
 .header-f {
@@ -104,4 +105,18 @@ video {
 	background-size: cover;
 }
 
+.main-videos {
+	max-width: 100%;
+	min-height: 80%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+.card {
+	width: 25%;
+	height: 30%;
+	margin: 30px;
+}
 
