@@ -27,7 +27,7 @@
 		
 		$data = file_get_contents(WAY . "table$fileOfTable.json");
 		$dsd = json_decode($data);
-		var_dump($dsd);
+		//var_dump($dsd);
 		$key = $id & 255;
 		$key = "" . $key;
 		$src = $dsd->arr->$key;

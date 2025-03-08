@@ -7,16 +7,27 @@ html, body, .container {
 .header {
 	width: 100% !important;
 	height: 50px;
+	z-index: -200;
+}
+
+.header-f {
+	display: none;
 }
 
 .video-seen {
 	width: 75%;
 	height: 80%;
+	display: flex;
+	left: 0%;
 }
 
-.video-seen > video {
+video, .video {
 	width: 100%;
 	left: 0%;
+}
+
+video {
+	height: 100%;
 }
 
 .next-videos {
@@ -31,3 +42,66 @@ html, body, .container {
 	position: absolute;
 
 }
+
+.controlls {
+	width: 75%;
+	height: 25px;
+	position: absolute;
+	top: 83%;
+	left: 30px;
+}
+
+#pause {
+	width: 25px;
+	height: 25px;
+	background-color: blue; 
+}
+
+#fullscreen {
+	width: 25px;
+	height: 25px;
+	background-color: red;
+	position: absolute;
+	left: 85%;
+	top: 0%; 
+}
+
+.polzunok {
+	width: 30px;
+	height: 30px;
+	background-color: blue;
+	border-radius: 100%;
+	position: relative;
+	left: 0%;
+	bottom: 10px;
+}
+
+.scroll {
+	position: relative;
+	width: 94%;
+	height: 10px;
+	background-color: lightblue;
+	bottom: 50px;
+	border-radius: 10px;
+}
+
+#playBackRate {
+	position: absolute;
+	top: -25%;
+	right: 7%;
+	height: 30px;
+}
+
+.fullscreen {
+	position: fixed;
+	left: 0;
+	top: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	background-size: cover;
+}
+
+
