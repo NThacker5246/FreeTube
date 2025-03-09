@@ -19,11 +19,14 @@
 		<div class="main-videos">
 			<?php
 			for ($i=1; $i < $data->count; $i++) { 
+				$conf = file_get_contents("./config/$i.conf");
+				$kw = explode("!HCRGMKARS%!", $conf);
+				$name = explode("ALGSTD!24", $kw[0])[1];
 				echo "
 				<a href=\"/watch.php?video=$i\">
 					<div class=\"card\">
-						<img src=\"preview.png\">
-						<p>$i video</p>
+						<img src=\"/preview/$i.png\" width=\"300px\">
+						<p>$name</p>
 					</div>
 				</a>";
 			}

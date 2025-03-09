@@ -43,6 +43,17 @@
 				</div>
 			</div>
 		</div>
+		<div class="description">
+			<pre>
+				<br>
+				<?php
+					$conf = file_get_contents("./config/$num.conf");
+					$kw = explode("!HCRGMKARS%!", $conf);
+					$text = explode("ALGSTD!24", $kw[1])[1];
+					echo "$text";
+				?>
+			</pre>
+		</div>
 		<div class="next-videos"></div>
 	</div>
 	<script type="text/javascript" src="controlls.js"></script>
