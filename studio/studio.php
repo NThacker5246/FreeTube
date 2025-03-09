@@ -34,4 +34,4 @@
 		$cl = fclose($config_file);
 	}
 
-	?>
+?>	

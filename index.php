@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="header">
 			<h1 style="margin: 0px;">FreeTube</h1>
-			<p style="margin-left: 30px; font-size: 20px; margin-top: 10px;">FreeTube - free, open source and the best analog of YT <a style="margin-left: 70px;  margin-top: 0px;" href="http://github.com/NThacker5246/FreeTube">Source</a> </p>
+			<p style="margin-left: 30px; font-size: 20px; margin-top: 10px;">FreeTube - free, open source and the best analog of YT <a style="position: absolute; right: 5px;" href="http://github.com/NThacker5246/FreeTube">Source Code</a> </p>
 		</div>
 		<div class="main-videos">
 			<?php
@@ -25,7 +25,7 @@
 				echo "
 				<a href=\"/watch.php?video=$i\">
 					<div class=\"card\">
-						<img src=\"/preview/$i.png\" width=\"300px\">
+						<img src=\"/preview/$i.png\" width=\"300px\" height=\"168.75px\">
 						<p>$name</p>
 					</div>
 				</a>";

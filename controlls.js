@@ -4,6 +4,9 @@ var pause = document.getElementById('pause');
 var notEdited = true;
 var fus = document.getElementById('fullscreen');
 var disp = document.getElementById('header');
+var next = document.getElementById('next');
+var desc = document.getElementById('desc');
+var controll = document.getElementById('controll');
 
 pause.addEventListener("click", function(e) {
 	if (flag) {
@@ -21,6 +24,9 @@ fus.addEventListener("click", function() {
 	video.classList.toggle("video");
 	video.classList.toggle("video-seen");
 	disp.classList.toggle("header-f");
+	next.classList.toggle("header-f");
+	desc.classList.toggle("header-f");
+	controll.classList.toggle("controlls-f");
 });
 
 var scrollPos = document.getElementById('pos');
@@ -36,8 +42,7 @@ speed.addEventListener('click', function() {
 scrollPos.addEventListener('mousemove', function(e) {
 	if(e.buttons != 0){
 		polzPos.style.left = (e.clientX - 40) + "px";
-		video.currentTime = e.clientX / 1032 * video.duration;
-		console.log(e.clientX / 1032 * video.duration);
+		video.currentTime = e.clientX / scrollPos.clientWidth * video.duration;
 		notEdited = false;
 	} else {
 		notEdited = true;
@@ -46,15 +51,14 @@ scrollPos.addEventListener('mousemove', function(e) {
 
 scrollPos.addEventListener('click', function(e) {
 	if(e.buttons != 0){
-		polzPos.style.left = (e.clientX - 40) + "px";
-		video.currentTime = e.clientX / 1032 * video.duration;
-		console.log(e.clientX / 1032 * video.duration);	
+		polzPos.style.left = (e.clientX - 40) + "px";	
+		video.currentTime = e.clientX / scrollPos.clientWidth * video.duration;
 	}
 });
 
 setInterval(function() {
 	if(notEdited){
-		var pixels = video.currentTime / video.duration * 1032;
+		var pixels = video.currentTime / video.duration * scrollPos.clientWidth;
 		polzPos.style.left = (pixels) + "px";		
 	}
 }, 1000);

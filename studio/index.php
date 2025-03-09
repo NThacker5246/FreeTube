@@ -20,7 +20,7 @@
 			<p class="placeholder">Preview picture file</p>
 		</div>
 		<div class="input-item">
-			<input type="text" name="description" placeholder="Description" title="Descript your video (compatible html tags)">
+			<textarea name="description" placeholder="Description" title="Descript your video (compatible html tags)"></textarea>
 		</div>
 		<div class="input-item">
 			<button type="submit">Submit</button>

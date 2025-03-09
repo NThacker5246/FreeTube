@@ -6,6 +6,9 @@
 
 	$src = getVideoWay(intval($num));
 
+	$fdata = file_get_contents("./db/table.json");
+	$data = json_decode($fdata);
+
 ?>
 
 <!DOCTYPE html>
@@ -17,12 +20,15 @@
 </head>
 <body>
 	<div class="container">
-		<div class="header" id="header"><h2>FreeTube</h2></div>
+		<div class="header" id="header">
+			<h1 style="margin: 0px;">FreeTube</h1>
+			<p style="margin-left: 30px; font-size: 20px; margin-top: 10px;">FreeTube - free, open source and the best analog of YT <a style="position: absolute; right: 5px;" href="http://github.com/NThacker5246/FreeTube">Source Code</a> </p>
+		</div>
 		<div class="video-seen">
 			<div class="video">
 				<video src="<?=$src?>" autoplay="" id="player">
 				</video>
-				<div class="controlls">
+				<div class="controlls" id="controll">
 					<div id="pause"></div>
 					<div class="scroll" id="pos">
 						<div class="polzunok" id="ppos"></div>
@@ -43,18 +49,34 @@
 				</div>
 			</div>
 		</div>
-		<div class="description">
+		<div class="description" id="desc">
 			<pre>
 				<br>
-				<?php
+<?php
 					$conf = file_get_contents("./config/$num.conf");
 					$kw = explode("!HCRGMKARS%!", $conf);
-					$text = explode("ALGSTD!24", $kw[1])[1];
+					$text = trim(explode("ALGSTD!24", $kw[1])[1]);
 					echo "$text";
 				?>
 			</pre>
 		</div>
-		<div class="next-videos"></div>
+		<div class="next-videos" id="next">
+			<?php
+			for ($i=1; $i < $data->count; $i++) { 
+				if($i == intval($num)) continue;
+				$conf = file_get_contents("./config/$i.conf");
+				$kw = explode("!HCRGMKARS%!", $conf);
+				$name = explode("ALGSTD!24", $kw[0])[1];
+				echo "
+				<a href=\"/watch.php?video=$i\">
+					<div class=\"card\">
+						<img src=\"/preview/$i.png\" width=\"300px\" height=\"168.75px\">
+						<p>$name</p>
+					</div>
+				</a>";
+			}
+			?>
+		</div>
 	</div>
 	<script type="text/javascript" src="controlls.js"></script>
 </body>
