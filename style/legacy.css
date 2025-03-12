@@ -136,3 +136,7 @@ video {
 	flex-wrap: wrap;
 	flex-direction: column;
 }
+
+.LikeDislike {
+	display: flex;
+}

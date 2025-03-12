@@ -59,6 +59,6 @@ scrollPos.addEventListener('click', function(e) {
 setInterval(function() {
 	if(notEdited){
 		var pixels = video.currentTime / video.duration * scrollPos.clientWidth;
-		polzPos.style.left = (pixels) + "px";		
+		polzPos.style.left = (pixels-5) + "px";		
 	}
 }, 1000);

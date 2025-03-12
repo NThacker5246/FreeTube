@@ -60,6 +60,10 @@
 				?>
 			</pre>
 		</div>
+		<div class="LikeDislike">
+			<div id="like">Like</div>/<div id="dislike">Dislike</div>
+		</div>
+		<div id="views">Views: </div>	
 		<div class="next-videos" id="next">
 			<?php
 			for ($i=1; $i < $data->count; $i++) { 
@@ -78,6 +82,10 @@
 			?>
 		</div>
 	</div>
+	<script type="text/javascript">
+		const i = parseInt(<?=$num?>);
+	</script>
 	<script type="text/javascript" src="controlls.js"></script>
+	<script type="text/javascript" src="alike.js"></script>
 </body>
 </html>

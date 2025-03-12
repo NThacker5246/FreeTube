@@ -30,7 +30,7 @@
 		$description = $_POST['description'];
 
 		$config_file = fopen("../config/$cnt.conf", "w");
-		$cfw = fwrite($config_file, "nameALGSTD!24$name!HCRGMKARS%!descriptionALGSTD!24$description");
+		$cfw = fwrite($config_file, "nameALGSTD!24$name!HCRGMKARS%!descriptionALGSTD!24$description!HCRGMKARS%!likesALGSTD!240!HCRGMKARS%!dislikesALGSTD!240!HCRGMKARS%!viewsALGSTD!240");
 		$cl = fclose($config_file);
 	}
 
