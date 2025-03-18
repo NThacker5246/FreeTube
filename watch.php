@@ -16,13 +16,15 @@
 <head>
 	<title>Watch videos</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="style/legacy.css">
+	<link rel="stylesheet" type="text/css" href="style/styleVideo.css">
 </head>
 <body>
 	<div class="container">
 		<div class="header" id="header">
-			<h1 style="margin: 0px;">FreeTube</h1>
-			<p style="margin-left: 30px; font-size: 20px; margin-top: 10px;">FreeTube - free, open source and the best analog of YT <a style="position: absolute; right: 5px;" href="http://github.com/NThacker5246/FreeTube">Source Code</a> </p>
+			<div class="headerBubble">
+                <span class="bubbleText">FreeTube</span>
+                <span class="bubbleTextsh">FreeTube</span>
+            </div>
 		</div>
 		<div class="video-seen">
 			<div class="video">
@@ -63,7 +65,7 @@
 		<div class="LikeDislike">
 			<div id="like">Like</div>/<div id="dislike">Dislike</div>
 		</div>
-		<div id="views">Views: </div>	
+		<div id="views" class="views">Views: </div>	
 		<div class="next-videos" id="next">
 			<?php
 			for ($i=1; $i < $data->count; $i++) { 
@@ -74,7 +76,7 @@
 				echo "
 				<a href=\"/watch.php?video=$i\">
 					<div class=\"card\">
-						<img src=\"/preview/$i.png\" width=\"300px\" height=\"168.75px\">
+						<img src=\"/preview/$i.png\" width=\"300px\" height=\"168.75px\" class=\"cardvid\">
 						<p>$name</p>
 					</div>
 				</a>";

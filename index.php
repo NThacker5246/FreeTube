@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>FreeTube - free, open source and the best analog of YT</title>
+	<title>FreeTube</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="/style/legacy.css">
 </head>
