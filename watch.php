@@ -16,7 +16,7 @@
 <head>
 	<title>Watch videos</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="style/legacy.css">
+	<link rel="stylesheet" type="text/css" href="style/styleVideo.css">
 </head>
 <body>
 	<div class="container">
@@ -28,7 +28,7 @@
 		</div>
 		<div class="video-seen">
 			<div class="video">
-				<video src="<?=$src?>" autoplay="" id="player">
+				<video src="<?=$src?>" autoplay="" id="player" class="video">
 				</video>
 				<div class="controlls" id="controll">
 					<div id="pause"></div>
@@ -77,7 +77,9 @@
 				<a href=\"/watch.php?video=$i\">
 					<div class=\"card\">
 						<img src=\"/preview/$i.png\" width=\"300px\" height=\"168.75px\" class=\"cardvid\">
-						<p>$name</p>
+						<div class=\"cardtext\">
+							<a>$name</a>
+						</div>
 					</div>
 				</a>";
 			}
