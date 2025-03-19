@@ -11,14 +11,16 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="/style/legacy.css">
+	<link rel="stylesheet" type="text/css" href="/style/styleHomepage.css">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
 	<div class="container">
-		<div class="header">
-			<h1 style="margin: 0px;">FreeTube</h1>
-			<p style="margin-left: 30px; font-size: 20px; margin-top: 10px;">FreeTube - free, open source and the best analog of YT <a style="position: absolute; right: 5px;" href="http://github.com/NThacker5246/FreeTube">Source Code</a> </p>
+		<div class="header" id="header">
+			<div class="headerBubble">
+                <span class="bubbleText">FreeTube</span>
+                <span class="bubbleTextsh">FreeTube</span>
+            </div>
 		</div>
 		<div class="main-videos">
 			<?php
@@ -29,8 +31,10 @@
 				echo "
 				<a href=\"/watch.php?video=$i\">
 					<div class=\"card\">
-						<img src=\"/preview/$i.png\" width=\"300px\" height=\"168.75px\">
-						<p>$name</p>
+						<img src=\"/preview/$i.png\" width=\"300px\" height=\"168.75px\" class=\"cardvid\">
+						<div class=\"cardtext\">
+							<a>$name</a>
+						</div>
 					</div>
 				</a>";
 			}
