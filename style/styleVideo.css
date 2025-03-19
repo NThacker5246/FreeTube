@@ -127,7 +127,7 @@ video {
 #pause {
 	width: 25px;
 	height: 25px;
-	background-color: blue; 
+	background-color: rgb(74, 74, 74); 
 }
 
 #fullscreen {
@@ -142,7 +142,7 @@ video {
 .polzunok {
 	width: 30px;
 	height: 30px;
-	background-color: blue;
+	background-color: rgb(74, 74, 74);
 	border-radius: 100%;
 	position: relative;
 	left: 0%;
@@ -232,13 +232,13 @@ video {
 .LikeDislike {
 	display: flex;
     position: absolute;
-    top: 950px;
+    top: 10%;
     left: 200px;
 }
 
 .views {
     display: flex;
     position: absolute;
-    top: 980px;
+    top: 10%;
     left: 200px;
 }
