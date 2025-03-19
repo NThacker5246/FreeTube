@@ -17,6 +17,9 @@
 	<title>Watch videos</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style/styleVideo.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
