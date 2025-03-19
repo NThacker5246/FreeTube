@@ -183,7 +183,8 @@ video {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-
+    padding-top: 4%;
+    text-decoration: none;
 }
 
 .card {
@@ -211,6 +212,7 @@ video {
 }
 
 .cardtext {
+    text-decoration: none;
 	padding-top: 10px;
 }
 
@@ -242,4 +244,9 @@ video {
     position: absolute;
     top: 10%;
     left: 200px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }

@@ -32,9 +32,7 @@
 				<a href=\"/watch.php?video=$i\">
 					<div class=\"card\">
 						<img src=\"/preview/$i.png\" width=\"300px\" height=\"168.75px\" class=\"cardvid\">
-						<div class=\"cardtext\">
-							<a>$name</a>
-						</div>
+						<div class=\"cardtext\">$name</div>
 					</div>
 				</a>";
 			}
