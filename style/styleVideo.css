@@ -29,8 +29,31 @@ html, body {
     left: 0px;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
     overflow: hidden;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.header {
+	will-change: backdrop-filter;
+}
+
+.abc {
+    width: 10%;
+    height: 70%;
+    background: rgba(255,206,206,0.3100000023841858);
+    opacity: 1;
+    position: relative;
+    top: 15%;
+    left: 20px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+	justify-content: center;
+    align-items: center;
+    overflow: hidden;
+	cursor: pointer;
+	display: flex;
 }
 
 .headerBubble {
@@ -98,6 +121,13 @@ video, .video {
 video {
 	height: 100%;
 	border-radius: 6px;
+}
+
+.videoblur {
+	content: "";
+	display: block;
+	filter: blur(50px);
+	position: absolute;
 }
 
 .next-videos {
