@@ -38,6 +38,7 @@
 			}
 			?>
 		</div>
+		<div>Link to profile <a href="profile.php">page</a></div>
 	</div>
 </body>
 </html>

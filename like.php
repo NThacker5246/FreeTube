@@ -1,6 +1,11 @@
 <?php
+
+	define('WAY', 'accounts/');
+	require_once 'login/db/account.php';
+
 	$data = $_GET['d'];
 	$v = $_GET['v'];
+	$td = $_COOKIE['Password'];
 	switch ($data) {
 		case 'like':
 			$result = file_get_contents("config/$v.conf");
@@ -10,10 +15,23 @@
 				$msg = $dt[$i];
 				$smg = explode("ALGSTD!24", $msg);
 				if ($smg[0] == "likes") {
-					$newMSG = $smg[0] . "ALGSTD!24" . strval(intval($smg[1]) + 1);
-					echo strval(intval($smg[1]) + 1);
-					$sol .= $newMSG;
-					$sol .= "!HCRGMKARS%!";
+					$newMSG = "";
+					//var_dump(getUserParam($td, "videoLiked", $v));
+					if (!getUserParam($td, "videoLiked", $v)) {
+						$newMSG = $smg[0] . "ALGSTD!24" . strval(intval($smg[1]) + 1);
+						echo strval(intval($smg[1]) + 1);
+						$sol .= $newMSG;
+						$sol .= "!HCRGMKARS%!";
+						//repUserParam($td, "videoLiked", 0, $v);
+						writeUserParam($td, $v, "videoLiked");
+					} else if (getUserParam($td, "videoLiked", $v)) {
+						$newMSG = $smg[0] . "ALGSTD!24" . strval(intval($smg[1]) - 1);
+						echo strval(intval($smg[1]) - 1);
+						$sol .= $newMSG;
+						$sol .= "!HCRGMKARS%!";
+						repUserParam($td, "videoLiked", $v, 0);
+					}
+					
 				} else {
 					$sol .= $msg;
 					$sol .= "!HCRGMKARS%!";
@@ -34,10 +52,22 @@
 				$msg = $dt[$i];
 				$smg = explode("ALGSTD!24", $msg);
 				if ($smg[0] == "dislikes") {
-					$newMSG = $smg[0] . "ALGSTD!24" . strval(intval($smg[1]) + 1);
-					echo strval(intval($smg[1]) + 1);
-					$sol .= $newMSG;
-					$sol .= "!HCRGMKARS%!";
+
+					if (!getUserParam($td, "videoDisliked", $v)) {
+						$newMSG = $smg[0] . "ALGSTD!24" . strval(intval($smg[1]) + 1);
+						echo strval(intval($smg[1]) + 1);
+						$sol .= $newMSG;
+						$sol .= "!HCRGMKARS%!";
+						//repUserParam($td, "videoLiked", 0, $v);
+
+						writeUserParam($td, $v, "videoLiked");
+					} else if (getUserParam($td, "videoDisliked", $v)) {
+						$newMSG = $smg[0] . "ALGSTD!24" . strval(intval($smg[1]) - 1);
+						echo strval(intval($smg[1]) - 1);
+						$sol .= $newMSG;
+						$sol .= "!HCRGMKARS%!";
+						repUserParam($td, "videoLiked", $v, 0);
+					}
 				} else {
 					$sol .= $msg;
 					$sol .= "!HCRGMKARS%!";
@@ -93,7 +123,6 @@
 				}
 			}
 			$sol = trim($sol, "!HCRGMKARS%!");
-
 
 			$cn = fopen("config/$v.conf", "w");
 			$ns = fwrite($cn, $sol);
