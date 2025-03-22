@@ -12,7 +12,7 @@
 	}
 
 	session_start();
-	setcookie("Password", $pwd, time() + 0x7FFFFFFF, ".");
+	setcookie("Password", $pwd, time() + 0x7FFFFFFF, "/");
 	$_SESSION['user'] = $nickname;
 	
 	header("Location: /profile.php");

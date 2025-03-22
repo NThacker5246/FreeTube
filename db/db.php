@@ -40,8 +40,11 @@
 		$fileOfTable = $id >> 8;
 		
 		if(!file_exists(WAY . "table$fileOfTable.json")){
-			$dsd = new TB();
-			$dsd->arr[$id & 255] = $link;
+			$dsd = new TB();	
+			$key = $id & 255;
+			$key = "" . $key;
+			$dsd->arr = new TB();
+			$dsd->arr->$key = $link;
 			$dt = json_encode($dsd);
 
 			$file = fopen(WAY . "table$fileOfTable.json", "w");
