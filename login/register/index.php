@@ -1,4 +1,4 @@
-<form action="login.php" method="POST" enctype="multipart/form-data">
+<form action="reg.php" method="POST" enctype="multipart/form-data">
 	<input type="text" name="name" placeholder="Nickname">
 	<input type="text" name="email" placeholder="Email">
 	<input type="text" name="number" placeholder="+7(800)555-35-35">

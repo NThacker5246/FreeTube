@@ -16,6 +16,6 @@
 	session_start();
 	setcookie("Password", $pwd, time() + 0x7FFFFFFF, "/");
 	$_SESSION['user'] = $dt->name;
-	header("Location: profile.php");
+	header("Location: /profile.php");
 
 ?>

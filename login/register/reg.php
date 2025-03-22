@@ -1,12 +1,12 @@
 <?php  
-	define('WAY', '../accounts/');
-	require_once 'db/account.php';
+	define('WAY', '../../accounts/');
+	require_once '../db/account.php';
 	$nickname = $_POST['name'];
 	$email = $_POST['email'];
 	$number = $_POST['number'];
 	$pwd = $_POST['pwd'];
 
-	$dt = addUser($pwd, $name, $email, $number);
+	$dt = addUser($pwd, $nickname, $email, $number);
 	if($dt == false){
 		header("Location: ./index.php");
 	}
@@ -15,6 +15,6 @@
 	setcookie("Password", $pwd, time() + 0x7FFFFFFF, ".");
 	$_SESSION['user'] = $nickname;
 	
-	header("Location: profile.php");
+	header("Location: /profile.php");
 
 ?>

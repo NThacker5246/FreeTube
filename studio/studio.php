@@ -1,6 +1,8 @@
 <?php
 	define('WAY', '../db/');
 	require_once '../db/db.php';
+	define('PATH', '../accounts/');
+	require_once '../login/db/accountStudio.php';
 	
 	var_dump($_FILES);
 	var_dump($_GET);

@@ -1,3 +1,9 @@
+<?php 
+	if($_COOKIE == []){
+		header("Location: /login");
+	}
+ ?>
+
 <?php if (!empty($_GET['chan'])): ?>
 
 <?php
@@ -43,6 +49,7 @@ $usr = json_decode(file_get_contents(WAY . $pd . ".conf"));
 	<p>Phone: <?=$usr->phone?></p>
 	<p>Mail: <?=$usr->email?></p>
 	<a href="/studio/index.php">Go to creator studio</a>
+	<a href="logoff.php"></a>
 </div>
 
 <?php endif ?>
