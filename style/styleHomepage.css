@@ -28,7 +28,7 @@ html, body {
     top: 0px;
     left: 0px;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
-    overflow: hidden;
+    overflow: hidden; 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }

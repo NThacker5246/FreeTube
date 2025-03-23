@@ -32,8 +32,9 @@
 		</div>
 		<div class="video-seen">
 			<div class="video">
-				<video src="<?=$src?>" autoplay="" id="player" class="video"></video>
-				<video src="<?=$src?>" autoplay="" id="player" class="videoblur"></video>
+				<video src="<?=$src?>" autoplay="" id="player" class="video">
+				</video>
+				<video src="<?=$src?>" autoplay="" id="playerBlur" class="videoblur"></video>
 				<div class="controlls" id="controll">
 					<div id="pause"></div>
 					<div class="scroll" id="pos">
@@ -113,5 +114,6 @@
 	</script>
 	<script type="text/javascript" src="controlls.js"></script>
 	<script type="text/javascript" src="alike.js"></script>
+	<script type="text/javascript" src="comment.js"></script>
 </body>
 </html>

@@ -8,11 +8,15 @@ var next = document.getElementById('next');
 var desc = document.getElementById('desc');
 var controll = document.getElementById('controll');
 
+var blur = document.getElementById('playerBlur');
+
 pause.addEventListener("click", function(e) {
 	if (flag) {
 		video.pause();
+		blur.pause();
 	} else {
 		video.play();
+		blur.play();
 	}
 
 	flag = !flag;
@@ -37,12 +41,15 @@ speed.value = "1";
 
 speed.addEventListener('click', function() {
 	video.playbackRate = parseFloat(speed.value);
+	blur.playbackRate = parseFloat(speed.value);
+
 });
 
 scrollPos.addEventListener('mousemove', function(e) {
 	if(e.buttons != 0){
 		polzPos.style.left = (e.clientX - 40) + "px";
 		video.currentTime = e.clientX / scrollPos.clientWidth * video.duration;
+		blur.currentTime = e.clientX / scrollPos.clientWidth * video.duration;
 		notEdited = false;
 	} else {
 		notEdited = true;
@@ -53,6 +60,7 @@ scrollPos.addEventListener('click', function(e) {
 	if(e.buttons != 0){
 		polzPos.style.left = (e.clientX - 40) + "px";	
 		video.currentTime = e.clientX / scrollPos.clientWidth * video.duration;
+		blur.currentTime = e.clientX / scrollPos.clientWidth * video.duration;
 	}
 });
 

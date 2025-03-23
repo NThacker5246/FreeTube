@@ -1,13 +1,14 @@
-s/* Design created by GiMaker 2025
+/* Design created by GiMaker 2025
 Legacy CSS were used so if something were not updated then it worked at least
 */
 html, body {
 	margin: 0px;
 	width: 100%;
-	height: 100%;
+	min-height: 120% !important;
 	overflow-x: hidden;
 	justify-content: center;
 	align-items: center;
+	overflow-y: hidden;
 }
 
 .container {
@@ -30,7 +31,7 @@ html, body {
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
 	overflow: hidden;
 	backdrop-filter: blur(8px);
-	-webkit-backdrop-filter: blur(8px);
+ 	-webkit-backdrop-filter: blur(8px);
 }
 
 .header {
@@ -110,7 +111,6 @@ html, body {
 	display: block;
 	left: 5%;
 	position: relative;
-
 }
 
 video, .video {
@@ -126,14 +126,15 @@ video {
 }
 
 .videoblur {
-	content: "";
-	top: 0px;
-	left: 0%;
-	display: block;
-	filter: blur(20px);
-	position: absolute;
-	z-index: -1;
-}
+ 	content: "";
+ 	top: 0px;
+ 	left: 0%;
+ 	display: block;
+ 	filter: blur(50px);
+ 	filter: blur(20px);
+ 	position: absolute;
+ 	z-index: -1;
+ }
 
 .next-videos {
 	width: 25%;
@@ -150,12 +151,12 @@ video {
 }
 
 .controlls {
-	width: 85%;
+	width: 95%;
 	height: 25px;
 	position: absolute;
 	justify-content: center;
 	align-items: center;
-	top: 65%;
+	top: 83%;
 /*	left: 10%; */
 }
 
@@ -272,14 +273,14 @@ video {
 .LikeDislike {
 	display: flex;
 	position: absolute;
-	top: 88%;
+	top: 94%;
 	left: 75px;
 }
 
 .titleV {
 	display: flex;
 	position: absolute;
-	top: 83%;
+	top: 90%;
 	left: 75px;
 	font-size: 24px;
 }
@@ -287,14 +288,14 @@ video {
 .views {
 	display: flex;
 	position: absolute;
-	top: 91%;
+	top: 97%;
 	left: 75px;
 }
 
 .description {
 	display: flex;
 	position: absolute;
-	top: 88%;
+	top: 98%;
 	left: 75px;
 	font-size: 18px;
 	clear: both;
@@ -308,8 +309,8 @@ video {
 
 .comments {
 	left: 75px;
-	font-size: 14px;
-	position: absolute;
-	top: calc(100% + 220px);
+	font-size: 20px;
+	position: relative;
+	top: 300px;
 
 }
