@@ -1,4 +1,4 @@
-/* Design created by GiMaker 2025
+s/* Design created by GiMaker 2025
 Legacy CSS were used so if something were not updated then it worked at least
 */
 html, body {
@@ -7,7 +7,7 @@ html, body {
 	height: 100%;
 	overflow-x: hidden;
 	justify-content: center;
-    align-items: center;
+	align-items: center;
 }
 
 .container {
@@ -22,15 +22,15 @@ html, body {
 	height: 8%;
 	z-index: 100;
 	display: flex;
-    background: rgba(255,255,255,0.949999988079071);
-    opacity: 1;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
-    overflow: hidden;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+	background: rgba(255,255,255,0.949999988079071);
+	opacity: 1;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
+	overflow: hidden;
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
 }
 
 .header {
@@ -38,66 +38,66 @@ html, body {
 }
 
 .abc {
-    width: 10%;
-    height: 70%;
-    background: rgba(255,206,206,0.3100000023841858);
-    opacity: 1;
-    position: relative;
-    top: 15%;
-    left: 20px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+	width: 10%;
+	height: 70%;
+	background: rgba(255,206,206,0.3100000023841858);
+	opacity: 1;
+	position: relative;
+	top: 15%;
+	left: 20px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
 	justify-content: center;
-    align-items: center;
-    overflow: hidden;
+	align-items: center;
+	overflow: hidden;
 	cursor: pointer;
 	display: flex;
 }
 
 .headerBubble {
-    width: 10%;
-    height: 70%;
-    background: rgba(255,206,206,0.3100000023841858);
-    opacity: 1;
-    position: relative;
-    top: 15%;
-    left: 20px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+	width: 10%;
+	height: 70%;
+	background: rgba(255,206,206,0.3100000023841858);
+	opacity: 1;
+	position: relative;
+	top: 15%;
+	left: 20px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
 	justify-content: center;
-    align-items: center;
-    overflow: hidden;
+	align-items: center;
+	overflow: hidden;
 	cursor: pointer;
 	display: flex;
   }
 
   .bubbleTextsh {
-    width: 10%;
-    color: rgba(255,159,159,1);
-    position: fixed;
-    font-family: Golos Text;
-    font-weight: Regular;
-    font-size: 100%;
-    opacity: 1;
-    text-align: center;
+	width: 10%;
+	color: rgba(255,159,159,1);
+	position: fixed;
+	font-family: Golos Text;
+	font-weight: Regular;
+	font-size: 100%;
+	opacity: 1;
+	text-align: center;
 	padding-top: 3px;
 	padding-left: 3px;
   }
 
   .bubbleText {
-    width: 10%;
-    color: rgba(106,0,0,1);
-    position: fixed;
-    font-family: Golos Text;
-    font-weight: Regular;
-    font-size: 100%;
-    opacity: 1;
-    text-align: center;
-    z-index: 2;
+	width: 10%;
+	color: rgba(106,0,0,1);
+	position: fixed;
+	font-family: Golos Text;
+	font-weight: Regular;
+	font-size: 100%;
+	opacity: 1;
+	text-align: center;
+	z-index: 2;
   }
 
 .header-f {
@@ -109,8 +109,8 @@ html, body {
 	height: 100%;
 	display: block;
 	left: 5%;
-    position: relative;
-    top: 100px;
+	position: relative;
+	top: 100px;
 }
 
 video, .video {
@@ -145,12 +145,12 @@ video {
 }
 
 .controlls {
-	width: 75%;
+	width: 85%;
 	height: 25px;
 	position: absolute;
 	justify-content: center;
-    align-items: center;
-	top: 85%;
+	align-items: center;
+	top: 65%;
 /*	left: 10%; */
 }
 
@@ -221,7 +221,7 @@ video {
 	height: 28%;
 	margin: 20px;
 	font-family: Golos Text;
-    font-weight: Bold;
+	font-weight: Bold;
 	color: black;
 	text-decoration: none;
 	cursor: pointer;
@@ -266,14 +266,45 @@ video {
 
 .LikeDislike {
 	display: flex;
-    position: absolute;
-    top: 10%;
-    left: 200px;
+	position: absolute;
+	top: 88%;
+	left: 75px;
+}
+
+.titleV {
+	display: flex;
+	position: absolute;
+	top: 83%;
+	left: 75px;
+	font-size: 24px;
 }
 
 .views {
-    display: flex;
-    position: absolute;
-    top: 10%;
-    left: 200px;
+	display: flex;
+	position: absolute;
+	top: 91%;
+	left: 75px;
+}
+
+.description {
+	display: flex;
+	position: absolute;
+	top: 88%;
+	left: 75px;
+	font-size: 18px;
+	clear: both;
+	height: 300px;
+	overflow-y: scroll;
+}
+
+.description > pre {
+	margin: 0px;
+}
+
+.comments {
+	left: 75px;
+	font-size: 14px;
+	position: absolute;
+	top: calc(100% + 220px);
+
 }

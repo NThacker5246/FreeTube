@@ -55,6 +55,14 @@
 				</div>
 			</div>
 		</div>
+		<div class="titleV">
+			<?php
+					$conf = file_get_contents("./config/$num.conf");
+					$kw = explode("!HCRGMKARS%!", $conf);
+					$text = trim(explode("ALGSTD!24", $kw[0])[1]);
+					echo "$text";
+			?>
+		</div>
 		<div class="description" id="desc">
 			<pre>
 				<br>
@@ -94,6 +102,10 @@
 				</a>";
 			}
 			?>
+		</div>
+		<div class="comments">
+			<input type="text" name="comment" id="inCom">
+			<div id="commRES"></div>
 		</div>
 	</div>
 	<script type="text/javascript">
