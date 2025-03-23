@@ -29,8 +29,8 @@ html, body {
 	left: 0px;
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
 	overflow: hidden;
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
 }
 
 .header {
@@ -110,24 +110,29 @@ html, body {
 	display: block;
 	left: 5%;
 	position: relative;
-	top: 100px;
+
 }
 
 video, .video {
 	width: 90%;
 	left: 0%;
+	border-radius: 6px;
 }
 
 video {
 	height: 100%;
 	border-radius: 6px;
+	position: absolute;
 }
 
 .videoblur {
 	content: "";
+	top: 0px;
+	left: 0%;
 	display: block;
-	filter: blur(50px);
+	filter: blur(20px);
 	position: absolute;
+	z-index: -1;
 }
 
 .next-videos {
