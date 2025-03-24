@@ -27,6 +27,8 @@
 	<h5>LPV: <?=$LPV?></h5>
 	<p>LPV (likes per view) - a coefficient, what uses to check - if video make good or topic was the useful. LPV counts using that formula:</p>
 	<pre>LPV = (likes - dislikes) / views</pre>
+	Go To <a href="./index.php">Analitics</a>
+	Go To <a href="../studio/index.php">Studio</a>
 </body>
 </html>
 
@@ -62,13 +64,14 @@
 						$VIEWER = [intval(explode("ALGSTD!24", $params[4])[1]), explode("ALGSTD!24", $params[0])[1], $link];
 					}
 				?>
-				<td><?=explode("ALGSTD!24", $params[0])[1]?></td>
+				<td><a href="./?num=<?=$link?>"><?=explode("ALGSTD!24", $params[0])[1]?></a></td>
 				<td><?=explode("ALGSTD!24", $params[4])[1]?></td>
 				<td><?=explode("ALGSTD!24", $params[2])[1]?>/<?=explode("ALGSTD!24", $params[3])[1]?></td>
 			</tr>
 		<?php endforeach ?>
 	</table>
 	<h3>Your video, that got a max views: <a href="/watch.php?video=<?=$VIEWER[2]?>"><?=$VIEWER[1]?></a>, with total views <?=$VIEWER[0]?></h3>
+	Go To <a href="../studio/index.php">Studio</a>
 
 </body>
 </html>

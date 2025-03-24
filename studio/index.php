@@ -26,6 +26,8 @@
 			<button type="submit">Submit</button>
 		</div>
 	</form>
+	Go To <a href="../profile.php">Profile</a>
+	Go To <a href="../analitics/">Analitics</a>
 
 </body>
 </html>
