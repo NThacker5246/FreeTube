@@ -57,12 +57,15 @@
 			</div>
 		</div>
 		<div class="titleV">
-			<?php
+			<div class="titleV2">
+				<?php
 					$conf = file_get_contents("./config/$num.conf");
 					$kw = explode("!HCRGMKARS%!", $conf);
 					$text = trim(explode("ALGSTD!24", $kw[0])[1]);
 					echo "$text";
-			?>
+				?>
+			</div>
+		</div>
 		</div>
 		<div class="description" id="desc">
 			<pre>

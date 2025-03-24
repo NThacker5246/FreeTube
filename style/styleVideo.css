@@ -116,13 +116,13 @@ html, body {
 video, .video {
 	width: 90%;
 	left: 0%;
-	border-radius: 6px;
 }
 
 video {
-	height: 100%;
-	border-radius: 6px;
 	position: absolute;
+	border-radius: 6px;
+	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
+	top: 100px;
 }
 
 .videoblur {
@@ -130,10 +130,10 @@ video {
  	top: 0px;
  	left: 0%;
  	display: block;
- 	filter: blur(50px);
- 	filter: blur(20px);
+ 	filter: blur(100px);
  	position: absolute;
  	z-index: -1;
+	top: 100px;
  }
 
 .next-videos {
@@ -156,7 +156,7 @@ video {
 	position: absolute;
 	justify-content: center;
 	align-items: center;
-	top: 83%;
+	top: 110%;
 /*	left: 10%; */
 }
 
@@ -273,29 +273,46 @@ video {
 .LikeDislike {
 	display: flex;
 	position: absolute;
-	top: 94%;
+	top: 130%;
 	left: 75px;
 }
 
 .titleV {
 	display: flex;
 	position: absolute;
-	top: 90%;
+	top: 120%;
 	left: 75px;
 	font-size: 24px;
+	font-weight: bold;
+}
+
+.titleV {
+	width: 30%;
+	border-radius: 6px;
+	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
+	background: white;
+	display: flex;
+	opacity: 1;
+}
+
+.titleV2 {
+	margin-left: 20px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+
 }
 
 .views {
 	display: flex;
 	position: absolute;
-	top: 97%;
+	top: 127%;
 	left: 75px;
 }
 
 .description {
 	display: flex;
 	position: absolute;
-	top: 98%;
+	top: 130%;
 	left: 75px;
 	font-size: 18px;
 	clear: both;
