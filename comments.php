@@ -1,12 +1,11 @@
 <?php
 	$comment = $_GET['comment'];
 	$v = $_GET['v'];
-	$pwd = $_COOKIE['Password'];
+	$name = $_COOKIE['name'];
 	$md = $_GET['m'];
 	
 	switch ($md) {
 		case 'write':
-			$name = json_decode(file_get_contents("./accounts/$pwd.conf"))->name;
 			$save_cm = "<div>$name> $comment</div>";
 			if (file_exists("./comments/$v.txt")) {
 				$save_cm = file_get_contents("./comments/$v.txt") . $save_cm;

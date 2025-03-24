@@ -68,8 +68,8 @@
 			<pre>
 				<br>
 <?php
-					$conf = file_get_contents("./config/$num.conf");
-					$kw = explode("!HCRGMKARS%!", $conf);
+					//$conf = file_get_contents("./config/$num.conf");
+					//$kw = explode("!HCRGMKARS%!", $conf);
 					$text = trim(explode("ALGSTD!24", $kw[1])[1]);
 					echo "$text";
 				?>
@@ -78,8 +78,8 @@
 		<div class="LikeDislike">
 			<div id="like">Like</div>/<div id="dislike">Dislike</div>/
 			<?php  
-				$conf = file_get_contents("./config/$num.conf");
-				$kw = explode("!HCRGMKARS%!", $conf);
+				//$conf = file_get_contents("./config/$num.conf");
+				//$kw = explode("!HCRGMKARS%!", $conf);
 				//var_dump($kw);
 				//var_dump($kw);
 				$text = trim(explode("ALGSTD!24", $kw[5])[1]);

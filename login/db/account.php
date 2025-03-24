@@ -23,8 +23,8 @@
 		$param->email = $email;
 		$param->phone = $phone;
 
-		if(!file_exists(WAY . $password . ".conf")){
-			$file = fopen(WAY . $password . ".conf", "w");
+		if(!file_exists(WAY . $name . ".conf")){
+			$file = fopen(WAY . $name . ".conf", "w");
 			$fw = fwrite($file, json_encode($param));
 			$fc = fclose($file);
 			return true;
@@ -32,13 +32,13 @@
 		return false;
 	}
 
-	function getUser($password, $name, $email, $phone)
+	function getUser($password, $name)
 	{
-		if(file_exists(WAY . $password . ".conf")){
-			$dt = json_decode(file_get_contents(WAY . $password . ".conf"));
+		if(file_exists(WAY . $name . ".conf")){
+			$dt = json_decode(file_get_contents(WAY . $name . ".conf"));
 			var_dump($name);
 			var_dump($dt->name);
-			if ($dt->name == $name || $dt->email == $email || $dt->phone == $phone) {
+			if ($dt->password == $password) {
 				return $dt;
 			}
 			return false;
@@ -46,16 +46,16 @@
 		return false;
 	}
 
-	function writeUserParam($password, $param, $type)
+	function writeUserParam($name, $param, $type)
 	{
-		if(file_exists(WAY . $password . ".conf")){
-			$dt = json_decode(file_get_contents(WAY . $password . ".conf"));
+		if(file_exists(WAY . $name . ".conf")){
+			$dt = json_decode(file_get_contents(WAY . $name . ".conf"));
 			switch ($type) {
 				case 'videoCreated':
 					$prev = $dt->videoCreated;
 					if($prev == null){
 						$dt->videoCreated = array($param);
-						$file = fopen(WAY . $password . ".conf", "w");
+						$file = fopen(WAY . $name . ".conf", "w");
 						$fw = fwrite($file, json_encode($dt));
 						$fc = fclose($file);
 						return true;
@@ -69,8 +69,8 @@
 						$i++;
 					}
 					$dt->videoCreated[$i] = $param;
-					$file = fopen(WAY . $password . ".conf", "w");
-					$fw = fwrite($file, json_encode($dt));
+					$file = fopen(WAY . $name . ".conf", "w");
+					$fw = fwrite($file, name($dt));
 					$fc = fclose($file);
 					var_dump($dt);
 					echo "<br>";
@@ -81,7 +81,7 @@
 					$prev = $dt->videoLiked;
 					if($prev == null){
 						$dt->videoLiked = array($param);
-						$file = fopen(WAY . $password . ".conf", "w");
+						$file = fopen(WAY . $name . ".conf", "w");
 						$fw = fwrite($file, json_encode($dt));
 						$fc = fclose($file);
 						return true;
@@ -95,7 +95,7 @@
 						$i++;
 					}
 					$dt->videoLiked[$i] = $param;
-					$file = fopen(WAY . $password . ".conf", "w");
+					$file = fopen(WAY . $name . ".conf", "w");
 					$fw = fwrite($file, json_encode($dt));
 					$fc = fclose($file);
 					//var_dump($dt);
@@ -107,7 +107,7 @@
 					$prev = $dt->videoDisliked;
 					if($prev == null){
 						$dt->videoDisliked = array($param);
-						$file = fopen(WAY . $password . ".conf", "w");
+						$file = fopen(WAY . $name . ".conf", "w");
 						$fw = fwrite($file, json_encode($dt));
 						$fc = fclose($file);
 						return true;
@@ -121,7 +121,7 @@
 						$i++;
 					}
 					$dt->videoDisliked[$i] = $param;
-					$file = fopen(WAY . $password . ".conf", "w");
+					$file = fopen(WAY . $name . ".conf", "w");
 					$fw = fwrite($file, json_encode($dt));
 					$fc = fclose($file);
 					//var_dump($dt);
@@ -137,10 +137,10 @@
 		return false;
 	}
 
-	function getUserParam($password, $type, $par)
+	function getUserParam($name, $type, $par)
 	{
-		if(file_exists(WAY . $password . ".conf")){
-			$dt = json_decode(file_get_contents(WAY . $password . ".conf"));
+		if(file_exists(WAY . $name . ".conf")){
+			$dt = json_decode(file_get_contents(WAY . $name . ".conf"));
 			switch ($type) {
 				case 'videoCreated':
 					foreach ($dt->videoCreated as $value) {
@@ -174,10 +174,10 @@
 		return false;
 	}
 
-	function repUserParam($password, $type, $par, $np)
+	function repUserParam($name, $type, $par, $np)
 	{
-		if(file_exists(WAY . $password . ".conf")){
-			$dt = json_decode(file_get_contents(WAY . $password . ".conf"));
+		if(file_exists(WAY . $name . ".conf")){
+			$dt = json_decode(file_get_contents(WAY . $name . ".conf"));
 			switch ($type) {
 				case 'videoCreated':
 					$i = 0;
@@ -208,7 +208,7 @@
 					break;
 
 			}
-			$file = fopen(WAY . $password . ".conf", "w");
+			$file = fopen(WAY . $name . ".conf", "w");
 			$fw = fwrite($file, json_encode($dt));
 			$fc = fclose($file);	
 			return true;

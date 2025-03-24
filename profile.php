@@ -37,15 +37,15 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 <?php
 define('WAY', 'accounts/');
 
-$pd = $_COOKIE['Password'];
+$name = $_COOKIE['name'];
 
-$usr = json_decode(file_get_contents(WAY . $pd . ".conf"));
+$usr = json_decode(file_get_contents(WAY . $name . ".conf"));
 
 ?>
 
 <div>
 	<h1>Hello, <?=$usr->name?>!</h1>
-	<p>Password: <?=$pd?></p>
+	<p>Password: <?=$usr->password?></p>
 	<p>Phone: <?=$usr->phone?></p>
 	<p>Mail: <?=$usr->email?></p>
 	<a href="/studio/index.php">Go to creator studio</a>

@@ -32,10 +32,10 @@
 		$description = $_POST['description'];
 
 		$config_file = fopen("../config/$cnt.conf", "w");
-		$pd = $_COOKIE['Password'];
-		$cfw = fwrite($config_file, "nameALGSTD!24$name!HCRGMKARS%!descriptionALGSTD!24$description!HCRGMKARS%!likesALGSTD!240!HCRGMKARS%!dislikesALGSTD!240!HCRGMKARS%!viewsALGSTD!240!HCRGMKARS%!passALGSTD!24$pd");
+		$username = $_COOKIE['name'];
+		$cfw = fwrite($config_file, "nameALGSTD!24$name!HCRGMKARS%!descriptionALGSTD!24$description!HCRGMKARS%!likesALGSTD!240!HCRGMKARS%!dislikesALGSTD!240!HCRGMKARS%!viewsALGSTD!240!HCRGMKARS%!passALGSTD!24$username");
 		$cl = fclose($config_file);
-		writeUserParam($_COOKIE['Password'], $cnt, "videoCreated");
+		writeUserParam($username, $cnt, "videoCreated");
 	}
 
 ?>	

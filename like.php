@@ -5,7 +5,7 @@
 
 	$data = $_GET['d'];
 	$v = $_GET['v'];
-	$td = $_COOKIE['Password'];
+	$td = $_COOKIE['name'];
 	switch ($data) {
 		case 'like':
 			$result = file_get_contents("config/$v.conf");

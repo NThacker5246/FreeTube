@@ -2,6 +2,10 @@
 <img src="./Screenshots/001.png"><br>
 <img src="./Screenshots/002.png"><br>
 <img src="./Screenshots/003.png"><br>
+<img src="./Screenshots/004.png"><br>
+<img src="./Screenshots/005.png"><br>
+<img src="./Screenshots/006.png"><br>
+<img src="./Screenshots/007.png"><br>
 
 Features:
 <ol>
