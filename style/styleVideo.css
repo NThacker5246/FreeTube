@@ -15,7 +15,8 @@ html, body {
 	margin: 0px;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
+	overflow-x: hidden;
+	font-family: Golos Text;
 }
 
 .header {
@@ -38,25 +39,6 @@ html, body {
 	will-change: backdrop-filter;
 }
 
-.abc {
-	width: 10%;
-	height: 70%;
-	background: rgba(255,206,206,0.3100000023841858);
-	opacity: 1;
-	position: relative;
-	top: 15%;
-	left: 20px;
-	border-top-left-radius: 6px;
-	border-top-right-radius: 6px;
-	border-bottom-left-radius: 6px;
-	border-bottom-right-radius: 6px;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-	cursor: pointer;
-	display: flex;
-}
-
 .headerBubble {
 	width: 10%;
 	height: 70%;
@@ -65,10 +47,7 @@ html, body {
 	position: relative;
 	top: 15%;
 	left: 20px;
-	border-top-left-radius: 6px;
-	border-top-right-radius: 6px;
-	border-bottom-left-radius: 6px;
-	border-bottom-right-radius: 6px;
+	border-radius: 6px;
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
@@ -121,8 +100,8 @@ video, .video {
 video {
 	position: absolute;
 	border-radius: 6px;
-	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
-	top: 100px;
+	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
+	top: 70px;
 }
 
 .videoblur {
@@ -130,19 +109,23 @@ video {
  	top: 0px;
  	left: 0%;
  	display: block;
- 	filter: blur(100px);
+ 	filter: blur(100px) brightness(5);
+	opacity: 0.5;
  	position: absolute;
  	z-index: -1;
-	top: 100px;
+	top: 70px;
  }
 
 .next-videos {
 	width: 25%;
-	height: 750px;
+	height: 100%;
 	right: 0%;
 	position: absolute;
-	top: 80px;
-	
+	top: 50px;
+	background: white;
+	box-shadow: -5px 0px 4px rgba(0, 0, 0, 0.03999999910593033);
+	border-radius: 6px;
+	top: 70px;
 }
 
 .container {
@@ -156,7 +139,7 @@ video {
 	position: absolute;
 	justify-content: center;
 	align-items: center;
-	top: 110%;
+	top: 630px;
 /*	left: 10%; */
 }
 
@@ -223,8 +206,8 @@ video {
 }
 
 .card {
-	width: 50%;
-	height: 28%;
+	width: 100%;
+	height: 200px;
 	margin: 20px;
 	font-family: Golos Text;
 	font-weight: Bold;
@@ -239,11 +222,10 @@ video {
 }
 
 .cardvid {
-	width: 300px;
 	height: 168.75px;
 	margin: 0px;
 	border-radius: 6px;
-	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.53);
+	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
 	text-decoration: none;
 }
 
@@ -255,7 +237,6 @@ video {
 
 .card > p {
 	text-decoration: none;
-	width: 325px;
 }
 
 
@@ -272,26 +253,25 @@ video {
 
 .LikeDislike {
 	display: flex;
-	position: absolute;
+	position: relative;
 	top: 130%;
-	left: 75px;
+	left: 20px;
+	opacity: 0.5;
 }
 
 .titleV {
-	display: flex;
 	position: absolute;
-	top: 120%;
-	left: 75px;
-	font-size: 24px;
-	font-weight: bold;
+	top: 670px;
+	left: 65px;
+
 }
 
 .titleV {
-	width: 30%;
+	width: 68%;
+	height: fit-content;
 	border-radius: 6px;
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
 	background: white;
-	display: flex;
 	opacity: 1;
 }
 
@@ -299,25 +279,27 @@ video {
 	margin-left: 20px;
 	margin-top: 3px;
 	margin-bottom: 3px;
-
+	font-size: 24px;
+	font-weight: bold;
+	display: block;
 }
 
 .views {
 	display: flex;
-	position: absolute;
-	top: 127%;
-	left: 75px;
+	position: relative;
+	margin-left: 20px;
+	font-weight: light;
 }
 
 .description {
-	display: flex;
-	position: absolute;
-	top: 130%;
-	left: 75px;
+	display: block;
+	position: relative;
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-bottom: 20px;
 	font-size: 18px;
 	clear: both;
-	height: 300px;
-	overflow-y: scroll;
+	height: fit-content;
 }
 
 .description > pre {
@@ -325,9 +307,34 @@ video {
 }
 
 .comments {
-	left: 75px;
 	font-size: 20px;
 	position: relative;
-	top: 300px;
+	margin: 20px;
+}
 
+.commentBubble {
+	position: relative;
+	width: 68%;
+	height: fit-content;
+	border-radius: 6px;
+	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
+	background: white;
+	opacity: 1;
+	left: 65px;
+	top: 150px;
+	display: block;
+}
+
+.commentInput {
+	border-radius: 6px;
+}
+
+.commentText {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 12px;
+	justify-content: center;
+	align-items: center;
+	text-align: left;
+	opacity: 0.8;
 }

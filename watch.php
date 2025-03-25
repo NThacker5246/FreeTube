@@ -72,6 +72,7 @@
 			</div>
 		</div>
 		<div class="titleV">
+
 			<div class="titleV2">
 				<?php
 					$conf = file_get_contents("./config/$num.conf");
@@ -80,31 +81,32 @@
 					echo "$text";
 				?>
 			</div>
-		</div>
-		</div>
-		<div class="description" id="desc">
-			<pre>
-				<br>
-<?php
+
+			<div class="LikeDislike">
+				<div id="like">Like</div>/<div id="dislike">Dislike</div>/
+				<?php  
+					//$conf = file_get_contents("./config/$num.conf");
+					//$kw = explode("!HCRGMKARS%!", $conf);
+					//var_dump($kw);
+					//var_dump($kw);
+					$text = trim(explode("ALGSTD!24", $kw[5])[1]);
+				?>
+				<div>Link to authory: <a href="profile.php?chan=<?=$text?>"><?=$text?></a></div>
+			</div>
+			<div id="views" class="views">Views: </div>	
+
+			<div class="description" id="desc">
+				
+				<?php
 					//$conf = file_get_contents("./config/$num.conf");
 					//$kw = explode("!HCRGMKARS%!", $conf);
 					$text = trim(explode("ALGSTD!24", $kw[1])[1]);
 					echo "$text";
 				?>
-			</pre>
+				
+			</div>
+
 		</div>
-		<div class="LikeDislike">
-			<div id="like">Like</div>/<div id="dislike">Dislike</div>/
-			<?php  
-				//$conf = file_get_contents("./config/$num.conf");
-				//$kw = explode("!HCRGMKARS%!", $conf);
-				//var_dump($kw);
-				//var_dump($kw);
-				$text = trim(explode("ALGSTD!24", $kw[5])[1]);
-			?>
-			<div>Link to authory: <a href="profile.php?chan=<?=$text?>"><?=$text?></a></div>
-		</div>
-		<div id="views" class="views">Views: </div>	
 		<div class="next-videos" id="next">
 			<?php
 			for ($i=1; $i < $data->count; $i++) { 
@@ -122,9 +124,11 @@
 			}
 			?>
 		</div>
-		<div class="comments">
-			<input type="text" name="comment" id="inCom">
-			<div id="commRES"></div>
+		<div class="commentBubble">
+			<div class="comments">
+				<input type="text" name="comment" id="inCom" class="commentInput">
+				<div id="commRES" class="commentText"></div>
+			</div>
 		</div>
 	</div>
 	<script type="text/javascript">
