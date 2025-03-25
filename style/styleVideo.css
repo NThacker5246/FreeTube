@@ -4,11 +4,10 @@ Legacy CSS were used so if something were not updated then it worked at least
 html, body {
 	margin: 0px;
 	width: 100%;
-	min-height: 120% !important;
 	overflow-x: hidden;
 	justify-content: center;
 	align-items: center;
-	overflow-y: scroll !important
+	overflow-y: hidden;
 }
 
 .container {
