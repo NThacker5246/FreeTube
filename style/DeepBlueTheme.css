@@ -1,0 +1,8 @@
+html, body, .header {
+	background-color: darkblue !important;
+	color: darkblue !important;
+}
+
+html, body {
+	background: url(http://localhost:8888/Desktop.png) !important;
+}

@@ -16,11 +16,12 @@
 <head>
 	<title>Watch videos</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="style/styleVideo.css">
+	<link rel="stylesheet" type="text/css" href="style/styleVideo.css" id="styles">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
 	<link rel="icon" href="favicon.ico" >
+	<link rel="stylesheet" type="text/css" href="/style/" id="linker">
 </head>
 <body>
 	<div class="container">
@@ -29,6 +30,20 @@
                 <span class="bubbleText">FreeTube</span>
                 <span class="bubbleTextsh">FreeTube</span>
 			</a>
+
+			<select class="headerBubble" id="themeSelecter">
+				<option value="0">LightTheme</option>
+				<option value="1">DarkTheme</option>
+				<option value="2">ContrastTheme</option>
+				<option value="3">DeepBlueTheme</option>
+				<option value="2">GrayscaleTheme</option>
+				<option value="3">Glassomorphism</option>
+			</select>
+
+			<select class="headerBubble" id="styleChanger">
+				<option value="0">GiMaker version</option>
+				<option value="1">NThacker version</option>
+			</select>
 		</div>
 		<div class="video-seen">
 			<div class="video">
@@ -118,5 +133,7 @@
 	<script type="text/javascript" src="controlls.js"></script>
 	<script type="text/javascript" src="alike.js"></script>
 	<script type="text/javascript" src="comment.js"></script>
+	<script type="text/javascript" src="themes.js"></script>
+	<script type="text/javascript" src="styles.js"></script>
 </body>
 </html>

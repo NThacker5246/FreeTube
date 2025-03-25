@@ -1,0 +1,16 @@
+html, body, .header, option {
+	background-color: #000F00 !important;
+	color: white !important; 
+}
+
+html, body {
+	background: url(https://avatars.mds.yandex.net/i?id=95c6be836a06c62b0a3aa69586fe196e_l-9847927-images-thumbs&n=13);
+}
+
+.scroll {
+	background-color: firebrick;
+}
+
+* {
+	color: white !important; 
+}

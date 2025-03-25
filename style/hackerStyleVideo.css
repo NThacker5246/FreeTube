@@ -8,14 +8,14 @@ html, body {
 	overflow-x: hidden;
 	justify-content: center;
 	align-items: center;
-	overflow-y: scroll !important
+	overflow-y: scroll !important;
 }
 
 .container {
 	margin: 0px;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 .header {
@@ -116,13 +116,13 @@ html, body {
 video, .video {
 	width: 90%;
 	left: 0%;
+	border-radius: 6px;
 }
 
 video {
-	position: absolute;
+	height: 100%;
 	border-radius: 6px;
-	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
-	top: 100px;
+	position: absolute;
 }
 
 .videoblur {
@@ -130,10 +130,10 @@ video {
  	top: 0px;
  	left: 0%;
  	display: block;
- 	filter: blur(100px);
+ 	filter: blur(50px);
+ 	filter: blur(20px);
  	position: absolute;
  	z-index: -1;
-	top: 100px;
  }
 
 .next-videos {
@@ -156,7 +156,7 @@ video {
 	position: absolute;
 	justify-content: center;
 	align-items: center;
-	top: 110%;
+	top: 83%;
 /*	left: 10%; */
 }
 
@@ -273,46 +273,29 @@ video {
 .LikeDislike {
 	display: flex;
 	position: absolute;
-	top: 130%;
+	top: 94%;
 	left: 75px;
 }
 
 .titleV {
 	display: flex;
 	position: absolute;
-	top: 120%;
+	top: 90%;
 	left: 75px;
 	font-size: 24px;
-	font-weight: bold;
-}
-
-.titleV {
-	width: 30%;
-	border-radius: 6px;
-	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
-	background: white;
-	display: flex;
-	opacity: 1;
-}
-
-.titleV2 {
-	margin-left: 20px;
-	margin-top: 3px;
-	margin-bottom: 3px;
-
 }
 
 .views {
 	display: flex;
 	position: absolute;
-	top: 127%;
+	top: 97%;
 	left: 75px;
 }
 
 .description {
 	display: flex;
 	position: absolute;
-	top: 130%;
+	top: 98%;
 	left: 75px;
 	font-size: 18px;
 	clear: both;
@@ -327,7 +310,7 @@ video {
 .comments {
 	left: 75px;
 	font-size: 20px;
-	position: relative;
-	top: 300px;
+	position: absolute;
+	top: calc(99% + 250px);
 
 }

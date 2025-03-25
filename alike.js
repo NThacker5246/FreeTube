@@ -20,16 +20,16 @@ like.addEventListener("click", function(e) {
 dislike.addEventListener("click", function(e) {
 	e.preventDefault();
 
-	var xhr = new XMLHttpRequest();
-	xhr.open("GET", "like.php?d=dislike&v=" + i);
+	var xhr1 = new XMLHttpRequest();
+	xhr1.open("GET", "like.php?d=dislike&v=" + i);
 
-	xhr.onreadystatechange = function() {
-		if(xhr.readyState == 4 && xhr.status == 200){
-			dislike.innerHTML = "Dislikes: " + xhr.responseText;
+	xhr1.onreadystatechange = function() {
+		if(xhr1.readyState == 4 && xhr1.status == 200){
+			dislike.innerHTML = "Dislikes: " + xhr1.responseText;
 		}
 	}
 
-	xhr.send();
+	xhr1.send();
 });
 
 var xhr = new XMLHttpRequest();
