@@ -71,7 +71,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="titleV">
+		<div class="titleV" id="titleV">
 
 			<div class="titleV2">
 				<?php
@@ -95,16 +95,16 @@
 			</div>
 			<div id="views" class="views">Views: </div>	
 
-			<div class="description" id="desc">
+			<pre class="description" id="desc">
 				
-				<?php
+<?php
 					//$conf = file_get_contents("./config/$num.conf");
 					//$kw = explode("!HCRGMKARS%!", $conf);
 					$text = trim(explode("ALGSTD!24", $kw[1])[1]);
 					echo "$text";
 				?>
 				
-			</div>
+			</pre>
 
 		</div>
 		<div class="next-videos" id="next">
@@ -124,7 +124,7 @@
 			}
 			?>
 		</div>
-		<div class="commentBubble">
+		<div class="commentBubble" id="commentBubble">
 			<div class="comments">
 				<input type="text" name="comment" id="inCom" class="commentInput">
 				<div id="commRES" class="commentText"></div>

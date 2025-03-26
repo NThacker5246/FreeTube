@@ -79,9 +79,6 @@ html, body {
 	z-index: 2;
   }
 
-.header-f {
-	display: none;
-}
 
 .video-seen {
 	width: 75%;
@@ -138,7 +135,7 @@ video {
 	position: absolute;
 	justify-content: center;
 	align-items: center;
-	top: 630px;
+	top: 80%;
 /*	left: 10%; */
 }
 
@@ -240,7 +237,7 @@ video {
 
 
 .controlls-f {
-	width: 100%;
+	width: 120% !important;
 	height: 25px;
 	position: absolute;
 	top: 95%;
@@ -248,6 +245,12 @@ video {
 	justify-content: center;
 	flex-wrap: wrap;
 	flex-direction: column;
+	left: 0px;
+}
+
+.controlls-f > #pause{
+	position: absolute;
+	left: 5%;
 }
 
 .LikeDislike {
@@ -260,7 +263,7 @@ video {
 
 .titleV {
 	position: absolute;
-	top: 670px;
+	top: 90%;
 	left: 65px;
 
 }
@@ -336,4 +339,12 @@ video {
 	align-items: center;
 	text-align: left;
 	opacity: 0.8;
+}
+
+.header-f {
+	display: none !important;
+}
+
+pre {
+	font-family: "Segoe UI";
 }
