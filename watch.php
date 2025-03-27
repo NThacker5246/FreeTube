@@ -16,7 +16,7 @@
 <head>
 	<title>Watch videos</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="style/styleVideo.css" id="styles">
+	<link rel="stylesheet" type="text/css" href="style/legacy.css" id="styles">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
@@ -39,17 +39,11 @@
 				<option value="2">GrayscaleTheme</option>
 				<option value="3">Glassomorphism</option>
 			</select>
-
-			<select class="headerBubble" id="styleChanger">
-				<option value="0">GiMaker version</option>
-				<option value="1">NThacker version</option>
-			</select>
 		</div>
 		<div class="video-seen">
 			<div class="video">
 				<video src="<?=$src?>" autoplay="" id="player" class="video">
 				</video>
-				<video src="<?=$src?>" autoplay="" id="playerBlur" class="videoblur"></video>
 				<div class="controlls" id="controll">
 					<div id="pause"></div>
 					<div class="scroll" id="pos">
