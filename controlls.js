@@ -65,7 +65,7 @@ scrollPos.addEventListener('mousemove', function(e) {
 
 scrollPos.addEventListener('click', function(e) {
 	if(e.buttons != 0){
-		polzPos.style.left = (e.clientX - 40) + "px";	
+		polzPos.style.left = (e.clientX) + "px";	
 		video.currentTime = e.clientX / scrollPos.clientWidth * video.duration;
 		blur.currentTime = e.clientX / scrollPos.clientWidth * video.duration;
 	}

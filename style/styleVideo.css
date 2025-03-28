@@ -88,6 +88,7 @@ html, body {
 	position: relative;
 }
 
+
 video, .video {
 	width: 90%;
 	left: 0%;
@@ -130,12 +131,12 @@ video {
 }
 
 .controlls {
-	width: 100%;
+	width: 89%;
 	height: 25px;
-	position: relative;
+	position: absolute;
 	justify-content: center;
 	align-items: center;
-	top: 625px;
+	top: 16cm !important; 
 /*	left: 10%; */
 }
 

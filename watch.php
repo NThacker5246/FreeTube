@@ -22,7 +22,7 @@
 <head>
 	<title>Watch videos</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="style/freeStyleVideo.css" id="styles">
+	<link rel="stylesheet" type="text/css" href="style/styleVideo.css" id="styles">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
@@ -73,26 +73,26 @@
 			<div class="video">
 				<video src="<?=$src?>" autoplay="" id="player" class="">
 				</video>
-					<div class="controlls" id="controll">
-						<div id="pause"></div>
-						<div class="scroll" id="pos">
-							<div class="polzunok" id="ppos"></div>
-						</div>
-
-						<select id="playBackRate">
-							<option value="0.25">0.25</option>
-							<option value="0.5">0.5</option>
-							<option value="0.75">0.75</option>
-							<option value="1">1</option>
-							<option value="1.25">1.25</option>
-							<option value="1.5">1.5</option>
-							<option value="1.75">1.75</option>
-							<option value="2">2</option>
-						</select>
-
-						<div id="fullscreen"></div>
-					</div>
 				<video src="<?=$src?>" autoplay="" id="playerBlur" class="videoblur"></video>
+				<div class="controlls" id="controll">
+					<div id="pause"></div>
+					<div class="scroll" id="pos">
+						<div class="polzunok" id="ppos"></div>
+					</div>
+
+					<select id="playBackRate">
+						<option value="0.25">0.25</option>
+						<option value="0.5">0.5</option>
+						<option value="0.75">0.75</option>
+						<option value="1">1</option>
+						<option value="1.25">1.25</option>
+						<option value="1.5">1.5</option>
+						<option value="1.75">1.75</option>
+						<option value="2">2</option>
+					</select>
+
+					<div id="fullscreen"></div>
+				</div> 
 			</div>
 		</div>
 		<div class="titleV" id="titleV">
