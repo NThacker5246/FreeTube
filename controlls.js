@@ -9,6 +9,7 @@ var desc = document.getElementById('desc');
 var controll = document.getElementById('controll');
 var title = document.getElementById('titleV');
 var commentBubble = document.getElementById('commentBubble');
+var ThereButton = document.getElementById('ThereButton');
 
 var blur = document.getElementById('playerBlur');
 
@@ -34,8 +35,9 @@ fus.addEventListener("click", function() {
 	desc.classList.toggle("header-f");
 	title.classList.toggle("header-f");
 	commentBubble.classList.toggle("header-f");
-	blur.classList.toggle("header-f");
 	controll.classList.toggle("controlls-f");
+	blur.classList.toggle("header-f");
+	ThereButton.classList.toggle("header-f");
 });
 
 var scrollPos = document.getElementById('pos');
