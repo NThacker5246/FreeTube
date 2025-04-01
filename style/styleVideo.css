@@ -95,7 +95,7 @@ video, .video {
 }
 
 video {
-	position: absolute;
+	position: relative;
 	border-radius: 6px;
 	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
 	top: 70px;
@@ -133,10 +133,10 @@ video {
 .controlls {
 	width: 89%;
 	height: 25px;
-	position: absolute;
+	position: relative;
 	justify-content: center;
 	align-items: center;
-	top: 16cm !important; 
+	top: 130px !important; 
 /*	left: 10%; */
 }
 
