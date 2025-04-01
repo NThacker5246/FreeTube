@@ -7,7 +7,7 @@ var disp = document.getElementById('header');
 var next = document.getElementById('next');
 var desc = document.getElementById('desc');
 var controll = document.getElementById('controll');
-var title = document.getElementById('titleV');
+var title = document.getElementById('titleV2');
 var commentBubble = document.getElementById('commentBubble');
 
 var blur = document.getElementById('playerBlur');
