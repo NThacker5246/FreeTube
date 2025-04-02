@@ -30,45 +30,68 @@
                 <span class="bubbleText">FreeTube</span>
                 <span class="bubbleTextsh">FreeTube</span>
 			</a>
+			<div class="headerBubble2" id="headerBubble">
+				<div class="slider" id="themeSelecter">
+					<div class="bubble" style="background-color:rgb(255, 255, 255);"></div>
+					<div class="bubble" style="background-color:rgb(31, 31, 31);"></div>
+					<div class="bubble" style="background-color:rgb(81, 107, 225);"></div>
+					<div class="bubble" style="background-color:rgb(87, 195, 137);"></div>
+					<div class="bubble" style="background-color: #FF33A8;"></div>
+					<div class="bubble" style="background-color: #FFBD33;"></div>
+					<div class="bubble" style="background-color: #33FFF0;"></div>
+					<div class="bubble" style="background-color: #A833FF;"></div>
+				</div>
+			</div>
 
-			<select class="headerBubble" id="themeSelecter">
-				<option value="0">LightTheme</option>
-				<option value="1">DarkTheme</option>
-				<option value="2">ContrastTheme</option>
-				<option value="3">DeepBlueTheme</option>
-				<option value="2">GrayscaleTheme</option>
-				<option value="3">Glassomorphism</option>
-			</select>
+	<script>
+		const slider = document.getElementById("themeSelecter");
+        let index = 0;
+        const totalBubbles = document.querySelectorAll(".bubble").length;
+        const bubbleWidth = 26;
 
-			<select class="headerBubble" id="styleChanger">
+		slider.addEventListener("wheel", (event) => {
+			event.preventDefault(); // Prevent default page scrolling
+			index += event.deltaY > 0 ? 1 : -1;
+			index = Math.max(0, Math.min(index, totalBubbles - 3));
+			slider.style.transform = `translateX(${-index * bubbleWidth}px)`;
+		});
+		const bubbles = Array.from(document.querySelectorAll(".bubble"));
+		bubbles.forEach((bubble) => {
+			bubble.addEventListener("click", () => {
+				bubbles.forEach((b) => b.classList.remove("selected"));
+				bubble.classList.add("selected");
+			});
+		});
+    </script>
+
+		<!--	<select class="headerBubble" id="styleChanger">
 				<option value="0">GiMaker version</option>
 				<option value="1">NThacker version</option>
-			</select>
+			</select> -->
 		</div>
 		<div class="video-seen">
 			<div class="video">
-				<video src="<?=$src?>" autoplay="" id="player" class="video">
-				</video>
+				<video src="<?=$src?>" autoplay="" id="player" class="videoplay"></video>
 				<video src="<?=$src?>" autoplay="" id="playerBlur" class="videoblur"></video>
-				<div class="controlls" id="controll">
-					<div id="pause"></div>
-					<div class="scroll" id="pos">
-						<div class="polzunok" id="ppos"></div>
-					</div>
-
-					<select id="playBackRate">
-						<option value="0.25">0.25</option>
-						<option value="0.5">0.5</option>
-						<option value="0.75">0.75</option>
-						<option value="1">1</option>
-						<option value="1.25">1.25</option>
-						<option value="1.5">1.5</option>
-						<option value="1.75">1.75</option>
-						<option value="2">2</option>
-					</select>
-
-					<div id="fullscreen"></div>
+			</div>
+			<div class="controlls" id="controll">
+				<div id="pause"></div>
+				<div class="scroll" id="pos">
+					<div class="polzunok" id="ppos"></div>
 				</div>
+
+				<select id="playBackRate">
+					<option value="0.25">0.25</option>
+					<option value="0.5">0.5</option>
+					<option value="0.75">0.75</option>
+					<option value="1">1</option>
+					<option value="1.25">1.25</option>
+					<option value="1.5">1.5</option>
+					<option value="1.75">1.75</option>
+					<option value="2">2</option>
+				</select>
+
+				<div id="fullscreen"></div>
 			</div>
 		</div>
 		<div class="titleV" id="titleV">
