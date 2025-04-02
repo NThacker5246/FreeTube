@@ -1,3 +1,9 @@
+<script type="text/javascript">
+	if (document.location.href.split("#")[1] != "player") {
+		document.location.href = document.location.href + "#player";
+	}
+</script>
+
 <?php
 	define('WAY', 'db/');
 
@@ -39,15 +45,33 @@
 				<option value="2">GrayscaleTheme</option>
 				<option value="3">Glassomorphism</option>
 			</select>
-
-			<select class="headerBubble" id="styleChanger">
-				<option value="0">GiMaker version</option>
-				<option value="1">NThacker version</option>
-			</select>
+			<!--
+				<select class="headerBubble" id="styleChanger">
+					<option value="0">Modern View</option>
+					<option value="1">Classic View</option>
+				</select>
+			-->
+		</div>
+		<div class="next-videos" id="next">
+			<?php
+			for ($i=1; $i < $data->count; $i++) { 
+				if($i == intval($num)) continue;
+				$conf = file_get_contents("./config/$i.conf");
+				$kw = explode("!HCRGMKARS%!", $conf);
+				$name = explode("ALGSTD!24", $kw[0])[1];
+				echo "
+				<a href=\"/watch.php?video=$i\" class=\"card\">
+					<div>
+						<img src=\"/preview/$i.png\" width=\"300px\" height=\"168.75px\" class=\"cardvid\">
+						<div class=\"cardtext\">$name</div>
+					</div>
+				</a>";
+			}
+			?>
 		</div>
 		<div class="video-seen">
 			<div class="video">
-				<video src="<?=$src?>" autoplay="" id="player" class="video">
+				<video src="<?=$src?>" autoplay="" id="player" class="">
 				</video>
 				<video src="<?=$src?>" autoplay="" id="playerBlur" class="videoblur"></video>
 				<div class="controlls" id="controll">
@@ -68,10 +92,10 @@
 					</select>
 
 					<div id="fullscreen"></div>
-				</div>
+				</div> 
 			</div>
 		</div>
-		<div class="titleV">
+		<div class="titleV" id="titleV">
 
 			<div class="titleV2">
 				<?php
@@ -95,41 +119,22 @@
 			</div>
 			<div id="views" class="views">Views: </div>	
 
-			<div class="description" id="desc">
-				
-				<?php
+			<pre class="description" id="desc">				
+<?php
 					//$conf = file_get_contents("./config/$num.conf");
 					//$kw = explode("!HCRGMKARS%!", $conf);
 					$text = trim(explode("ALGSTD!24", $kw[1])[1]);
 					echo "$text";
-				?>
-				
-			</div>
+				?></pre>
 
 		</div>
-		<div class="next-videos" id="next">
-			<?php
-			for ($i=1; $i < $data->count; $i++) { 
-				if($i == intval($num)) continue;
-				$conf = file_get_contents("./config/$i.conf");
-				$kw = explode("!HCRGMKARS%!", $conf);
-				$name = explode("ALGSTD!24", $kw[0])[1];
-				echo "
-				<a href=\"/watch.php?video=$i\" class=\"card\">
-					<div>
-						<img src=\"/preview/$i.png\" width=\"300px\" height=\"168.75px\" class=\"cardvid\">
-						<div class=\"cardtext\">$name</div>
-					</div>
-				</a>";
-			}
-			?>
-		</div>
-		<div class="commentBubble">
+		<div class="commentBubble" id="commentBubble">
 			<div class="comments">
 				<input type="text" name="comment" id="inCom" class="commentInput">
 				<div id="commRES" class="commentText"></div>
 			</div>
 		</div>
+		<a href="/watch.php?video=<?=$num?>#player" id="ThereButton"><div class="goToVideo">There</div></a>
 	</div>
 	<script type="text/javascript">
 		const i = parseInt(<?=$num?>);
@@ -138,6 +143,8 @@
 	<script type="text/javascript" src="alike.js"></script>
 	<script type="text/javascript" src="comment.js"></script>
 	<script type="text/javascript" src="themes.js"></script>
-	<script type="text/javascript" src="styles.js"></script>
+	<!--
+		<script type="text/javascript" src="styles.js"></script>
+	-->
 </body>
 </html>

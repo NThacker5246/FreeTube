@@ -14,8 +14,8 @@ const linker1 = document.getElementById('styles'); //tag link
 slt.value = s;
 
 const styles = [
-	"styleVideo.css",
-	"hackerStyleVideo.css"
+	"hackerStyleVideo.css",
+	"styleVideo.css"
 ];
 
 linker1.setAttribute("href", WAY + styles[s]);
