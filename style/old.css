@@ -1,7 +1,6 @@
 /* Design created by GiMaker 2025
 Legacy CSS were used so if something were not updated then it worked at least
 */
-
 html, body {
 	margin: 0px;
 	width: 100%;
@@ -61,7 +60,7 @@ html, body {
 	position: fixed;
 	font-family: Golos Text;
 	font-weight: Regular;
-	font-size: 1vw;
+	font-size: 100%;
 	opacity: 1;
 	text-align: center;
 	padding-top: 3px;
@@ -74,7 +73,7 @@ html, body {
 	position: fixed;
 	font-family: Golos Text;
 	font-weight: Regular;
-	font-size: 1vw;
+	font-size: 100%;
 	opacity: 1;
 	text-align: center;
 	z-index: 2;
@@ -85,7 +84,7 @@ html, body {
 	width: 75%;
 	height: 100%;
 	display: block;
-	left: 3.5vw;
+	left: 65px;
 	position: relative;
 }
 
@@ -96,10 +95,10 @@ video, .video {
 }
 
 video {
-	position: absolute;
+	position: relative;
 	border-radius: 6px;
 	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
-	top: 5vw;
+	top: 70px;
 }
 
 .videoblur {
@@ -111,11 +110,12 @@ video {
 	opacity: 0.5;
  	position: absolute;
  	z-index: -1;
-	top: 5vw;
+	top: 70px;
  }
 
 .next-videos {
 	width: 25%;
+	height: 100%;
 	right: 0%;
 	position: absolute;
 	top: 50px;
@@ -132,23 +132,23 @@ video {
 
 .controlls {
 	width: 89%;
-	height: 3vw;
-	position: absolute;
+	height: 25px;
+	position: relative;
 	justify-content: center;
 	align-items: center;
-	top: 40vw !important; 
+	top: 130px !important; 
 /*	left: 10%; */
 }
 
 #pause {
-	width: 1.5vw;
-	height: 1.5vw;
+	width: 25px;
+	height: 25px;
 	background-color: rgb(74, 74, 74); 
 }
 
 #fullscreen {
-	width: 1.5vw;
-	height: 1.5vw;
+	width: 25px;
+	height: 25px;
 	background-color: red;
 	position: absolute;
 	left: 85%;
@@ -156,29 +156,29 @@ video {
 }
 
 .polzunok {
-	width: 2vw;
-	height: 2vw;
+	width: 30px;
+	height: 30px;
 	background-color: rgb(74, 74, 74);
 	border-radius: 100%;
 	position: relative;
 	left: 0%;
-	bottom: 0.65vw;
+	bottom: 10px;
 }
 
 .scroll {
 	position: absolute;
 	width: 100%;
-	height: 0.5vw;
+	height: 10px;
 	background-color: lightblue;
-	bottom: 5vw;
+	bottom: 50px;
 	border-radius: 10px;
 }
 
 #playBackRate {
 	position: absolute;
-	right: 1vw;
-	top: -0.5vw;
-	height: 2vw;
+	top: -25%;
+	right: 7%;
+	height: 30px;
 }
 
 .fullscreen {
@@ -203,7 +203,7 @@ video {
 
 .card {
 	width: 100%;
-	height: 14vw;
+	height: 200px;
 	margin: 20px;
 	font-family: Golos Text;
 	font-weight: Bold;
@@ -263,8 +263,8 @@ video {
 
 .titleV {
 	position: relative;
-	left: 3.5vw;
-	top: -1vw;
+	top: 50px;
+	left: 65px;
 
 }
 
@@ -316,14 +316,14 @@ video {
 
 .commentBubble {
 	position: relative;
-	width: 67.5%;
+	width: 68%;
 	height: fit-content;
 	border-radius: 6px;
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
 	background: white;
 	opacity: 1;
-	left: 3.5vw;
-	top: -1vw;
+	left: 65px;
+	top: 150px;
 	display: block;
 }
 
@@ -352,14 +352,4 @@ pre {
 
 .goToVideo {
 	display: none;
-}
-
-
-* {
-	font-size: 1vw !important;
-}
-
-img {
-	width: 21vw !important;
-	height: 12vw !important;
 }
