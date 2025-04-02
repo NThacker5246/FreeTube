@@ -1,0 +1,255 @@
+[33mcommit d45e784c5e3fc1699a7cc8ef4ced5ff957ac317c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/DesignBeta[m[33m)[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Wed Apr 2 15:42:47 2025 +0400
+
+    Adapted for all resolutions, (readme.md screenshot 30%)
+
+[33mcommit d915bf9bbaf5aa4e650dde865b9186801f5be8a5[m
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Tue Apr 1 20:44:51 2025 +0200
+
+    fixed controls distance
+
+[33mcommit 54f9fce450575626190d5d07ef1c64439ea28def[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Fri Mar 28 15:05:42 2025 +0400
+
+    Kept files up to date
+
+[33mcommit cc8939f1eb84c06e3c628d160acff8d805834912[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Fri Mar 28 14:13:49 2025 +0400
+
+    Modified something, merged with GMFTD
+
+[33mcommit e7f9ffe46fe8d46c91586fff6be9091d701e86b9[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Fri Mar 28 13:59:57 2025 +0400
+
+    Modified something, merged with GMFTD
+
+[33mcommit cef9df6bfc9cec66ed4be7f32de00d1eff8e86e6[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Wed Mar 26 09:09:53 2025 +0400
+
+    Added admin panel, oobe, fixed controls display
+
+[33mcommit 82b7d8bd55ae4ebf78ad3802faa3cdf3eb3c9ef2[m[33m ([m[1;31morigin/UIMaker[m[33m)[m
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Tue Mar 25 16:32:52 2025 +0100
+
+    little fix
+
+[33mcommit 753d8a65cc7aa3a8b94024d78e5fe27dc067804b[m
+Merge: 4e8eb0c 9413d0f
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Tue Mar 25 16:11:41 2025 +0100
+
+    Merge branch 'testmerge' into UIMaker
+
+[33mcommit 9413d0ffe2b3911f0372bc7ab4db2d53334e40bb[m[33m ([m[1;31morigin/testmerge[m[33m)[m
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Tue Mar 25 16:01:54 2025 +0100
+
+    Fixed blur, added frames and simply better design
+
+[33mcommit 4e8eb0cf75b0961d43c81b285874dcd885fb8cc2[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Tue Mar 25 17:49:12 2025 +0400
+
+    Added themes, theme controller, rollbacked styles
+
+[33mcommit 10035bfd3df3f0fcd920172006f802b378c0e5fb[m
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Mon Mar 24 16:39:13 2025 +0100
+
+    Updated design for video
+    fixed rounded corners
+    bigger blur for cinema modifiedSome description fixes etc
+
+[33mcommit 9e13670694828ec8286339872cde629110391d9b[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Mon Mar 24 19:23:30 2025 +0400
+
+    Linking everything together
+
+[33mcommit 53774e481d7fef2e91efa88e0bfcb36faab82e22[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Mon Mar 24 18:45:56 2025 +0400
+
+    Added analitics
+
+[33mcommit 2c373d2f899b3626b93b82bf6488e159c8e6fabe[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Mon Mar 24 18:04:50 2025 +0400
+
+    Added account protection, readme.md
+
+[33mcommit 6516fe831726b86d3d443e7d1a48735d0f24e57d[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Sun Mar 23 21:40:48 2025 +0400
+
+    Fixed styles again, made blur player dynamic
+
+[33mcommit 395f6f178ecdb77282ad45a3f23f852380f9c285[m[33m ([m[1;31morigin/DesignTesting[m[33m)[m
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Sun Mar 23 17:02:04 2025 +0100
+
+    Added not dynamic cinema mode
+
+[33mcommit 8bb3692b746d28ec3e8fc284eca22613721f705d[m
+Merge: 7822f72 aac533d
+Author: NThacker5246 <137170036+NThacker5246@users.noreply.github.com>
+Date:   Sun Mar 23 18:32:22 2025 +0400
+
+    Merge pull request #3 from NThacker5246/fix
+    
+    Fixed styles, user error
+
+[33mcommit aac533d51803f8f2ca17728556ada8b0afc2f2ce[m[33m ([m[1;31morigin/fix[m[33m)[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Sun Mar 23 18:26:16 2025 +0400
+
+    Fixed styles, user error
+
+[33mcommit 7822f7275c0a91cc635189039e47eea0e4a67bf6[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Sat Mar 22 17:05:31 2025 +0400
+
+    Bug fixing
+
+[33mcommit 934506735b27ad273d5e9caceb38dfeb9a9001a8[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Sat Mar 22 15:59:13 2025 +0400
+
+    Fixed bugs, added logoff page
+
+[33mcommit a08b53515cdcef1c6e60d5bced52e73252bd0cd5[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Fri Mar 21 20:07:28 2025 +0400
+
+    Added users, creators, everything linked together, merged design, fixed all bugs
+
+[33mcommit 7cbe553a3e069edd8bd2a55de8410e71589a7f93[m
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Thu Mar 20 17:06:32 2025 +0100
+
+    UI Homepage and video changes:
+    1. Some blur settings were configured
+    2. FreeTube Bubble is now a Button!
+    3. minor fixes
+
+[33mcommit b07df5b1272e7d8910f2f18561afe33570551afe[m
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Wed Mar 19 18:27:45 2025 +0100
+
+    Homepage fixed:
+    1. Padding fixed
+    2. Text now also clickable
+
+[33mcommit 5b0b7da45b91ff94708371fd7a906263f88ea7fb[m
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Wed Mar 19 18:15:56 2025 +0100
+
+    New Homepage UI
+    fixed video positioning
+
+[33mcommit 975ca95c6a6f85b8b0a7ca1feb882d37ebf8ae98[m
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Wed Mar 19 17:33:05 2025 +0100
+
+    modified controls position and added icon
+
+[33mcommit cb75732491cc5a4f008491927e3eebd71b2e1da2[m
+Merge: ff517af fc1f248
+Author: GiMaker <95705585+GiMakerGit@users.noreply.github.com>
+Date:   Wed Mar 19 18:03:18 2025 +0100
+
+    Merge pull request #1 from NThacker5246/UI
+    
+    UI
+
+[33mcommit fc1f2482607954aa3a671e3e6f5b3fa7184e355b[m[33m ([m[1;31morigin/UI[m[33m)[m
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Wed Mar 19 16:52:19 2025 +0100
+
+    ReadME update
+
+[33mcommit 11a728196527906884d9eca4095d2e0f77c975b6[m
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Wed Mar 19 16:47:59 2025 +0100
+
+    Golos Text sync
+
+[33mcommit 3dfa74d65f0c5fe608d6c648bafad114105ba1db[m
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Tue Mar 18 19:14:23 2025 +0100
+
+    Fixed flexibility problems
+    Added shadows to suggested videos
+    Added hover elemen to suggested videos
+
+[33mcommit ff517af99a949f3fd61956ea25fb61f29318a6e9[m
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Tue Mar 18 18:18:03 2025 +0100
+
+    Backshifting to legacy css
+
+[33mcommit ba0efdba301c68f177e575fdb0642a4ef50859ac[m
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Tue Mar 18 15:19:57 2025 +0100
+
+    Video page design changes:
+    1. Header fully redesigned, bg blur effect, shadow and logo.
+    2. Removed source code button, will be repositioned later
+    3. Round corners for suggested videos and margin changes
+    4. Controls repositioning
+    5. View and like/dislike count repositioned
+
+[33mcommit 26b4319e2a41039db75aa38ec6c885c8dc5d2cfc[m
+Author: GiMakerGit <g.v.danylo@gmail.com>
+Date:   Tue Mar 18 14:09:31 2025 +0100
+
+    New design files were created
+
+[33mcommit 9f4fbf3aaaa157798bb6a136059634813b1e7497[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Wed Mar 12 19:33:13 2025 +0400
+
+    Added Likes/Dislikes counter. Add views counter
+
+[33mcommit 394ca30747568bd66d95b4affe49016228555610[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Sun Mar 9 18:43:31 2025 +0400
+
+    Modified style, adapted for all resolutions, ReadME.md
+
+[33mcommit cbe5a41fb4d4d1b91dfff09b9d002caa39d2d2d8[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Sun Mar 9 12:41:56 2025 +0400
+
+    Modified FreeTube Creator Studio, added pictures, titles, descriptions
+
+[33mcommit 4f364414e12d2de289377d57ecee6dc6d060864e[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Sat Mar 8 22:12:52 2025 +0400
+
+    Added video display on home page
+
+[33mcommit 8e4f2665720891941b6db44e30d3c38702b1980c[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Sat Mar 8 17:52:02 2025 +0400
+
+    Added freetube controls
+
+[33mcommit b009712d65d800273712c406a2e396fe97026eda[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Sat Mar 8 16:05:34 2025 +0400
+
+    Added video studio and player
+
+[33mcommit 988787b958851c91cbf43c595273b71201aab890[m
+Author: NThacker5246 <nytrecover@gmail.com>
+Date:   Sat Mar 8 14:48:46 2025 +0400
+
+    Hello world commit
