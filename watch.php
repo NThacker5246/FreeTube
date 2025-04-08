@@ -23,7 +23,9 @@
 	<link rel="icon" href="favicon.ico" >
 	<link rel="stylesheet" type="text/css" href="/style/" id="linker">
 </head>
+
 <body>
+	
 	<div class="container">
 		<div class="header" id="header">
 			<a href="/" class="headerBubble">
@@ -54,13 +56,6 @@
 			index += event.deltaY > 0 ? 1 : -1;
 			index = Math.max(0, Math.min(index, totalBubbles - 3));
 			slider.style.transform = `translateX(${-index * bubbleWidth}px)`;
-		});
-		const bubbles = Array.from(document.querySelectorAll(".bubble"));
-		bubbles.forEach((bubble) => {
-			bubble.addEventListener("click", () => {
-				bubbles.forEach((b) => b.classList.remove("selected"));
-				bubble.classList.add("selected");
-			});
 		});
     </script>
 
