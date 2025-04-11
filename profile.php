@@ -65,54 +65,61 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 							});
 						</script>
 
-						<!--	<select class="headerBubble" id="styleChanger">
-								<option value="0">GiMaker version</option>
-								<option value="1">NThacker version</option>
-							</select> -->
+
 					</div>
 
-					<div class="ProfilePicture">
-						<div class="ChannelParent">
+					<div class="ChannelBanner">
+
 							<?php
 							$imagePath = '/accounts/Banners/' . $usr->name . 'banner.png';
 							$hasImage = file_exists($_SERVER['DOCUMENT_ROOT'] . $imagePath);
 
-							// Generate a less saturated random color
+							
 							function generateLessSaturatedColor() {
-								$r = mt_rand(169, 255); // Limit red to a softer range
-								$g = mt_rand(169, 255); // Limit green to a softer range
-								$b = mt_rand(169, 255); // Limit blue to a softer range
+								$r = mt_rand(200, 255); 
+								$g = mt_rand(200, 255); 
+								$b = mt_rand(200, 255); 
 								return sprintf('#%02X%02X%02X', $r, $g, $b);
 							}
 
 							$bgColor = generateLessSaturatedColor();
 							?>
+
 							<div class="ChannelBanner" style="background-color: <?php echo !$hasImage ? $bgColor : 'transparent'; ?>;">
 								<?php if ($hasImage): ?>
 									<img src="<?php echo $imagePath; ?>" alt="AccountBanner">
 								<?php endif; ?>
+
+								<div class="ProfileInformation">
+									<?php
+									$imagePath = '/accounts/Images/' . $usr->name . '.png';
+									$hasImage = file_exists($_SERVER['DOCUMENT_ROOT'] . $imagePath);
+									?>
+									<div class="profileInfoLow">
+										<div class="profileBorder">
+											<img class="profileImage" width="96" height="96" src="<?php echo $hasImage ? $imagePath : '/ico/profiledefault.png'; ?>" alt="Profile Image">
+										</div>
+										<span class="profileName"><?=$usr->name?></span>
+									</div>
+								</div>
+
 							</div>
-						</div>
-					
+					</div>
 
-
-						<div class="ProfileInformation">
-							<H1>Channel: <?=$usr->name?></H1>
-								<?php
-									for ($i=0; $i < count($usr->videoCreated); $i++) { 
-										$conf = file_get_contents("./config/" . $usr->videoCreated[$i] . ".conf");
-										$kw = explode("!HCRGMKARS%!", $conf);
-										$name = explode("ALGSTD!24", $kw[0])[1];
-										echo "
-										<a href=\"/watch.php?video=" . $usr->videoCreated[$i] . "\">
-											<div class=\"card\">
-												<img src=\"/preview/". $usr->videoCreated[$i] .".png\" width=\"300px\" height=\"168.75px\">
-												<p>$name</p>
-											</div>
-										</a>";
-									}
-								?>
-						</div>
+					<?php
+						for ($i=0; $i < count($usr->videoCreated); $i++) { 
+						$conf = file_get_contents("./config/" . $usr->videoCreated[$i] . ".conf");
+						$kw = explode("!HCRGMKARS%!", $conf);
+						$name = explode("ALGSTD!24", $kw[0])[1];
+						echo "
+						<a class=\"card\" href=\"/watch.php?video=" . $usr->videoCreated[$i] . "\">
+							<div>
+								<img class=\"cardvid\" src=\"/preview/". $usr->videoCreated[$i] .".png\" width=\"300px\" height=\"168.75px\">
+								<div class=\"cardtext\">$name</div>
+							</div>
+						</a>";
+						}
+					?>
 				</div>
 			</div>
 
