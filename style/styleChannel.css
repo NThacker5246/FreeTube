@@ -190,6 +190,7 @@ html, body {
 
 .profileImage {
 	opacity: 50%;
+	border-radius: 50%;
 }
 
 .profileBorder {
