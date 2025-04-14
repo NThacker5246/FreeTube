@@ -2,6 +2,14 @@
 	$fdata = file_get_contents("./db/table.json");
 	$data = json_decode($fdata);
 ?>
+<?php
+	define('WAY', 'accounts/');
+
+	$name = $_COOKIE['name'];
+
+	$usr = json_decode(file_get_contents(WAY . $name . ".conf"));
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -55,12 +63,13 @@
 				});
 			</script>
 
-			<!--	<select class="headerBubble" id="styleChanger">
-					<option value="0">GiMaker version</option>
-					<option value="1">NThacker version</option>
-				</select> -->
 		</div>
-
+		<div class="welcomemain">
+			<div class="welcomeSign">
+				<p class="title-mek">Welcome back, <?=$usr->name?></p>
+			</div>
+		</div>
+		
 		<div class="main-videos">
 			<?php
 			for ($i=1; $i < $data->count; $i++) { 
