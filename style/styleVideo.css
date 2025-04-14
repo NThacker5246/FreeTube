@@ -65,6 +65,7 @@ html, body {
 	text-align: center;
 	padding-top: 3px;
 	padding-left: 3px;
+	transition: all 0.1s ease-in-out;
   }
 
   .bubbleText {
@@ -77,6 +78,16 @@ html, body {
 	opacity: 1;
 	text-align: center;
 	z-index: 2;
+	transition: all 0.1s ease-in-out;
+}
+
+.bubbleText:hover {
+	transform: translate(-3px, -3px);
+}
+
+.bubbleText:hover + .bubbleTextsh {
+	transform: translate(-2px, -2px);
+	text-shadow: rgb(255, 0, 0) 0px 0px 10px;
 }
 
 .headerBubble2 {
@@ -115,6 +126,35 @@ html, body {
     border: 3px solid #000; 
     transform: scale(1.2); 
     transition: transform 0.2s ease; 
+}
+
+.headerBubble3 {
+	width: 50px;
+	height: 70%;
+	background: rgba(255,206,206,0.3100000023841858);
+	opacity: 1;
+	position: relative;
+	top: 15%;
+	left: 30px;
+	border-radius: 25px;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	cursor: pointer;
+	display: flex;
+	transition: all 0.1s ease-in-out;
+}
+
+.headerBubble3:hover {
+	box-shadow: 0px 3px 4px rgba(255, 0, 0, 0.25);
+	transform: translate(0px, -3px);
+}
+
+.profileIcon {
+	position: relative;
+	cursor: pointer;
+	image-rendering: optimizeQuality;
+	opacity: 50%;
 }
 
 .video-seen {
@@ -163,7 +203,6 @@ video {
 
 .container {
 	position: absolute;
-
 }
 
 .controlls {
@@ -360,7 +399,7 @@ video {
 	background: white;
 	opacity: 1;
 	left: 65px;
-	top: 150px;
+	top: 50px;
 	display: block;
 }
 
@@ -376,6 +415,7 @@ video {
 	align-items: center;
 	text-align: left;
 	opacity: 0.8;
+	min-height: 25px;
 }
 
 .header-f {
@@ -384,4 +424,31 @@ video {
 
 pre {
 	font-family: "Segoe UI";
+}
+
+.footer {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.03999999910593033);
+	background: rgb(255, 255, 255);
+	opacity: 1;
+	top: 50px;
+	display: flex;
+}
+
+.footerText {
+	margin: 10px;
+	color: rgba(0, 0, 0, 0.504);
+	font-family: Golos Text;
+	font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footerText:hover a {
+	font-weight: bold;
 }

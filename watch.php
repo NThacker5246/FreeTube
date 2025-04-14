@@ -45,24 +45,25 @@
 				</div>
 			</div>
 
-	<script>
-		const slider = document.getElementById("themeSelecter");
-        let index = 0;
-        const totalBubbles = document.querySelectorAll(".bubble").length;
-        const bubbleWidth = 26;
+			<a href="/profile.php" class="headerBubble3">
+				<img class="profileIcon" width="25" height="25" src="ico/profileicon.png"/>
+			</a>
 
-		slider.addEventListener("wheel", (event) => {
-			event.preventDefault(); // Prevent default page scrolling
-			index += event.deltaY > 0 ? 1 : -1;
-			index = Math.max(0, Math.min(index, totalBubbles - 3));
-			slider.style.transform = `translateX(${-index * bubbleWidth}px)`;
-		});
-    </script>
+			<script>
+				const slider = document.getElementById("themeSelecter");
+				let index = 0;
+				const totalBubbles = document.querySelectorAll(".bubble").length;
+				const bubbleWidth = 26;
 
-		<!--	<select class="headerBubble" id="styleChanger">
-				<option value="0">GiMaker version</option>
-				<option value="1">NThacker version</option>
-			</select> -->
+				slider.addEventListener("wheel", (event) => {
+					event.preventDefault(); // Prevent default page scrolling
+					index += event.deltaY > 0 ? 1 : -1;
+					index = Math.max(0, Math.min(index, totalBubbles - 3));
+					slider.style.transform = `translateX(${-index * bubbleWidth}px)`;
+				});
+			</script>
+
+
 		</div>
 		<div class="video-seen">
 			<div class="video">
@@ -125,6 +126,14 @@
 			</pre>
 
 		</div>
+
+		<div class="commentBubble" id="commentBubble">
+			<div class="comments">
+				<input type="text" name="comment" id="inCom" class="commentInput">
+				<div id="commRES" class="commentText"></div>
+			</div>
+		</div>
+
 		<div class="next-videos" id="next">
 			<?php
 			for ($i=1; $i < $data->count; $i++) { 
@@ -142,12 +151,15 @@
 			}
 			?>
 		</div>
-		<div class="commentBubble" id="commentBubble">
-			<div class="comments">
-				<input type="text" name="comment" id="inCom" class="commentInput">
-				<div id="commRES" class="commentText"></div>
+
+		<div class="footer">
+			<div class="footerText">FreeTube</div>
+			<div class="footerText">© 2025-present Alogical Std.</div>
+			<div class="footerText">
+				<a href=https://github.com/NThacker5246/FreeTube>Source-code</a>
 			</div>
 		</div>
+
 	</div>
 	<script type="text/javascript">
 		const i = parseInt(<?=$num?>);
