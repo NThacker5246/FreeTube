@@ -14,6 +14,10 @@
 	<title><?=$usr->name?>'s studio</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../style/styleStudio.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
 	<div class="container">
@@ -60,6 +64,8 @@
 		<div class="stepUpload">
 			<div class="bg">
 				<div class="bgText">Upload</div>
+				<div class="uploadInfo">
+				</div>
 			</div>
 		</div>
 		

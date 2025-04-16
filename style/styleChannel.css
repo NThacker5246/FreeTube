@@ -233,7 +233,7 @@ html, body {
 }
 
 .card {
-	width: 100%;
+	width: 300px;
 	height: 200px;
 	margin: 20px;
 	font-family: Golos Text;
@@ -241,8 +241,13 @@ html, body {
 	color: black;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+.videos {
+	width: 100%;
+	height: fit-content;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 }
 
 .cardtext:hover {
@@ -333,6 +338,7 @@ a {
 
 .goToStudioButton {
 	font-weight: bold;
+	font-family: Golos Text;
 }
 
 .goToStudioButton:hover {

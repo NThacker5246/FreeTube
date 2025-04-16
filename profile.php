@@ -103,21 +103,23 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 
 							</div>
 					</div>
-
-					<?php
-						for ($i=0; $i < count($usr->videoCreated); $i++) { 
-						$conf = file_get_contents("./config/" . $usr->videoCreated[$i] . ".conf");
-						$kw = explode("!HCRGMKARS%!", $conf);
-						$name = explode("ALGSTD!24", $kw[0])[1];
-						echo "
-						<a class=\"card\" href=\"/watch.php?video=" . $usr->videoCreated[$i] . "\">
-							<div>
-								<img class=\"cardvid\" src=\"/preview/". $usr->videoCreated[$i] .".png\" width=\"300px\" height=\"168.75px\">
-								<div class=\"cardtext\">$name</div>
-							</div>
-						</a>";
-						}
-					?>
+					
+					<div class="videos">
+						<?php
+							for ($i=0; $i < count($usr->videoCreated); $i++) { 
+							$conf = file_get_contents("./config/" . $usr->videoCreated[$i] . ".conf");
+							$kw = explode("!HCRGMKARS%!", $conf);
+							$name = explode("ALGSTD!24", $kw[0])[1];
+							echo "
+							<a class=\"card\" href=\"/watch.php?video=" . $usr->videoCreated[$i] . "\">
+								<div>
+									<img class=\"cardvid\" src=\"/preview/". $usr->videoCreated[$i] .".png\" width=\"300px\" height=\"168.75px\">
+									<div class=\"cardtext\">$name</div>
+								</div>
+							</a>";
+							}
+						?>
+					</div>
 				</div>
 		</body>
 	</html>
@@ -237,21 +239,23 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 
 							</div>
 					</div>
-
-					<?php
-						for ($i=0; $i < count($usr->videoCreated); $i++) { 
-						$conf = file_get_contents("./config/" . $usr->videoCreated[$i] . ".conf");
-						$kw = explode("!HCRGMKARS%!", $conf);
-						$name = explode("ALGSTD!24", $kw[0])[1];
-						echo "
-						<a class=\"card\" href=\"/watch.php?video=" . $usr->videoCreated[$i] . "\">
-							<div>
-								<img class=\"cardvid\" src=\"/preview/". $usr->videoCreated[$i] .".png\" width=\"300px\" height=\"168.75px\">
-								<div class=\"cardtext\">$name</div>
-							</div>
-						</a>";
-						}
-					?>
+					
+					<div class="videos">
+						<?php
+							for ($i=0; $i < count($usr->videoCreated); $i++) { 
+							$conf = file_get_contents("./config/" . $usr->videoCreated[$i] . ".conf");
+							$kw = explode("!HCRGMKARS%!", $conf);
+							$name = explode("ALGSTD!24", $kw[0])[1];
+							echo "
+							<a class=\"card\" href=\"/watch.php?video=" . $usr->videoCreated[$i] . "\">
+								<div>
+									<img class=\"cardvid\" src=\"/preview/". $usr->videoCreated[$i] .".png\" width=\"300px\" height=\"168.75px\">
+									<div class=\"cardtext\">$name</div>
+								</div>
+							</a>";
+							}
+						?>
+					</div>
 				</div>
 		</body>
 	</html>
