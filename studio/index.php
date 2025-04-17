@@ -1,4 +1,3 @@
-
 <?php
 	define('WAY', '../accounts/');
 
@@ -60,30 +59,41 @@
 
 		</div>
 
-
-		<div class="stepUpload">
-			<div class="bg">
-				<div class="bgText">Upload</div>
-				<div class="uploadInfo">
+		<form action="./studio.php" method="POST" enctype="multipart/form-data" id="uploadForm" class="form">
+			<div class="stepUpload">
+				<div class="bg">
+					<div class="bgText">Upload</div>
+					<label class="uploadbutton" for="fileInput">Choose File</label>
+					<input type="file" id="fileInput" name="file" accept="video/*" required>
 				</div>
 			</div>
-		</div>
-		
+			
 
-		<div class="stepName">
-				
-		</div>
-
-
-		<div class="stepBanner">
-				
-		</div>
+			<div class="stepName">
+				<div class="bg">
+					<div class="bgText">Name</div>
+					<input type="text" name="title" placeholder="This is title for video" title="Title text" required>
+				</div>
+			</div>
 
 
-		<div class="stepDescription">
+			<div class="stepBanner">
+				<div class="bg">
+					<div class="bgText">Banner</div>
+					<label class="uploadbutton" for="previewInput">Choose Preview</label>
+					<input type="file" id="previewInput" name="preview" accept="image/png" required>
+				</div>
+			</div>
 
-		</div>
 
+			<div class="stepDescription">
+				<div class="bg">
+					<div class="bgText">Description</div>
+					<textarea name="description" placeholder="Description" title="Descript your video (compatible html tags)"></textarea>
+					<button type="submit">Submit</button>
+				</div>
+			</div>
+		</form>
 
 		<!--
 		<p class="title-mek">Let's make a video:</p> 
