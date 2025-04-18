@@ -58,67 +58,127 @@
 			</script>
 
 		</div>
-
-		<form action="./studio.php" method="POST" enctype="multipart/form-data" id="uploadForm" class="form">
-			<div class="stepUpload">
-				<div class="bg">
-					<div class="bgText">Upload</div>
-					<label class="uploadbutton" for="fileInput">Choose File</label>
-					<input type="file" id="fileInput" name="file" accept="video/*" required>
+		
+		<form action="./studio.php" method="POST" enctype="multipart/form-data" id="uploadForm">
+			<div class="form">
+				<div class="stepUpload active" id="step1">
+					<div class="bg">
+						<div class="bgText">Upload</div>
+						<label class="uploadbutton" for="fileInput">Choose File</label>
+						<input type="file" id="fileInput" name="file" accept="video/*" required>
+						<button class="nextButton" type="button" id="nextBtn1">Next</button>
+					</div>
 				</div>
-			</div>
-			
 
-			<div class="stepName">
-				<div class="bg">
-					<div class="bgText">Name</div>
-					<input type="text" name="title" placeholder="This is title for video" title="Title text" required>
+				<div class="stepName inactive" id="step2">
+					<div class="bg">
+						<div class="bgText">Name</div>
+						<input type="text" name="title" placeholder="This is title for video" title="Title text" required>
+						<button class="nextButton" type="button" id="nextBtn2">Next</button>
+						<button class="backButton" type="button" id="backBtn1">Back</button>
+					</div>
 				</div>
-			</div>
 
-
-			<div class="stepBanner">
-				<div class="bg">
-					<div class="bgText">Banner</div>
-					<label class="uploadbutton" for="previewInput">Choose Preview</label>
-					<input type="file" id="previewInput" name="preview" accept="image/png" required>
+				<div class="stepBanner inactive" id="step3">
+					<div class="bg">
+						<div class="bgText">Banner</div>
+						<label class="uploadbutton" for="previewInput">Choose Preview</label>
+						<input type="file" id="previewInput" name="preview" accept="image/png" required>
+						<button class="nextButton" type="button" id="nextBtn3">Next</button>
+						<button class="backButton" type="button" id="backBtn2">Back</button>
+					</div>
 				</div>
-			</div>
 
-
-			<div class="stepDescription">
-				<div class="bg">
-					<div class="bgText">Description</div>
-					<textarea name="description" placeholder="Description" title="Descript your video (compatible html tags)"></textarea>
-					<button type="submit">Submit</button>
+				<div class="stepDescription inactive" id="step4">
+					<div class="bg">
+						<div class="bgText">Description</div>
+						<textarea name="description" placeholder="Description" title="Descript your video (compatible html tags)"></textarea>
+						<button type="submit">Submit</button>
+						<button class="backButton" type="button" id="backBtn3">Back</button>
+					</div>
 				</div>
 			</div>
 		</form>
+		<script>
+			const steps = [
+				document.getElementById('step1'),
+				document.getElementById('step2'),
+				document.getElementById('step3'),
+				document.getElementById('step4')
+			];
 
-		<!--
-		<p class="title-mek">Let's make a video:</p> 
-		<form action="./studio.php" method="POST" enctype="multipart/form-data">
-			<div class="input-item">
-				<input type="file" name="file" accept="video/*" placeholder="Video (target) file" title="Target file">
-				<p class="placeholder">Video file</p>
-			</div>
-			<div class="input-item">
-				<input type="text" name="title" placeholder="This is title for video" title="Title text">
-			</div>
-			<div class="input-item">
-				<input type="file" accept="image/png" name="preview" placeholder="Preview pictrure" title="Target pictrure">
-				<p class="placeholder">Preview picture file</p>
-			</div>
-			<div class="input-item">
-				<textarea name="description" placeholder="Description" title="Descript your video (compatible html tags)"></textarea>
-			</div>
-			<div class="input-item">
-				<button type="submit">Submit</button>
-			</div>
-		</form>
-		Go To <a href="../profile.php">Profile</a>
-		Go To <a href="../analitics/">Analitics</a>
-		-->
+			let currentStep = 0;
+
+			const nextButtons = [
+				document.getElementById('nextBtn1'),
+				document.getElementById('nextBtn2'),
+				document.getElementById('nextBtn3')
+			];
+
+			const backButtons = [
+				document.getElementById('backBtn1'),
+				document.getElementById('backBtn2'),
+				document.getElementById('backBtn3')
+			];
+
+			// Handle "Next" button clicks
+			nextButtons.forEach((btn, index) => {
+				btn.addEventListener('click', () => {
+					if (index === 0) {
+						const videoInput = document.querySelector('input[name="file"]');
+						if (!videoInput.files.length) {
+							alert("Please select a video file first.");
+							return;
+						}
+					} else if (index === 1) {
+						const titleInput = document.querySelector('input[name="title"]');
+						if (!titleInput.value.trim()) {
+							alert("Please enter a title for the video.");
+							return;
+						}
+					} else if (index === 2) {
+						const previewInput = document.querySelector('input[name="preview"]');
+						if (!previewInput.files.length) {
+							alert("Please select a preview image.");
+							return;
+						}
+					}
+
+					// Remove active class from the current step
+					steps[currentStep].classList.remove('active');
+					steps[currentStep].classList.add('inactive');
+
+					// Move to the next step
+					currentStep++;
+
+					 // Prepare the next step to slide in from the right
+					steps[currentStep].classList.remove('inactive');
+					steps[currentStep].classList.add('next');
+
+					// Trigger the sliding animation
+					setTimeout(() => {
+						steps[currentStep].classList.remove('next');
+						steps[currentStep].classList.add('active');
+					}, 50); // Small delay to allow the transition to take effect
+				});
+			});
+
+			// Handle "Back" button clicks
+			backButtons.forEach((btn, index) => {
+				btn.addEventListener('click', () => {
+					// Remove active class from the current step
+					steps[currentStep].classList.remove('active');
+					steps[currentStep].classList.add('next'); // Slide out to the right
+
+					// Move to the previous step
+					currentStep--;
+
+					// Prepare the previous step to slide in from the left
+					steps[currentStep].classList.remove('inactive');
+					steps[currentStep].classList.add('active');
+				});
+			});
+		</script>
 	</div>
 </body>
 </html>
