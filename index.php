@@ -2,14 +2,8 @@
 	$fdata = file_get_contents("./db/table.json");
 	$data = json_decode($fdata);
 ?>
-<?php
-	define('WAY', 'accounts/');
 
-	$name = $_COOKIE['name'];
 
-	$usr = json_decode(file_get_contents(WAY . $name . ".conf"));
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -64,11 +58,34 @@
 			</script>
 
 		</div>
+
+		<?php if ($_COOKIE == []): ?>
+
+		<div class="welcomemain">
+			<div class="welcomeSign">
+				<p class="title-mek">Welcome</p>
+			</div>
+		</div>
+
+		<?php else: 
+
+		
+		
+			define('WAY', 'accounts/');
+
+			$name = $_COOKIE['name'];
+
+			$usr = json_decode(file_get_contents(WAY . $name . ".conf"));
+
+		?>
+
 		<div class="welcomemain">
 			<div class="welcomeSign">
 				<p class="title-mek">Welcome back, <?=$usr->name?></p>
 			</div>
 		</div>
+
+		<?php endif ?>
 		
 		<div class="main-videos">
 			<?php
