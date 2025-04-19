@@ -224,6 +224,11 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 									</div>
 								</div>
 								<div class="customize">
+
+									<div class="goToStudio">
+										<a href="/studio/index.php" class="goToStudioButton">Studio</a>
+									</div>
+
 									<div class="IconImport">
 										<input type="file" id="iconInput" accept="image/png, image/jpg, image/webm, image/jpeg" onchange="IconImage(event)">
 										<button class="IconImportButton" onclick="document.getElementById('iconInput').click();">

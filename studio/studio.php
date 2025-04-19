@@ -36,6 +36,10 @@
 		$cfw = fwrite($config_file, "nameALGSTD!24$name!HCRGMKARS%!descriptionALGSTD!24$description!HCRGMKARS%!likesALGSTD!240!HCRGMKARS%!dislikesALGSTD!240!HCRGMKARS%!viewsALGSTD!240!HCRGMKARS%!passALGSTD!24$username");
 		$cl = fclose($config_file);
 		writeUserParam($username, $cnt, "videoCreated");
+
+		
+		header("Location: /watch.php?video=$cnt");
+		exit();
 	}
 
-?>	
+?>
