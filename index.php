@@ -3,6 +3,8 @@
 	$data = json_decode($fdata);
 ?>
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,12 +57,36 @@
 				});
 			</script>
 
-			<!--	<select class="headerBubble" id="styleChanger">
-					<option value="0">GiMaker version</option>
-					<option value="1">NThacker version</option>
-				</select> -->
 		</div>
 
+		<?php if ($_COOKIE == []): ?>
+
+		<div class="welcomemain">
+			<div class="welcomeSign">
+				<p class="title-mek">Welcome</p>
+			</div>
+		</div>
+
+		<?php else: 
+
+		
+		
+			define('WAY', 'accounts/');
+
+			$name = $_COOKIE['name'];
+
+			$usr = json_decode(file_get_contents(WAY . $name . ".conf"));
+
+		?>
+
+		<div class="welcomemain">
+			<div class="welcomeSign">
+				<p class="title-mek">Welcome back, <?=$usr->name?></p>
+			</div>
+		</div>
+
+		<?php endif ?>
+		
 		<div class="main-videos">
 			<?php
 			for ($i=1; $i < $data->count; $i++) { 
@@ -77,7 +103,15 @@
 			}
 			?>
 		</div>
-		<!-- <div>Link to profile <a href="profile.php">page</a></div> -->
+		
+		<div class="footer">
+			<div class="footerText">FreeTube</div>
+			<div class="footerText">© 2025-present Alogical Std.</div>
+			<div class="footerText">
+				<a href=https://github.com/NThacker5246/FreeTube>Source-code</a>
+			</div>
+		</div>
+		
 	</div>
 </body>
 </html>

@@ -65,6 +65,7 @@ html, body {
 	text-align: center;
 	padding-top: 3px;
 	padding-left: 3px;
+	transition: all 0.1s ease-in-out;
   }
 
   .bubbleText {
@@ -77,6 +78,16 @@ html, body {
 	opacity: 1;
 	text-align: center;
 	z-index: 2;
+	transition: all 0.1s ease-in-out;
+}
+
+.bubbleText:hover {
+	transform: translate(-3px, -3px);
+}
+
+.bubbleText:hover + .bubbleTextsh {
+	transform: translate(-2px, -2px);
+	text-shadow: rgb(255, 0, 0) 0px 0px 10px;
 }
 
 .headerBubble2 {
@@ -117,12 +128,42 @@ html, body {
     transition: transform 0.2s ease; 
 }
 
+.headerBubble3 {
+	width: 50px;
+	height: 70%;
+	background: rgba(255,206,206,0.3100000023841858);
+	opacity: 1;
+	position: relative;
+	top: 15%;
+	left: 30px;
+	border-radius: 25px;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	cursor: pointer;
+	display: flex;
+	transition: all 0.1s ease-in-out;
+}
+
+.headerBubble3:hover {
+	box-shadow: 0px 3px 4px rgba(255, 0, 0, 0.25);
+	transform: translate(0px, -3px);
+}
+
+.profileIcon {
+	position: relative;
+	cursor: pointer;
+	image-rendering: optimizeQuality;
+	opacity: 50%;
+}
+
 .video-seen {
 	width: 75%;
 	height: 100%;
-	display: block;
+	display: flex;
 	left: 65px;
 	position: relative;
+	flex-direction: column;
 }
 
 video, .video {
@@ -134,11 +175,18 @@ video {
 	position: absolute;
 	border-radius: 6px;
 	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
-	top: 70px;
+	margin-top: 70px;
+	height: fit-content;
 }
 
+
+.videoplay {
+	width: 100%;
+	height: fit-content;
+	display: block;
+	position: relative;
+}
 .videoblur {
- 	content: "";
  	top: 0px;
  	left: 0%;
  	display: block;
@@ -147,6 +195,7 @@ video {
  	position: absolute;
  	z-index: -1;
 	top: 70px;
+	height: fit-content;
  }
 
 .next-videos {
@@ -163,23 +212,23 @@ video {
 
 .container {
 	position: absolute;
-
 }
 
 .controlls {
-	width: 100%;
-	height: 25px;
+	width: 90%;
+	height: 50px;
 	position: relative;
 	justify-content: center;
 	align-items: center;
-	top: 625px;
+	top: 50px;
 /*	left: 10%; */
 }
 
 #pause {
 	width: 25px;
 	height: 25px;
-	background-color: rgb(74, 74, 74); 
+	background-color: rgb(74, 74, 74);
+	border-radius: 6px;
 }
 
 #fullscreen {
@@ -187,33 +236,33 @@ video {
 	height: 25px;
 	background-color: red;
 	position: absolute;
-	left: 85%;
+	left: 820px;
 	top: 0%; 
 }
 
 .polzunok {
-	width: 30px;
-	height: 30px;
-	background-color: rgb(74, 74, 74);
+	width: 20px;
+	height: 20px;
+	background-color: rgb(255, 119, 119);
 	border-radius: 100%;
 	position: relative;
 	left: 0%;
-	bottom: 10px;
+	bottom: 8px;
 }
 
 .scroll {
 	position: absolute;
 	width: 100%;
-	height: 10px;
-	background-color: lightblue;
+	height: 5px;
+	background-color: rgb(0, 0, 0);
 	bottom: 50px;
-	border-radius: 10px;
+	border-radius: 5px;
 }
 
 #playBackRate {
 	position: absolute;
 	top: -25%;
-	right: 7%;
+	right: 0;
 	height: 30px;
 }
 
@@ -273,17 +322,16 @@ video {
 }
 
 
-.controlls-f {
+ .controlls-f {
 	width: 120% !important;
 	height: 25px;
 	position: absolute;
-	top: 95%;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 	flex-direction: column;
 	left: 0px;
-}
+} 
 
 .controlls-f > #pause{
 	position: absolute;
@@ -353,14 +401,14 @@ video {
 
 .commentBubble {
 	position: relative;
-	width: 68%;
+	width: 67.5%;
 	height: fit-content;
 	border-radius: 6px;
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
 	background: white;
 	opacity: 1;
 	left: 65px;
-	top: 150px;
+	top: 50px;
 	display: block;
 }
 
@@ -376,6 +424,7 @@ video {
 	align-items: center;
 	text-align: left;
 	opacity: 0.8;
+	min-height: 25px;
 }
 
 .header-f {
@@ -384,4 +433,31 @@ video {
 
 pre {
 	font-family: "Segoe UI";
+}
+
+.footer {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.03999999910593033);
+	background: rgb(255, 255, 255);
+	opacity: 1;
+	top: 50px;
+	display: flex;
+}
+
+.footerText {
+	margin: 10px;
+	color: rgba(0, 0, 0, 0.504);
+	font-family: Golos Text;
+	font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footerText:hover a {
+	font-weight: bold;
 }
