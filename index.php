@@ -14,14 +14,53 @@
 	<link rel="stylesheet" type="text/css" href="/style/styleHomepage.css">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
+
 	<div class="container">
 		<div class="header" id="header">
-			<div class="headerBubble">
+			<a href="/" class="headerBubble">
                 <span class="bubbleText">FreeTube</span>
                 <span class="bubbleTextsh">FreeTube</span>
-            </div>
+			</a>
+			
+			<div class="headerBubble2" id="headerBubble">
+				<div class="slider" id="themeSelecter">
+					<div class="bubble" style="background-color:rgb(255, 255, 255);"></div>
+					<div class="bubble" style="background-color:rgb(31, 31, 31);"></div>
+					<div class="bubble" style="background-color:rgb(81, 107, 225);"></div>
+					<div class="bubble" style="background-color:rgb(87, 195, 137);"></div>
+					<div class="bubble" style="background-color: #FF33A8;"></div>
+					<div class="bubble" style="background-color: #FFBD33;"></div>
+					<div class="bubble" style="background-color: #33FFF0;"></div>
+					<div class="bubble" style="background-color: #A833FF;"></div>
+				</div>
+			</div>
+
+			<a href="/profile.php" class="headerBubble3">
+				<img class="profileIcon" width="25" height="25" src="ico/profileicon.png"/>
+			</a>
+
+			<script>
+				const slider = document.getElementById("themeSelecter");
+				let index = 0;
+				const totalBubbles = document.querySelectorAll(".bubble").length;
+				const bubbleWidth = 26;
+
+				slider.addEventListener("wheel", (event) => {
+					event.preventDefault(); // Prevent default page scrolling
+					index += event.deltaY > 0 ? 1 : -1;
+					index = Math.max(0, Math.min(index, totalBubbles - 3));
+					slider.style.transform = `translateX(${-index * bubbleWidth}px)`;
+				});
+			</script>
+
+			<!--	<select class="headerBubble" id="styleChanger">
+					<option value="0">GiMaker version</option>
+					<option value="1">NThacker version</option>
+				</select> -->
 		</div>
+
 		<div class="main-videos">
 			<?php
 			for ($i=1; $i < $data->count; $i++) { 
@@ -38,7 +77,7 @@
 			}
 			?>
 		</div>
-		<div>Link to profile <a href="profile.php">page</a></div>
+		<!-- <div>Link to profile <a href="profile.php">page</a></div> -->
 	</div>
 </body>
 </html>

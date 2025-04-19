@@ -1,6 +1,7 @@
 /* Design created by GiMaker 2025
 Legacy CSS were used so if something were not updated then it worked at least
 */
+
 html, body {
 	margin: 0px;
 	width: 100%;
@@ -52,78 +53,42 @@ html, body {
 	overflow: hidden;
 	cursor: pointer;
 	display: flex;
-  }
+}
 
-  .bubbleTextsh {
+.bubbleTextsh {
 	width: 10%;
 	color: rgba(255,159,159,1);
 	position: fixed;
 	font-family: Golos Text;
 	font-weight: Regular;
-	font-size: 100%;
+	font-size: 1vw;
 	opacity: 1;
 	text-align: center;
-	padding-top: 3px;
-	padding-left: 3px;
-  }
+	/*padding-top: 3px;*/
+	/*padding-left: 3px;*/
+}
 
-  .bubbleText {
+.bubbleText {
 	width: 10%;
 	color: rgba(106,0,0,1);
 	position: fixed;
 	font-family: Golos Text;
 	font-weight: Regular;
-	font-size: 100%;
+	font-size: 1vw;
 	opacity: 1;
 	text-align: center;
 	z-index: 2;
 }
 
-.headerBubble2 {
-	width: 10%;
-	height: 70%;
-	background: rgba(255,206,206,0.3100000023841858);
-	opacity: 1;
-	position: relative;
-	top: 15%;
-	left: 25px;
-	border-radius: 6px;
-	justify-content: left;
-	align-items: center;
-	overflow: hidden;
-	cursor: pointer;
-	display: flex;
-}
-
-.slider {
-	display: flex;
-	transition: transform 0.3s ease-in-out;
-	gap: 10px;
-	margin-left: 10px;
-}
-
-.bubble {
-	width: 15px;
-	height: 15px;
-	border-radius: 50%;
-	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-	border: 4px solid gray;
-	flex-shrink: 0;
-}
-
-.bubble.selected {
-    border: 3px solid #000; 
-    transform: scale(1.2); 
-    transition: transform 0.2s ease; 
-}
 
 .video-seen {
 	width: 75%;
 	height: 100%;
 	display: block;
-	left: 65px;
+	left: 3.5vw;
 	position: relative;
 }
+
 
 video, .video {
 	width: 90%;
@@ -134,7 +99,7 @@ video {
 	position: absolute;
 	border-radius: 6px;
 	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
-	top: 70px;
+	top: 5vw;
 }
 
 .videoblur {
@@ -146,19 +111,23 @@ video {
 	opacity: 0.5;
  	position: absolute;
  	z-index: -1;
-	top: 70px;
+	top: 5vw;
  }
 
 .next-videos {
 	width: 25%;
-	height: 100%;
 	right: 0%;
 	position: absolute;
 	top: 50px;
 	background: white;
 	box-shadow: -5px 0px 4px rgba(0, 0, 0, 0.03999999910593033);
 	border-radius: 6px;
-	top: 70px;
+	top: 5vw;
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+	flex-direction: column;
+	align-items: center;
 }
 
 .container {
@@ -167,24 +136,24 @@ video {
 }
 
 .controlls {
-	width: 100%;
-	height: 25px;
-	position: relative;
+	width: 89%;
+	height: 3vw;
+	position: absolute;
 	justify-content: center;
 	align-items: center;
-	top: 625px;
+	top: 40vw !important; 
 /*	left: 10%; */
 }
 
 #pause {
-	width: 25px;
-	height: 25px;
+	width: 1.5vw;
+	height: 1.5vw;
 	background-color: rgb(74, 74, 74); 
 }
 
 #fullscreen {
-	width: 25px;
-	height: 25px;
+	width: 1.5vw;
+	height: 1.5vw;
 	background-color: red;
 	position: absolute;
 	left: 85%;
@@ -192,29 +161,30 @@ video {
 }
 
 .polzunok {
-	width: 30px;
-	height: 30px;
+	width: 2vw;
+	height: 2vw;
 	background-color: rgb(74, 74, 74);
 	border-radius: 100%;
 	position: relative;
 	left: 0%;
-	bottom: 10px;
+	bottom: 0.65vw;
 }
 
 .scroll {
 	position: absolute;
 	width: 100%;
-	height: 10px;
+	height: 0.5vw;
 	background-color: lightblue;
-	bottom: 50px;
+	bottom: 5vw;
 	border-radius: 10px;
 }
 
 #playBackRate {
 	position: absolute;
-	top: -25%;
-	right: 7%;
-	height: 30px;
+	right: 1vw;
+	top: -0.5vw;
+	height: 2vw;
+	width: 4.5vw;
 }
 
 .fullscreen {
@@ -225,7 +195,6 @@ video {
 	min-height: 100%;
 	width: auto;
 	height: auto;
-	z-index: -100;
 	background-size: cover;
 }
 
@@ -240,14 +209,15 @@ video {
 
 .card {
 	width: 100%;
-	height: 200px;
-	margin: 20px;
+	height: 14vw;
 	font-family: Golos Text;
 	font-weight: Bold;
 	color: black;
 	text-decoration: none;
 	cursor: pointer;
 	display: flex;
+	justify-content: center;
+	margin-top: 1vw;
 }
 
 .cardtext:hover {
@@ -264,7 +234,7 @@ video {
 
 .cardtext {
 	text-decoration: none;
-	padding-top: 10px;
+	padding-top: 0.75vw;
 	position: relative;
 }
 
@@ -300,8 +270,8 @@ video {
 
 .titleV {
 	position: relative;
-	top: 50px;
-	left: 65px;
+	left: 3.5vw;
+	top: -1vw;
 
 }
 
@@ -353,14 +323,14 @@ video {
 
 .commentBubble {
 	position: relative;
-	width: 68%;
+	width: 67.5%;
 	height: fit-content;
 	border-radius: 6px;
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
 	background: white;
 	opacity: 1;
-	left: 65px;
-	top: 150px;
+	left: 3.5vw;
+	top: -1vw;
 	display: block;
 }
 
@@ -384,4 +354,19 @@ video {
 
 pre {
 	font-family: "Segoe UI";
+}
+
+
+.goToVideo {
+	display: none;
+}
+
+
+* {
+	font-size: 1vw !important;
+}
+
+img {
+	width: 21vw !important;
+	height: 12vw !important;
 }

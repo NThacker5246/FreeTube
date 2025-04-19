@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
 	<title>FreeTube creator studio</title>
 	<meta charset="utf-8">
