@@ -29,8 +29,8 @@
 	<div class="container">
 		<div class="header" id="header">
 			<a href="/" class="headerBubble">
-                <span class="bubbleText">FreeTube</span>
-                <span class="bubbleTextsh">FreeTube</span>
+				<span class="bubbleText">FreeTube</span>
+				<span class="bubbleTextsh">FreeTube</span>
 			</a>
 			<div class="headerBubble2" id="headerBubble">
 				<div class="slider" id="themeSelecter">
@@ -44,7 +44,6 @@
 					<div class="bubble" style="background-color: #A833FF;"></div>
 				</div>
 			</div>
-
 			<a href="/profile.php" class="headerBubble3">
 				<img class="profileIcon" width="25" height="25" src="ico/profileicon.png"/>
 			</a>
@@ -62,7 +61,6 @@
 					slider.style.transform = `translateX(${-index * bubbleWidth}px)`;
 				});
 			</script>
-
 
 		</div>
 		<div class="video-seen">
@@ -127,6 +125,15 @@
 
 		</div>
 
+		<?php if (!empty($_GET['playlist'])): ?>
+			<script type="text/javascript">
+				var play_name = <?=$_GET['playlist']?>;
+			</script>
+			<div class="playlistViewer">
+				
+			</div>
+		<?php endif ?>
+
 		<div class="commentBubble" id="commentBubble">
 			<div class="comments">
 				<input type="text" name="comment" id="inCom" class="commentInput">
@@ -169,5 +176,6 @@
 	<script type="text/javascript" src="comment.js"></script>
 	<script type="text/javascript" src="themes.js"></script>
 	<script type="text/javascript" src="styles.js"></script>
+	<script type="text/javascript" src="playlist.js"></script>
 </body>
 </html>
