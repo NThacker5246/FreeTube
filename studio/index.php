@@ -85,6 +85,7 @@
 						<div class="bgText">Banner</div>
 						<label class="uploadbutton" for="previewInput">Choose Preview</label>
 						<input type="file" id="previewInput" name="preview" accept="image/png" required>
+						<span id="previewFileName" class="file-name">No file selected</span>
 						<button class="nextButton" type="button" id="nextBtn3">Next</button>
 						<button class="backButton" type="button" id="backBtn2">Back</button>
 					</div>
@@ -188,6 +189,17 @@
 					fileNameSpan.textContent = fileInput.files[0].name; // Display the selected file name
 				} else {
 					fileNameSpan.textContent = 'No file selected'; // Reset if no file is selected
+				}
+			});
+
+			const previewInput = document.getElementById('previewInput');
+			const previewFileNameSpan = document.getElementById('previewFileName');
+
+			previewInput.addEventListener('change', () => {
+				if (previewInput.files.length > 0) {
+					previewFileNameSpan.textContent = previewInput.files[0].name; // Display the selected file name
+				} else {
+					previewFileNameSpan.textContent = 'No file selected'; // Reset if no file is selected
 				}
 			});
 		</script>
