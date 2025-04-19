@@ -69,7 +69,7 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 					<div class="ChannelBanner">
 
 							<?php
-							$imagePath = '/accounts/Banners/' . $usr->name . 'banner.png';
+							$imagePath = '/accounts/Banners/' . $usr->name . '.jpg';
 							$hasImage = file_exists($_SERVER['DOCUMENT_ROOT'] . $imagePath);
 
 							
@@ -85,22 +85,21 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 
 							<div class="ChannelBanner" style="background-color: <?php echo !$hasImage ? $bgColor : 'transparent'; ?>;">
 								<?php if ($hasImage): ?>
-									<img src="<?php echo $imagePath; ?>" alt="AccountBanner">
+									<img class="imageMask" width="100%" src="<?php echo $imagePath; ?>" alt="AccountBanner">
 								<?php endif; ?>
 
 								<div class="ProfileInformation">
 									<?php
-									$imagePath = '/accounts/Images/' . $usr->name . '.png';
+									$imagePath = '/accounts/Images/' . $usr->name . '.jpg';
 									$hasImage = file_exists($_SERVER['DOCUMENT_ROOT'] . $imagePath);
 									?>
 									<div class="profileInfoLow">
-										<div class="profileBorder">
-											<img class="profileImage" width="96" height="96" src="<?php echo $hasImage ? $imagePath : '/ico/profiledefault.png'; ?>" alt="Profile Image">
-										</div>
-										<span class="profileName"><?=$usr->name?></span>
+											<div class="profileBorder">
+												<img class="profileImage" width="96" height="96" src="<?php echo $hasImage ? $imagePath : '/ico/profiledefault.png'; ?>" alt="Profile Image">
+											</div>
+											<div class="profileName"><?=$usr->name?></div>
 									</div>
 								</div>
-
 							</div>
 					</div>
 					

@@ -86,7 +86,15 @@
 			}
 			?>
 		</div>
-		<!-- <div>Link to profile <a href="profile.php">page</a></div> -->
+		
+		<div class="footer">
+			<div class="footerText">FreeTube</div>
+			<div class="footerText">© 2025-present Alogical Std.</div>
+			<div class="footerText">
+				<a href=https://github.com/NThacker5246/FreeTube>Source-code</a>
+			</div>
+		</div>
+		
 	</div>
 </body>
 </html>
