@@ -66,6 +66,7 @@
 						<div class="bgText">Upload</div>
 						<label class="uploadbutton" for="fileInput">Choose File</label>
 						<input type="file" id="fileInput" name="file" accept="video/*" required>
+						<span id="fileName" class="file-name">No file selected</span>
 						<button class="nextButton" type="button" id="nextBtn1">Next</button>
 					</div>
 				</div>
@@ -177,6 +178,17 @@
 					steps[currentStep].classList.remove('inactive');
 					steps[currentStep].classList.add('active');
 				});
+			});
+
+			const fileInput = document.getElementById('fileInput');
+			const fileNameSpan = document.getElementById('fileName');
+
+			fileInput.addEventListener('change', () => {
+				if (fileInput.files.length > 0) {
+					fileNameSpan.textContent = fileInput.files[0].name; // Display the selected file name
+				} else {
+					fileNameSpan.textContent = 'No file selected'; // Reset if no file is selected
+				}
 			});
 		</script>
 	</div>

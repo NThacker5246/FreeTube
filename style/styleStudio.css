@@ -303,3 +303,11 @@ input[type="text"], input[type="number"], textarea {
 	top: 450px;
 	position: absolute;
 }
+
+.file-name {
+    font-family: Golos Text;
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+    text-align: center;
+}
