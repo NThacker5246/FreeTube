@@ -161,13 +161,30 @@ html, body {
 	opacity: 50%;
 }
 
+.headerBubble4 {
+	width: 50px;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.31);
+	opacity: 1;
+	position: relative;
+	border-radius: 6px;
+	border-color: #787878;
+	border-width: 2px;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	cursor: pointer;
+	display: flex;
+	transition: all 0.1s ease-in-out;
+}
+
 h1 {
     font-family: Golos Text;
     font-weight: Regular;
     font-size: 200%;
     color: #000000;
     opacity: 1;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 h2 {
@@ -177,4 +194,33 @@ h2 {
     color: #000000;
     opacity: 1;
     margin-top: 10px;
+}
+
+.headersearch {
+	height: 50px;
+	position: fixed;
+	top: 50px;
+	width: 100%;
+	display: flex;
+}
+
+.headerfilter {
+	margin: 10px;
+	width: 100%;
+	background-color: white;
+	border-radius: 6px;
+	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.116);
+	display: flex;
+	justify-content: left;
+	align-content: center;
+	flex-direction: row;
+}
+
+.headerfilterButton {
+	font-family: Golos Text;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
 }

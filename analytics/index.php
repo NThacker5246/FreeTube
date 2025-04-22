@@ -58,6 +58,7 @@
 					</script>
 
 				</div>
+
 				<h1><?=$_COOKIE['name']?></h1>
 				<h2>Most popular videos:</h2>
 				<h3>Video: <?=explode("ALGSTD!24", $params[0])[1]?></h3>
@@ -110,6 +111,8 @@
 						<img class="profileIcon" width="25" height="25" src="../ico/profileicon.png"/>
 					</a>
 
+				
+
 					<script>
 						const slider = document.getElementById("themeSelecter");
 						let index = 0;
@@ -125,6 +128,8 @@
 					</script>
 
 				</div>
+
+
 				<h1><?=$_COOKIE['name']?></h1>
 				<h2>Most popular videos:</h2>
 				<?php
