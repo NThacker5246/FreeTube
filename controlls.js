@@ -9,6 +9,7 @@ var desc = document.getElementById('desc');
 var controll = document.getElementById('controll');
 var title = document.getElementById('titleV2');
 var commentBubble = document.getElementById('commentBubble');
+var ThereButton = document.getElementById('ThereButton');
 
 var blur = document.getElementById('playerBlur');
 
@@ -34,8 +35,9 @@ fus.addEventListener("click", function() {
 	desc.classList.toggle("header-f");
 	title.classList.toggle("header-f");
 	commentBubble.classList.toggle("header-f");
-	blur.classList.toggle("header-f");
 	controll.classList.toggle("controlls-f");
+	blur.classList.toggle("header-f");
+	ThereButton.classList.toggle("header-f");
 });
 
 var scrollPos = document.getElementById('pos');
@@ -52,7 +54,7 @@ speed.addEventListener('click', function() {
 
 scrollPos.addEventListener('mousemove', function(e) {
 	if(e.buttons != 0){
-		polzPos.style.left = (e.clientX - 40) + "px";
+		polzPos.style.left = (e.clientX - 90 * document.body.clientWidth / 2232) + "px";
 		video.currentTime = e.clientX / scrollPos.clientWidth * video.duration;
 		blur.currentTime = e.clientX / scrollPos.clientWidth * video.duration;
 		notEdited = false;
@@ -63,7 +65,7 @@ scrollPos.addEventListener('mousemove', function(e) {
 
 scrollPos.addEventListener('click', function(e) {
 	if(e.buttons != 0){
-		polzPos.style.left = (e.clientX - 40) + "px";	
+		polzPos.style.left = (e.clientX - 90 * document.body.clientWidth / 2232) + "px";	
 		video.currentTime = e.clientX / scrollPos.clientWidth * video.duration;
 		blur.currentTime = e.clientX / scrollPos.clientWidth * video.duration;
 	}
@@ -72,6 +74,7 @@ scrollPos.addEventListener('click', function(e) {
 setInterval(function() {
 	if(notEdited){
 		var pixels = video.currentTime / video.duration * scrollPos.clientWidth;
-		polzPos.style.left = (pixels-5) + "px";		
+		polzPos.style.left = (pixels) + "px";	
+		console.log("there");	
 	}
 }, 1000);
