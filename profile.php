@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profileImage'])) {
         $tmpName = $_FILES['profileImage']['tmp_name'];
         $fileType = mime_content_type($tmpName);
 
-        if (in_array($fileType, ['image/png', 'image/jpeg', 'image/jpg'])) {
+        if (in_array($fileType, ['image/jpeg', 'image/jpg'])) {
             if (move_uploaded_file($tmpName, $uploadFile)) {
                 echo "<script>alert('Profile image updated successfully!');</script>";
             } else {
