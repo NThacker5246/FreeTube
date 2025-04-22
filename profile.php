@@ -4,6 +4,40 @@
 	}
  ?>
 
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profileImage'])) {
+    $username = $_COOKIE['name']; 
+    $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/accounts/Images/';
+    $uploadFile = $uploadDir . $username . '.jpg'; 
+
+
+    if ($_FILES['profileImage']['error'] === UPLOAD_ERR_OK) {
+        $tmpName = $_FILES['profileImage']['tmp_name'];
+        $fileType = mime_content_type($tmpName);
+
+        if (in_array($fileType, ['image/png', 'image/jpeg', 'image/jpg'])) {
+            if (move_uploaded_file($tmpName, $uploadFile)) {
+                echo "<script>alert('Profile image updated successfully!');</script>";
+            } else {
+                echo "<script>alert('Failed to upload the image.');</script>";
+            }
+        } else {
+            echo "<script>alert('Invalid file type. Please upload a PNG or JPG image.');</script>";
+        }
+    } else {
+        echo "<script>alert('Error uploading the file.');</script>";
+    }
+}
+
+if (isset($_POST['logout'])) {
+    foreach ($_COOKIE as $key => $value) {
+        setcookie($key, '', time() - 3600, '/');
+    }
+    header("Location: /login");
+    exit();
+}
+?>
+
 <?php if (!empty($_GET['chan'])): ?>
 
 <?php
@@ -56,7 +90,7 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 							const bubbleWidth = 26;
 
 							slider.addEventListener("wheel", (event) => {
-								event.preventDefault(); // Prevent default page scrolling
+								event.preventDefault(); 
 								index += event.deltaY > 0 ? 1 : -1;
 								index = Math.max(0, Math.min(index, totalBubbles - 3));
 								slider.style.transform = `translateX(${-index * bubbleWidth}px)`;
@@ -178,7 +212,7 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 							const bubbleWidth = 26;
 
 							slider.addEventListener("wheel", (event) => {
-								event.preventDefault(); // Prevent default page scrolling
+								event.preventDefault(); 
 								index += event.deltaY > 0 ? 1 : -1;
 								index = Math.max(0, Math.min(index, totalBubbles - 3));
 								slider.style.transform = `translateX(${-index * bubbleWidth}px)`;
@@ -223,16 +257,24 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 									</div>
 								</div>
 								<div class="customize">
-
+									
 									<div class="goToStudio">
 										<a href="/studio/index.php" class="goToStudioButton">Studio</a>
 									</div>
 
 									<div class="IconImport">
-										<input type="file" id="iconInput" accept="image/png, image/jpg, image/webm, image/jpeg" onchange="IconImage(event)">
-										<button class="IconImportButton" onclick="document.getElementById('iconInput').click();">
-											<img class="iconico" src="/ico/profiledefault.png" width="20px" height="20px">
-										</button>
+										<form action="/profile.php" method="POST" enctype="multipart/form-data">
+											<input type="file" id="iconInput" name="profileImage" accept="image/png, image/jpg, image/jpeg" style="display: none;" onchange="this.form.submit();">
+											<button class="IconImportButton" type="button" onclick="document.getElementById('iconInput').click();">
+												<img class="iconico" src="/ico/profiledefault.png" width="20px" height="20px">
+											</button>
+										</form>
+									</div>
+
+									<div class="logout">
+										<form action="/profile.php" method="POST">
+											<button class="logoutButton" type="submit" name="logout">Logout</button>
+										</form>
 									</div>
 								</div>
 
