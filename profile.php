@@ -29,6 +29,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profileImage'])) {
     }
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['bannerImage'])) {
+    $username = $_COOKIE['name']; // Get the username from the cookie
+    $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/accounts/Banners/';
+    $uploadFile = $uploadDir . $username . '.jpg'; // Save the file as the username.jpg
+
+    // Check if the file was uploaded without errors
+    if ($_FILES['bannerImage']['error'] === UPLOAD_ERR_OK) {
+        $tmpName = $_FILES['bannerImage']['tmp_name'];
+        $fileType = mime_content_type($tmpName);
+
+        // Validate the file type (allow only PNG, JPG, JPEG)
+        if (in_array($fileType, ['image/jpeg', 'image/jpg'])) {
+            // Move the uploaded file to the target directory
+            if (move_uploaded_file($tmpName, $uploadFile)) {
+                echo "<script>alert('Banner image updated successfully!');</script>";
+            } else {
+                echo "<script>alert('Failed to upload the banner image.');</script>";
+            }
+        } else {
+            echo "<script>alert('Invalid file type. Please upload a PNG or JPG image.');</script>";
+        }
+    } else {
+        echo "<script>alert('Error uploading the banner image.');</script>";
+    }
+}
+
 if (isset($_POST['logout'])) {
     foreach ($_COOKIE as $key => $value) {
         setcookie($key, '', time() - 3600, '/');
@@ -267,6 +293,15 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 											<input type="file" id="iconInput" name="profileImage" accept="image/png, image/jpg, image/jpeg" style="display: none;" onchange="this.form.submit();">
 											<button class="IconImportButton" type="button" onclick="document.getElementById('iconInput').click();">
 												<img class="iconico" src="/ico/profiledefault.png" width="20px" height="20px">
+											</button>
+										</form>
+									</div>
+
+									<div class="BannerImport">
+										<form action="/profile.php" method="POST" enctype="multipart/form-data">
+											<input type="file" id="bannerInput" name="bannerImage" accept="image/png, image/jpg, image/jpeg" style="display: none;" onchange="this.form.submit();">
+											<button class="BannerImportButton" type="button" onclick="document.getElementById('bannerInput').click();">
+												<img class="bannerico" src="/ico/bannerdefault.png" width="20px" height="20px">
 											</button>
 										</form>
 									</div>
