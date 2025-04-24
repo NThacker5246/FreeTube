@@ -1,9 +1,3 @@
-<?php 
-	if($_COOKIE == []){
-		header("Location: /login");
-	}
- ?>
-
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profileImage'])) {
     $username = $_COOKIE['name']; 
@@ -193,8 +187,10 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 
 				$usr = json_decode(file_get_contents(WAY . $name . ".conf"));
 
-				?>
-
+				if($_COOKIE == []){
+				header("Location: /login");
+				}
+ 				?>
 <!DOCTYPE html>
 	<html>
 		<head>

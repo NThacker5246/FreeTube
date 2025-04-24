@@ -1,13 +1,15 @@
 <?php
 
-	define('WAY', 'accounts/');
-	require_once 'login/db/account.php';
+
 
 	$data = $_GET['d'];
 	$v = $_GET['v'];
-	$td = $_COOKIE['name'];
+	
 	switch ($data) {
 		case 'like':
+			define('WAY', 'accounts/');
+			require_once 'login/db/account.php';
+			$td = $_COOKIE['name'];
 			$result = file_get_contents("config/$v.conf");
 			$dt = explode("!HCRGMKARS%!", $result);
 			$sol = "";
@@ -45,6 +47,9 @@
 			break;
 		
 		case 'dislike':
+			define('WAY', 'accounts/');
+			require_once 'login/db/account.php';
+			$td = $_COOKIE['name'];
 			$result = file_get_contents("config/$v.conf");
 			$dt = explode("!HCRGMKARS%!", $result);
 			$sol = "";

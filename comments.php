@@ -1,11 +1,12 @@
 <?php
 	$comment = $_GET['comment'];
 	$v = $_GET['v'];
-	$name = $_COOKIE['name'];
+	//DO NOT EVER MAKE VISIBILITY OF COMMENTS ETC. LOGIN ONLY
 	$md = $_GET['m'];
 	
 	switch ($md) {
 		case 'write':
+			$name = $_COOKIE['name'];
 			$save_cm = "<div>$name> $comment</div>";
 			if (file_exists("./comments/$v.txt")) {
 				$save_cm = file_get_contents("./comments/$v.txt") . $save_cm;
