@@ -314,6 +314,7 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 					
 					<div class="videos">
 						<?php
+							// Write if script to check if user has videos
 							for ($i=0; $i < count($usr->videoCreated); $i++) { 
 							$conf = file_get_contents("./config/" . $usr->videoCreated[$i] . ".conf");
 							$kw = explode("!HCRGMKARS%!", $conf);
