@@ -72,10 +72,12 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 		<head>
 			<title><?=$usr->name?> - FreeTube</title>
 			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link rel="preconnect" href="https://fonts.googleapis.com">
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 			<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
-			<link rel="stylesheet" type="text/css" href="/style/styleChannel.css">
+			<link rel="stylesheet" type="text/css" href="/style/styleChannel.css" media="(min-width: 768px)">
+			<link rel="stylesheet" type="text/css" href="/style/mobile/styleChannel.css" media="(max-width: 767px)">
 			<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		</head>
 		<body>
@@ -149,7 +151,7 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 									?>
 									<div class="profileInfoLow">
 											<div class="profileBorder">
-												<img class="profileImage" width="96" height="96" src="<?php echo $hasImage ? $imagePath : '/ico/profiledefault.png'; ?>" alt="Profile Image">
+												<img class="profileImage" width="48" height="48" src="<?php echo $hasImage ? $imagePath : '/ico/profiledefault.png'; ?>" alt="Profile Image">
 											</div>
 											<div class="profileName"><?=$usr->name?></div>
 									</div>
@@ -166,7 +168,7 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 							echo "
 							<a class=\"card\" href=\"/watch.php?video=" . $usr->videoCreated[$i] . "\">
 								<div>
-									<img class=\"cardvid\" src=\"/preview/". $usr->videoCreated[$i] .".png\" width=\"300px\" height=\"168.75px\">
+									<img class=\"cardvid\" src=\"/preview/". $usr->videoCreated[$i] .".png\">
 									<div class=\"cardtext\">$name</div>
 								</div>
 							</a>";
@@ -196,10 +198,12 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 		<head>
 			<title><?=$usr->name?> - FreeTube</title>
 			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link rel="preconnect" href="https://fonts.googleapis.com">
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 			<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
-			<link rel="stylesheet" type="text/css" href="/style/styleChannel.css">
+			<link rel="stylesheet" type="text/css" href="/style/styleChannel.css" media="(min-width: 768px)">
+			<link rel="stylesheet" type="text/css" href="/style/mobile/styleChannel.css" media="(max-width: 767px)">
 			<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		</head>
 		<body>
@@ -273,7 +277,7 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 									?>
 									<div class="profileInfoLow">
 											<div class="profileBorder">
-												<img class="profileImage" width="96" height="96" src="<?php echo $hasImage ? $imagePath : '/ico/profiledefault.png'; ?>" alt="Profile Image">
+												<img class="profileImage" src="<?php echo $hasImage ? $imagePath : '/ico/profiledefault.png'; ?>" alt="Profile Image">
 											</div>
 											<div class="profileName"><?=$usr->name?></div>
 									</div>
@@ -322,7 +326,7 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 							echo "
 							<a class=\"card\" href=\"/watch.php?video=" . $usr->videoCreated[$i] . "\">
 								<div>
-									<img class=\"cardvid\" src=\"/preview/". $usr->videoCreated[$i] .".png\" width=\"300px\" height=\"168.75px\">
+									<img class=\"cardvid\" src=\"/preview/". $usr->videoCreated[$i] .".png\">
 									<div class=\"cardtext\">$name</div>
 								</div>
 							</a>";

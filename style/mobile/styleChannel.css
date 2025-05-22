@@ -40,17 +40,14 @@ html, body {
 }
 
 .headerBubble {
-    width: 10%;
+    width: 30%;
     height: 70%;
     background: rgba(255,206,206,0.3100000023841858);
     opacity: 1;
     position: relative;
     top: 15%;
     left: 20px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-radius: 6px;
 	justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -59,12 +56,12 @@ html, body {
   }
 
   .bubbleTextsh {
-    width: 10%;
+    width: 30%;
     color: #ff9f9f;
     position: fixed;
     font-family: Golos Text;
     font-weight: Regular;
-    font-size: 100%;
+    font-size: 80%;
     opacity: 1;
     text-align: center;
 	padding-top: 3px;
@@ -73,29 +70,20 @@ html, body {
   }
 
   .bubbleText {
-    width: 10%;
+    width: 30%;
     color: #6a0000;
     position: fixed;
     font-family: Golos Text;
     font-weight: Regular;
-    font-size: 100%;
+    font-size: 80%;
     opacity: 1;
     text-align: center;
     z-index: 2;
 	transition: all 0.1s ease-in-out;
   }
 
-.bubbleText:hover {
-	transform: translate(-3px, -3px);
-}
-
-.bubbleText:hover + .bubbleTextsh {
-	transform: translate(-2px, -2px);
-	text-shadow: rgb(255, 0, 0) 0px 0px 10px;
-}
-
   .headerBubble2 {
-	width: 10%;
+	width: 30%;
 	height: 70%;
 	background: rgba(255,206,206,0.3100000023841858);
 	opacity: 1;
@@ -107,7 +95,7 @@ html, body {
 	align-items: center;
 	overflow: hidden;
 	cursor: pointer;
-	display: flex;
+	display: none;
 }
 
 .slider {
@@ -166,9 +154,9 @@ html, body {
 	justify-content: center;
     align-items: center;
 	z-index: 2;
-	height: 350px;
+	height: 150px;
 	display: flex;
-	top: 100px;
+	top: 25px;
 }
 
 .customize {
@@ -177,30 +165,32 @@ html, body {
     -webkit-backdrop-filter: blur(8px);
 	border-radius: 12px;
 	position: relative;
-	justify-content: right;
+	justify-content: center;
 	align-items: center;
 	z-index: 2;
 	height: 350px;
 	display: flex;
 	height: 50px;
-	top: 100px;
+	top: 0px;
 	flex-direction: row;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.043);
 }
 
 .profileName {
 	position: relative;
 	font-family: Golos Text;
 	font-weight: Bold;
-	font-size: 300%;
+	font-size: 150%;
 	color: #000000;
 	text-align: center;
 	left: 0;
 	width: fit-content;
-	margin-right: 25px;
+	margin-left: 10px;
+    margin-right: 25px;
 }
 
 .ChannelBanner {
-	height: 500px;
+	height: 200px;
 	position: relative;
 	justify-content: center;
     align-items: center;
@@ -209,18 +199,20 @@ html, body {
 
 .profileImage {
 	border-radius: 50%;
-	width: 96px;
-	height: 96px;
+    width: 48px;
+    height: 48px;
 }
 
 .profileBorder {
 	position: relative;
 	border-radius: 50%;
 	border: 5px solid #000000;
-	height: 96px;
-	width: 96px;
-	left: 25px;
-	margin-right: 50px;
+	height: 48px;
+	width: 48px;
+	margin-left: 25px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .profileInfoLow {
@@ -232,8 +224,8 @@ html, body {
     -webkit-backdrop-filter: blur(8px);
 	position: relative;
 	left: 0px;
-	height: 150px;
-	justify-content: left;
+	height: fit-content;
+	justify-content: center;
 	align-items: center;
 	width: fit-content;
 }
@@ -261,8 +253,8 @@ html, body {
 }
 
 .cardvid {
-	width: 300px;
-	height: 168.75px;
+    width: 100px;
+	height: 56.25px;
 	margin: 0px;
 	border-radius: 6px;
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
@@ -273,6 +265,7 @@ html, body {
 	text-decoration: none;
 	padding-top: 10px;
 	position: relative;
+    font-size: 50%;
 }
 
 .card > p {
@@ -322,7 +315,7 @@ input[type="file"] {
 
 .imageMask {
 	width: 100%;
-	height: 500px;
+	height: 150px;
 	display: block;
 	object-fit: cover;
 	overflow: hidden;
@@ -346,6 +339,7 @@ a {
 	background-color: #ffffff00;
 	border: #00000000;
 	padding-top: 1px;
+    font-size: 80%;
 }
 
 .goToStudioButton {
@@ -353,7 +347,7 @@ a {
 	font-family: Golos Text;
 	transition: background-color 0.1s ease;
 	border-radius: 6px;
-	padding: 2px 10px;
+	padding: 4px 10px;
 }
 
 .goToStudioButton:hover {
@@ -364,12 +358,11 @@ a {
     background-color: #ff4d4d;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 80%;
     transition: background-color 0.3s ease;
-	margin-right: 10px;
 }
 
 .logoutButton:hover {
