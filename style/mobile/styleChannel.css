@@ -46,7 +46,7 @@ html, body {
     opacity: 1;
     position: relative;
     top: 15%;
-    left: 20px;
+    left: 10px;
     border-radius: 6px;
 	justify-content: center;
     align-items: center;
@@ -114,12 +114,6 @@ html, body {
 	flex-shrink: 0;
 }
 
-.bubble.selected {
-    border: 3px solid #000; 
-    transform: scale(1.2); 
-    transition: transform 0.2s ease; 
-}
-
 .headerBubble3 {
 	width: 50px;
 	height: 70%;
@@ -127,7 +121,7 @@ html, body {
 	opacity: 1;
 	position: relative;
 	top: 15%;
-	left: 30px;
+	left: 20px;
 	border-radius: 25px;
 	justify-content: center;
 	align-items: center;
@@ -135,11 +129,6 @@ html, body {
 	cursor: pointer;
 	display: flex;
 	transition: all 0.1s ease-in-out;
-}
-
-.headerBubble3:hover {
-	box-shadow: 0px 3px 4px rgba(255, 0, 0, 0.25);
-	transform: translate(0px, -3px);
 }
 
 .profileIcon {
@@ -160,18 +149,17 @@ html, body {
 }
 
 .customize {
-	background-color: rgba(255, 255, 255, 0.551);
+	background-color: rgba(255, 255, 255, 0.92);
 	backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(32px);
 	border-radius: 12px;
 	position: relative;
 	justify-content: center;
 	align-items: center;
 	z-index: 2;
-	height: 350px;
 	display: flex;
 	height: 50px;
-	top: 0px;
+	top: 25px;
 	flex-direction: row;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.043);
 }
@@ -190,7 +178,7 @@ html, body {
 }
 
 .ChannelBanner {
-	height: 200px;
+	height: 225px;
 	position: relative;
 	justify-content: center;
     align-items: center;
@@ -253,8 +241,8 @@ html, body {
 }
 
 .cardvid {
-    width: 100px;
-	height: 56.25px;
+    width: 160px;
+	height: 90px;
 	margin: 0px;
 	border-radius: 6px;
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
@@ -265,7 +253,7 @@ html, body {
 	text-decoration: none;
 	padding-top: 10px;
 	position: relative;
-    font-size: 50%;
+    font-size: 75%;
 }
 
 .card > p {
@@ -315,7 +303,7 @@ input[type="file"] {
 
 .imageMask {
 	width: 100%;
-	height: 150px;
+	height: 200px;
 	display: block;
 	object-fit: cover;
 	overflow: hidden;
