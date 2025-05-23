@@ -22,6 +22,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
 	<link rel="icon" href="favicon.ico" >
 	<link rel="stylesheet" type="text/css" href="/style/" id="linker">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/style/styleChannel.css" media="(min-width: 768px)">
+	<link rel="stylesheet" type="text/css" href="/style/mobile/styleVideo.css" media="(max-width: 767px)">
 </head>
 
 <body>
@@ -151,7 +154,7 @@
 				echo "
 				<a href=\"/watch.php?video=$i\" class=\"card\">
 					<div>
-						<img src=\"/preview/$i.png\" width=\"300px\" height=\"168.75px\" class=\"cardvid\">
+						<img src=\"/preview/$i.png\" class=\"cardvid\">
 						<div class=\"cardtext\">$name</div>
 					</div>
 				</a>";
