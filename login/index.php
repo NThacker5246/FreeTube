@@ -12,7 +12,7 @@
 			<link rel="stylesheet" type="text/css" href="/style/mobile/styleChannel.css" media="(max-width: 767px)">
 		</head>
 		<body>
-<!--			<div class="container">
+			<div class="container">
 				<div class="header" id="header">
 					<a href="/" class="headerBubble">
                 		<span class="bubbleText">FreeTube</span>
@@ -51,16 +51,21 @@
 					</script>
 
 
-				</div>	-->
-				<form action="log.php" method="POST" enctype="multipart/form-data">
-					<input type="text" name="name" placeholder="Nickname">
-					<br>
-					<input type="password" name="pwd" placeholder="Your password">
-					<br>
-					<button type="submit">Login</button>
-				</form>
-
-				Don't have an account? <a href="register">Register Now!</a>
+				</div>
+				<div class="loginPage">
+					<div class="loginBubble">
+						<div class="loginText">Login</div>
+						<form action="log.php" method="POST" enctype="multipart/form-data">
+							<input type="text" name="name" placeholder="Nickname">
+							<br>
+							<input type="password" name="pwd" placeholder="Your password">
+							<br>
+							<button type="submit" class="submitButton">Login</button>
+						</form>
+						<span class="NoAcc">Don't have an account?</span>
+						<a href="register">Register Now!</a>
+					</div>
+				</div>
 			</div>
 		</body>
 	</html>
