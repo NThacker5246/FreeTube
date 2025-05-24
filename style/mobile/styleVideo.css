@@ -2,34 +2,33 @@
 Legacy CSS were used so if something were not updated then it worked at least
 */
 html, body {
-	margin: 0px;
-	width: 100%;
-	overflow-x: hidden;
-	justify-content: center;
-	overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .container {
-	margin: 0px;
-	width: 100%;
-	height: 100%;
-	overflow-x: hidden;
-	font-family: Golos Text;
-    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
+    padding-top: 50px;
 }
 
 .header {
-	width: 100% !important;
-	height: 50px;
-	z-index: 100;
-	display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1000;
+    display: flex;
     background: rgba(255,255,255,0.949999988079071);
     opacity: 1;
-    position: fixed;
-    top: 0px;
-    left: 0px;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
     overflow: hidden; 
     backdrop-filter: blur(8px);
@@ -140,44 +139,46 @@ html, body {
 }
 
 .video-seen {
-	width: 75%;
-	height: 100%;
-	display: flex;
-	left: 65px;
-	position: relative;
-	flex-direction: column;
-    top: 175px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+	left: 0;
 }
 
 video, .video {
-	width: 90%;
+	width: 100%;
 	left: 0%;
+	height: 100%;
 }
 
 video {
+	width: 100%;
+	height: auto;
+	max-height: 100vh;
 	position: relative;
 	border-radius: 6px;
 	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
-	margin-top: 70px;
-	height: fit-content;
 }
 
 
 .videoplay {
 	width: 100%;
-	height: fit-content;
-	display: block;
+	height: auto;
 	position: relative;
+	margin-top: 0;
+	z-index: 2;
 }
 .videoblur {
- 	top: 0px;
+ 	margin-top: -50px;
  	left: 0%;
  	display: block;
  	filter: blur(100px) brightness(5);
 	opacity: 0.5;
  	position: absolute;
- 	z-index: -1;
-	top: 70px;
+ 	z-index: 0;
 	height: fit-content;
  }
 
@@ -189,7 +190,7 @@ video {
 	background: white;
 	box-shadow: -5px 0px 4px rgba(0, 0, 0, 0.03999999910593033);
 	border-radius: 6px;
-    top: 90px;
+    top: 40px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -205,8 +206,7 @@ video {
 	position: relative;
 	justify-content: center;
 	align-items: center;
-	top: 50px;
-/*	left: 10%; */
+	top: 25px;
 }
 
 #pause {
@@ -325,28 +325,25 @@ video {
 	display: flex;
 	position: relative;
 	top: 0;
-	left: 20px;
+	left: 10px;
 	opacity: 0.5;
 }
 
 .titleV {
 	position: relative;
 	left: 1%;
-
-}
-
-.titleV {
 	width: 98%;
 	height: fit-content;
 	border-radius: 6px;
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
 	background: white;
 	opacity: 1;
+	top: 15px;
 }
 
 .titleV2 {
-	margin-left: 20px;
-	margin-top: 3px;
+	margin-left: 10px;
+	margin-top: 5px;
 	margin-bottom: 3px;
 	font-size: 24px;
 	font-weight: bold;
@@ -356,16 +353,16 @@ video {
 .views {
 	display: flex;
 	position: relative;
-	margin-left: 20px;
+	margin-left: 10px;
 	font-weight: light;
 }
 
 .description {
 	display: block;
 	position: relative;
-	margin-top: 10px;
-	margin-left: 20px;
-	margin-bottom: 20px;
+	margin-top: 5px;
+	margin-left: 10px;
+	margin-bottom: 5px;
 	font-size: 18px;
 	clear: both;
 	height: fit-content;
@@ -390,7 +387,7 @@ video {
 	background: white;
 	opacity: 1;
 	left: 1%;
-	top: 70px;
+	top: 25px;
 	display: block;
 }
 
