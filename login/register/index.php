@@ -7,6 +7,9 @@
 			<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
 			<link rel="stylesheet" type="text/css" href="/style/styleLogin.css">
 			<link rel="icon" href="/favicon.ico" type="image/x-icon">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" type="text/css" href="/style/styleChannel.css" media="(min-width: 768px)">
+			<link rel="stylesheet" type="text/css" href="/style/mobile/styleLogin.css" media="(max-width: 767px)">
 		</head>
 		<body>
 			<div class="container">
