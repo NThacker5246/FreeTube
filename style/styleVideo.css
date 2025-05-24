@@ -185,6 +185,7 @@ video {
 	height: fit-content;
 	display: block;
 	position: relative;
+	z-index: 2;
 }
 .videoblur {
  	top: 0px;
@@ -193,14 +194,14 @@ video {
  	filter: blur(100px) brightness(5);
 	opacity: 0.5;
  	position: absolute;
- 	z-index: -1;
+ 	z-index: 0;
 	top: 70px;
 	height: fit-content;
  }
 
 .next-videos {
-	width: 25%;
-	height: 100%;
+	width: 320px;
+	height: 60vw;
 	right: 0%;
 	position: absolute;
 	top: 50px;
@@ -208,6 +209,11 @@ video {
 	box-shadow: -5px 0px 4px rgba(0, 0, 0, 0.03999999910593033);
 	border-radius: 6px;
 	top: 70px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 .container {
@@ -296,7 +302,7 @@ video {
 	color: black;
 	text-decoration: none;
 	cursor: pointer;
-	display: flex;
+	display: block;
 }
 
 .cardtext:hover {
