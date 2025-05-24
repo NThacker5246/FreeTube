@@ -30,7 +30,7 @@
 					</div>
 
 					<a href="/profile.php" class="headerBubble3">
-						<img class="profileIcon" width="25" height="25" src="../ico/profileicon.png"/>
+						<img class="profileIcon" width="25" height="25" src="/ico/profileicon.png"/>
 					</a>
 
 					<script>
@@ -54,15 +54,17 @@
 						<div class="loginText">Register</div>
 						<form action="reg.php" method="POST" enctype="multipart/form-data">
 							<input type="text" name="name" placeholder="Nickname">
+							<br>
 							<input type="text" name="email" placeholder="Email">
+							<br>
 							<input type="text" name="number" placeholder="+7(800)555-35-35">
 							<br>
 							<input type="password" name="pwd" placeholder="Your password">
 							<br>
 							<button type="submit" class="submitButton">Register</button>
 						</form>
-						<span class="NoAcc">Don't have an account?</span>
-						<a href="register">Register Now!</a>
+						<span class="NoAcc">Already have an account?</span>
+						<a href="/login">Login</a>
 					</div>
 				</div>
 			</div>
