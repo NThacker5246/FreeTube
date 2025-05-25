@@ -232,6 +232,21 @@ int main()
     return 0;
 }
 
+#include "StreamingServer.cpp"
+
+int main() {
+    try {
+        asio::io_context io_context;
+        StreamingServer server(io_context, 8080, "path/to/your/video.webm");
+        io_context.run();
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return 1;
+    }
+    return 0;
+}
+
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"

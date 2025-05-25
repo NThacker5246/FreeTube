@@ -228,6 +228,7 @@ video {
 	align-items: center;
 	top: 50px;
 /*	left: 10%; */
+	display: none;
 }
 
 #pause {

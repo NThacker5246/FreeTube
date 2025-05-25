@@ -54,29 +54,29 @@
 
         </div>
         <div class="video-seen">
-            <div class="video">
-                <video src="<?=$src?>" autoplay="" id="player" class="videoplay"></video>
-                <video src="<?=$src?>" autoplay="" id="playerBlur" class="videoblur"></video>
+            <video id="videoPlayer" controls>
+                <source src="http://localhost:8080/Alogicalogo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controlls" id="controll">
+            <div id="pause"></div>
+            <div class="scroll" id="pos">
+                <div class="polzunok" id="ppos"></div>
             </div>
-            <div class="controlls" id="controll">
-                <div id="pause"></div>
-                <div class="scroll" id="pos">
-                    <div class="polzunok" id="ppos"></div>
-                </div>
 
-                <select id="playBackRate">
-                    <option value="0.25">0.25</option>
-                    <option value="0.5">0.5</option>
-                    <option value="0.75">0.75</option>
-                    <option value="1">1</option>
-                    <option value="1.25">1.25</option>
-                    <option value="1.5">1.5</option>
-                    <option value="1.75">1.75</option>
-                    <option value="2">2</option>
-                </select>
+            <select id="playBackRate">
+                <option value="0.25">0.25</option>
+                <option value="0.5">0.5</option>
+                <option value="0.75">0.75</option>
+                <option value="1">1</option>
+                <option value="1.25">1.25</option>
+                <option value="1.5">1.5</option>
+                <option value="1.75">1.75</option>
+                <option value="2">2</option>
+            </select>
 
-                <div id="fullscreen"></div>
-            </div>
+            <div id="fullscreen"></div>
         </div>
         <div class="titleV" id="titleV">
 
