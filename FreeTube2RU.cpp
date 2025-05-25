@@ -184,9 +184,9 @@ int main()
                 
                 
 
-                response << "HTTP/1.1 206 OK\r\n"
+                response << "HTTP/1.1 200 OK\r\n"
                     << "Version: HTTP/1.1\r\n"
-                    << "Content-Type: video/" << ext + 1 << "\r\n"
+                    << "Content-Type: media/" << ext + 1 << "\r\n"
                     << "Accept-Ranges: bytes\r\n"
                     << "Content-Length: " << 1480704
                     << "\r\n\r\n";

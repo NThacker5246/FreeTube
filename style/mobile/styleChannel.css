@@ -1,0 +1,366 @@
+/* Design created by GiMaker 2025
+Legacy CSS were used so if something were not updated then it worked at least
+*/
+
+html, body {
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	justify-content: center;
+    align-items: center;
+	overflow-y: auto;
+}
+
+.container {
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+.header {
+	width: 100% !important;
+	height: 50px;
+	z-index: 100;
+	display: flex;
+    background: rgba(255,255,255,0.949999988079071);
+    opacity: 1;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.03999999910593033);
+    overflow: hidden; 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.header {
+	will-change: backdrop-filter;
+}
+
+.headerBubble {
+    width: 30%;
+    height: 70%;
+    background: rgba(255,206,206,0.3100000023841858);
+    opacity: 1;
+    position: relative;
+    top: 15%;
+    left: 10px;
+    border-radius: 6px;
+	justify-content: center;
+    align-items: center;
+    overflow: hidden;
+	cursor: pointer;
+	display: flex;
+  }
+
+  .bubbleTextsh {
+    width: 30%;
+    color: #ff9f9f;
+    position: fixed;
+    font-family: Golos Text;
+    font-weight: Regular;
+    font-size: 80%;
+    opacity: 1;
+    text-align: center;
+	padding-top: 3px;
+	padding-left: 3px;
+	transition: all 0.1s ease-in-out;
+  }
+
+  .bubbleText {
+    width: 30%;
+    color: #6a0000;
+    position: fixed;
+    font-family: Golos Text;
+    font-weight: Regular;
+    font-size: 80%;
+    opacity: 1;
+    text-align: center;
+    z-index: 2;
+	transition: all 0.1s ease-in-out;
+  }
+
+  .headerBubble2 {
+	width: 30%;
+	height: 70%;
+	background: rgba(255,206,206,0.3100000023841858);
+	opacity: 1;
+	position: relative;
+	top: 15%;
+	left: 25px;
+	border-radius: 6px;
+	justify-content: left;
+	align-items: center;
+	overflow: hidden;
+	cursor: pointer;
+	display: none;
+}
+
+.slider {
+	display: flex;
+	transition: transform 0.3s ease-in-out;
+	gap: 10px;
+	margin-left: 10px;
+}
+
+.bubble {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+	border: 4px solid gray;
+	flex-shrink: 0;
+}
+
+.headerBubble3 {
+	width: 50px;
+	height: 70%;
+	background: rgba(255,206,206,0.3100000023841858);
+	opacity: 1;
+	position: relative;
+	top: 15%;
+	left: 20px;
+	border-radius: 25px;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	cursor: pointer;
+	display: flex;
+	transition: all 0.1s ease-in-out;
+}
+
+.profileIcon {
+	position: relative;
+	cursor: pointer;
+	image-rendering: optimizeQuality;
+	opacity: 50%;
+}
+
+.ProfileInformation {
+    position: relative;
+	justify-content: center;
+    align-items: center;
+	z-index: 2;
+	height: 150px;
+	display: flex;
+	top: 37.5px;
+}
+
+.customize {
+	background-color: rgba(255, 255, 255, 0.92);
+	backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(32px);
+	border-radius: 12px;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+	display: flex;
+	height: 50px;
+	top: 25px;
+	flex-direction: row;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.043);
+}
+
+.profileName {
+	position: relative;
+	font-family: Golos Text;
+	font-weight: Bold;
+	font-size: 150%;
+	color: #000000;
+	text-align: center;
+	left: 0;
+	width: fit-content;
+	margin-left: 10px;
+    margin-right: 25px;
+}
+
+.ChannelBanner {
+	height: 225px;
+	position: relative;
+	justify-content: center;
+    align-items: center;
+	flex-direction: column;
+}
+
+.profileImage {
+	border-radius: 50%;
+    width: 48px;
+    height: 48px;
+}
+
+.profileBorder {
+	position: relative;
+	border-radius: 50%;
+	border: 5px solid #000000;
+	height: 48px;
+	width: 48px;
+	margin-left: 25px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.profileInfoLow {
+	display: flex;
+	flex-direction: row;
+	background-color: rgba(255, 255, 255, 0.546);
+	border-radius: 6px;
+	backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+	position: relative;
+	left: 0px;
+	height: fit-content;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+}
+
+.card {
+	width: 300px;
+	height: 200px;
+	margin: 20px;
+	font-family: Golos Text;
+	font-weight: Bold;
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.videos {
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+}
+
+.cardtext:hover {
+	text-decoration: underline;
+}
+
+.cardvid {
+    width: 160px;
+	height: 90px;
+	margin: 0px;
+	border-radius: 6px;
+	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+	text-decoration: none;
+}
+
+.cardtext {
+	text-decoration: none;
+	padding-top: 10px;
+	position: relative;
+    font-size: 75%;
+}
+
+.card > p {
+	text-decoration: none;
+}
+
+.welcomeback {
+	font-family: Golos Text;
+}
+
+.iconImport {
+	position: relative;
+	width: 25px;
+	height: 25px;
+	opacity: 1;
+	cursor: pointer;
+	display: flex;
+}
+
+input[type="file"] {
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+  }
+
+.IconImportButton {
+	position: relative;
+	width: 25px;
+	height: 25px;
+	opacity: 1;
+	cursor: pointer;
+	display: flex;
+	right: 10px;
+	background-color: #6a000000;
+	border: #00000000;
+	top: 2px;
+}
+
+.iconico {
+	transform: translate(-4px, 0px);
+	opacity: 1;
+}
+
+.bannerico {
+	transform: translate(-6px, 0px);
+}
+
+.imageMask {
+	width: 100%;
+	height: 200px;
+	display: block;
+	object-fit: cover;
+	overflow: hidden;
+	pointer-events: none;
+	position: absolute;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.goToStudio {
+	position: relative;
+	width: fit-content;
+	height: 25px;
+	opacity: 1;
+	cursor: pointer;
+	display: flex;
+	right: 15px;
+	background-color: #ffffff00;
+	border: #00000000;
+	padding-top: 1px;
+    font-size: 80%;
+}
+
+.goToStudioButton {
+	font-weight: bold;
+	font-family: Golos Text;
+	transition: background-color 0.1s ease;
+	border-radius: 6px;
+	padding: 4px 10px;
+}
+
+.goToStudioButton:hover {
+	background-color: #45a049;
+}
+
+.logoutButton {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 80%;
+    transition: background-color 0.3s ease;
+}
+
+.logoutButton:hover {
+    background-color: #ff1a1a;
+}
+
+.BannerImportButton {
+	background-color: #ffffff00;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+	display: flex;
+}

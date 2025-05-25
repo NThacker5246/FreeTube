@@ -1,0 +1,15 @@
+html, body, .header, option {
+	color: white !important; 
+}
+
+html, body {
+	background: rgb(0, 0, 0);
+	
+}
+
+.next-videos {
+ 	background: rgb(76, 76, 76);
+ 	box-shadow: -3px 0px 4px rgba(201, 33, 33, 0.48);
+}
+
+

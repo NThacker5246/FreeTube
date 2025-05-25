@@ -1,10 +1,125 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Testing</title>
-    </head>
-    <body>
-        <h1>Hello, world</h1>
-        <script type="text/javascript">console.log('scripting api');</script>
-    </body>
+<head>
+    <title>FreeTube</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/style/styleHomepage.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/style/styleChannel.css" media="(min-width: 768px)">
+    <link rel="stylesheet" type="text/css" href="/style/mobile/styleHomepage.css" media="(max-width: 767px)">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header" id="header">
+            <a href="/" class="headerBubble">
+                <span class="bubbleText">FreeTube</span>
+                <span class="bubbleTextsh">FreeTube</span>
+            </a>
+
+            <div class="headerBubble2" id="headerBubble">
+                <div class="slider" id="themeSelecter">
+                    <div class="bubble" style="background-color:rgb(255, 255, 255);"></div>
+                    <div class="bubble" style="background-color:rgb(31, 31, 31);"></div>
+                    <div class="bubble" style="background-color:rgb(81, 107, 225);"></div>
+                    <div class="bubble" style="background-color:rgb(87, 195, 137);"></div>
+                    <div class="bubble" style="background-color: #FF33A8;"></div>
+                    <div class="bubble" style="background-color: #FFBD33;"></div>
+                    <div class="bubble" style="background-color: #33FFF0;"></div>
+                    <div class="bubble" style="background-color: #A833FF;"></div>
+                </div>
+            </div>
+
+            <a href="/profile.php" class="headerBubble3">
+                <img class="profileIcon" width="25" height="25" src="ico/profileicon.png" />
+            </a>
+
+            <script>
+                const slider = document.getElementById("themeSelecter");
+                let index = 0;
+                const totalBubbles = document.querySelectorAll(".bubble").length;
+                const bubbleWidth = 26;
+
+                slider.addEventListener("wheel", (event) => {
+                    event.preventDefault(); // Prevent default page scrolling
+                    index += event.deltaY > 0 ? 1 : -1;
+                    index = Math.max(0, Math.min(index, totalBubbles - 3));
+                    slider.style.transform = `translateX(${-index * bubbleWidth}px)`;
+                });
+            </script>
+
+        </div>
+   
+        <div class="welcomemain">
+            <div class="welcomeSign">
+                <p class="title-mek">Welcome back, NThacker (default)</p>
+            </div>
+        </div>
+
+        <div class="main-videos">
+            <a href="watch.html" class="card">
+                <div>
+                    <img src="" class="cardvid">
+                    <div class="cardtext">%name%</div>
+                </div>
+            </a>
+            <a href="watch.html" class="card">
+                <div>
+                    <img src="" class="cardvid">
+                    <div class="cardtext">%name%</div>
+                </div>
+            </a>
+            <a href="watch.html" class="card">
+                <div>
+                    <img src="" class="cardvid">
+                    <div class="cardtext">%name%</div>
+                </div>
+            </a>
+            <a href="watch.html" class="card">
+                <div>
+                    <img src="" class="cardvid">
+                    <div class="cardtext">%name%</div>
+                </div>
+            </a>
+            <a href="watch.html" class="card">
+                <div>
+                    <img src="" class="cardvid">
+                    <div class="cardtext">%name%</div>
+                </div>
+            </a>
+            <a href="watch.html" class="card">
+                <div>
+                    <img src="" class="cardvid">
+                    <div class="cardtext">%name%</div>
+                </div>
+            </a>
+            <a href="watch.html" class="card">
+                <div>
+                    <img src="" class="cardvid">
+                    <div class="cardtext">%name%</div>
+                </div>
+            </a>
+            <a href="watch.html" class="card">
+                <div>
+                    <img src="" class="cardvid">
+                    <div class="cardtext">%name%</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <div class="footerText">FreeTube</div>
+            <div class="footerText">© 2025-present Alogical Std.</div>
+            <div class="footerText">
+                <a href=https://github.com/NThacker5246/FreeTube>Source-code</a>
+            </div>
+        </div>
+
+    </div>
+</body>
 </html>
