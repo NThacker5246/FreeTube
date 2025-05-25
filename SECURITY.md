@@ -9,6 +9,7 @@ FreeTube is not sequre at the moment and still in developement. Please notice th
 
 | Version | Sequre (Tested, compatible and supported)          |
 | ------- | ------------------ |
+| 0.70   | :x: |
 | 0.69   | :x: |
 | < 0.68   | :x:                |
 
