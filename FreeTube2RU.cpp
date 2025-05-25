@@ -23,10 +23,14 @@ using std::cerr;
 
 int main()
 {
-    char file_buffer[500]{};
+    char *file_buffer = new char[1024];
+
     std::string line;
+    char data = 0;
 
     std::ifstream in;
+    
+    std::cout << "Start";
     WSADATA wsaData; // служебная структура для хранение информации
     // о реализации Windows Sockets
     // старт использования библиотеки сокетов процессом
@@ -149,70 +153,63 @@ int main()
                     file[i] = '\0';
                     break;
                 }
-                if (buf[5 + i] == '.') {
-                    if (buf[6 + i] == 'm') {
-                        vid = 1;
-                    }
-                }
+                
                 file[i] = buf[5 + i];
             }
-            std::cout << file << "\n";
+            char* ext = getExtension(file);
+            std::cout << ext << "\n";
             
             
-            if (vid == 0) {
-                // Данные успешно получены
-            // формируем тело ответа (HTML)
-                if (file[0] == '\0') {
-                    in.open("index.html");
-                }
-                else {
-                    in.open(file);
-                }
-                if (in.is_open())
-                {
-                    while (std::getline(in, line))
-                    {
-                        response_body << line;
-                    }
-                    in >> file_buffer;
-                }
-
-                in.close();
-
-                // Формируем весь ответ вместе с заголовками
-                response << "HTTP/1.1 200 OK\r\n"
-                    << "Version: HTTP/1.1\r\n"
-                    << "Content-Type: text/html; charset=utf-8\r\n"
-                    << "Content-Length: " << response_body.str().length()
-                    << "\r\n\r\n"
-                    << response_body.str();
+            // Данные успешно получены
+        // формируем тело ответа (HTML)
+            if (file[0] == '\0') {
+                in.open("index.html");
             }
             else {
-                // Данные успешно получены
-            // формируем тело ответа (HTML)
-                if (file[0] == '\0') {
-                    in.open("index.html");
-                }
-                else {
-                    in.open(file);
-                }
-                if (in.is_open())
+                in.open(file);
+            }
+            if (in.is_open())
+            {
+                while (std::getline(in, line))
                 {
-                    
-                    in >> file_buffer;
-                    response_body << file_buffer;
+                    response_body << line;
                 }
+            }
 
-                in.close();
 
-                // Формируем весь ответ вместе с заголовками
+            in.close();
+
+            // Формируем весь ответ вместе с заголовками
+            if (ext[1] == 'm') {
+                
+                
+
+                response << "HTTP/1.1 206 OK\r\n"
+                    << "Version: HTTP/1.1\r\n"
+                    << "Content-Type: video/" << ext + 1 << "\r\n"
+                    << "Accept-Ranges: bytes\r\n"
+                    << "Content-Length: " << 1480704
+                    << "\r\n\r\n";
+
+                std::ifstream file("norm.mp4", std::ios::binary);
+                int j = 0;
+                while (file.read(reinterpret_cast<char*>(&data), sizeof(data))) {
+                    file_buffer[i] = data;
+                }
+                file.close();
+                response << file_buffer;
+            }
+            else {
                 response << "HTTP/1.1 200 OK\r\n"
                     << "Version: HTTP/1.1\r\n"
-                    << "Content-Type: video/mp4; charset=utf-8\r\n"
+                    << "Content-Type: text/" << ext + 1 << "; charset = utf - 8\r\n"
                     << "Content-Length: " << response_body.str().length()
                     << "\r\n\r\n"
                     << response_body.str();
             }
+            
+            
+          
             
 
             // Отправляем ответ клиенту с помощью функции send

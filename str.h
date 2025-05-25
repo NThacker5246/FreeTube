@@ -24,3 +24,11 @@ void strfind(char *source, const char* text, char* &out) {
 		}
 	}
 }
+
+char* getExtension(char* source) {
+	for (int i = 0;; i++) {
+		if (source[i] == '.') {
+			return source + i;
+		}
+	}
+}
