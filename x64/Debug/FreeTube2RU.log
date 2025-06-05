@@ -1,7 +1,10 @@
 ﻿  FreeTube2RU.cpp
-C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(62,23): warning C4244: инициализация: преобразование "SOCKET" в "int", возможна потеря данных
-C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(88,25): warning C4309: инициализация: усечение константного значения
-C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(91,31): warning C4244: =: преобразование "SOCKET" в "int", возможна потеря данных
-C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(158,76): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(160,74): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(88,23): warning C4244: инициализация: преобразование "SOCKET" в "int", возможна потеря данных
+C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(114,25): warning C4309: инициализация: усечение константного значения
+C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(117,31): warning C4244: =: преобразование "SOCKET" в "int", возможна потеря данных
+C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(164,68): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(191,68): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(192,49): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(206,68): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(207,48): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
   FreeTube2RU.vcxproj -> C:\Users\nicol\source\repos\FreeTube2RU\x64\Debug\FreeTube2RU.exe

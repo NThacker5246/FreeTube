@@ -5,6 +5,7 @@
 #include <sstream>
 #include <string>
 #include <map>
+#include <algorithm>
 
 #define _WIN32_WINNT 0x501
 #include <WinSock2.h>
@@ -12,16 +13,15 @@
 #pragma comment(lib, "Ws2_32.lib")
 
 using std::cerr;
+using std::string;
 
-// Функция для получения расширения файла
-std::string getExtension(const std::string& path) {
+string getExtension(const string& path) {
     size_t dot_pos = path.find_last_of('.');
-    if (dot_pos == std::string::npos) return "";
+    if (dot_pos == string::npos) return "";
     return path.substr(dot_pos + 1);
 }
 
-// Маппинг расширений на MIME-типы
-std::map<std::string, std::string> mime_types = {
+std::map<string, string> mime_types = {
     {"html", "text/html"},
     {"css", "text/css"},
     {"js", "application/javascript"},
@@ -33,6 +33,32 @@ std::map<std::string, std::string> mime_types = {
     {"webm", "video/webm"},
     {"ico", "image/x-icon"}
 };
+
+// Парсинг заголовка Range (например, "bytes=0-999")
+bool parseRange(const string& range_header, size_t file_size, size_t& start, size_t& end) {
+    if (range_header.empty() || range_header.find("bytes=") == string::npos) {
+        return false;
+    }
+
+    size_t eq_pos = range_header.find('=');
+    size_t dash_pos = range_header.find('-', eq_pos + 1);
+
+    if (dash_pos == string::npos) {
+        return false;
+    }
+
+    string start_str = range_header.substr(eq_pos + 1, dash_pos - eq_pos - 1);
+    string end_str = range_header.substr(dash_pos + 1);
+
+    start = stoull(start_str);
+    end = end_str.empty() ? file_size - 1 : stoull(end_str);
+
+    if (end >= file_size) {
+        end = file_size - 1;
+    }
+
+    return true;
+}
 
 int main() {
     WSADATA wsaData;
@@ -107,58 +133,82 @@ int main() {
         }
         else if (result > 0) {
             buf[result] = '\0';
+            string request(buf);
 
-            // Парсим запрос (очень упрощённо)
-            std::string request(buf);
-            size_t start = request.find(' ') + 1;
-            size_t end = request.find(' ', start);
-            std::string path = request.substr(start, end - start);
+            // Парсим путь запроса
+            size_t start_pos = request.find(' ') + 1;
+            size_t end_pos = request.find(' ', start_pos);
+            string path = request.substr(start_pos, end_pos - start_pos);
 
             if (path == "/") path = "/index.html";
+            string file_path = path.substr(1);
 
-            // Убираем ведущий слеш
-            std::string file_path = path.substr(1);
+            // Проверяем, есть ли заголовок Range
+            bool is_range_request = (request.find("Range: bytes=") != string::npos);
+            string range_header;
 
-            // Получаем расширение файла
-            std::string ext = getExtension(file_path);
-            std::string content_type = "text/plain"; // По умолчанию
-
-            if (mime_types.count(ext)) {
-                content_type = mime_types[ext];
+            if (is_range_request) {
+                size_t range_start = request.find("Range: bytes=");
+                size_t range_end = request.find("\r\n", range_start);
+                range_header = request.substr(range_start + 13, range_end - range_start - 13);
             }
 
-            // Открываем файл в бинарном режиме
-            std::ifstream file(file_path, std::ios::binary);
-            std::stringstream response;
-            std::string response_body;
+            // Открываем файл
+            std::ifstream file(file_path, std::ios::binary | std::ios::ate);
+            if (!file) {
+                string response_body = "404 Not Found";
+                string response = "HTTP/1.1 404 Not Found\r\n"
+                    "Content-Type: text/plain\r\n"
+                    "Content-Length: " + std::to_string(response_body.size()) + "\r\n"
+                    "\r\n" + response_body;
+                send(client_socket, response.c_str(), response.size(), 0);
+                closesocket(client_socket);
+                continue;
+            }
 
-            if (file) {
-                // Читаем весь файл
-                file.seekg(0, std::ios::end);
-                response_body.resize(file.tellg());
-                file.seekg(0, std::ios::beg);
-                file.read(&response_body[0], response_body.size());
-                file.close();
+            size_t file_size = file.tellg();
+            file.seekg(0, std::ios::beg);
 
-                response << "HTTP/1.1 200 OK\r\n"
-                    << "Content-Type: " << content_type << "\r\n"
-                    << "Content-Length: " << response_body.size() << "\r\n"
-                    << "\r\n";
+            size_t range_start = 0, range_end = file_size - 1;
+            bool has_range = parseRange(range_header, file_size, range_start, range_end);
+
+            string response;
+            if (has_range) {
+                // Отправляем часть файла (206 Partial Content)
+                size_t chunk_size = range_end - range_start + 1;
+                file.seekg(range_start);
+
+                char* chunk_data = new char[chunk_size];
+                file.read(chunk_data, chunk_size);
+
+                response = "HTTP/1.1 206 Partial Content\r\n"
+                    "Content-Type: " + mime_types[getExtension(file_path)] + "\r\n"
+                    "Content-Length: " + std::to_string(chunk_size) + "\r\n"
+                    "Content-Range: bytes " + std::to_string(range_start) + "-" +
+                    std::to_string(range_end) + "/" + std::to_string(file_size) + "\r\n"
+                    "\r\n";
+
+                send(client_socket, response.c_str(), response.size(), 0);
+                send(client_socket, chunk_data, chunk_size, 0);
+                delete[] chunk_data;
             }
             else {
-                // Файл не найден
-                response_body = "404 Not Found";
-                response << "HTTP/1.1 404 Not Found\r\n"
-                    << "Content-Type: text/plain\r\n"
-                    << "Content-Length: " << response_body.size() << "\r\n"
-                    << "\r\n";
+                // Отправляем весь файл (200 OK)
+                char* file_data = new char[file_size];
+                file.read(file_data, file_size);
+
+                response = "HTTP/1.1 200 OK\r\n"
+                    "Content-Type: " + mime_types[getExtension(file_path)] + "\r\n"
+                    "Content-Length: " + std::to_string(file_size) + "\r\n"
+                    "Accept-Ranges: bytes\r\n"  // Говорим клиенту, что поддерживаем Range
+                    "\r\n";
+
+                send(client_socket, response.c_str(), response.size(), 0);
+                send(client_socket, file_data, file_size, 0);
+                delete[] file_data;
             }
 
-            // Отправляем заголовки
-            send(client_socket, response.str().c_str(), response.str().size(), 0);
-            // Отправляем тело (может быть бинарным)
-            send(client_socket, response_body.c_str(), response_body.size(), 0);
-
+            file.close();
             closesocket(client_socket);
         }
     }
@@ -168,7 +218,6 @@ int main() {
     WSACleanup();
     return 0;
 }
-
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
