@@ -5,6 +5,7 @@
 #include <sstream>
 #include <string>
 #include <map>
+#include <vector> 
 #include <algorithm>
 
 #define _WIN32_WINNT 0x501
@@ -14,6 +15,23 @@
 
 using std::cerr;
 using std::string;
+
+static string base64_decode(const std::string& in) {
+    std::string out;
+    std::vector<int> T(256, -1);
+    for (int i = 0; i < 64; i++) T["ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"[i]] = i;
+    int val = 0, valb = -8;
+    for (char c : in) {
+        if (T[c] == -1) break;
+        val = (val << 6) + T[c];
+        valb += 6;
+        if (valb >= 0) {
+            out.push_back(char((val >> valb) & 0xFF));
+            valb -= 8;
+        }
+    }
+    return out;
+}
 
 string getExtension(const string& path) {
     size_t dot_pos = path.find_last_of('.');
@@ -145,48 +163,24 @@ int main() {
             size_t start_pos = request.find(' ') + 1;
             size_t end_pos = request.find(' ', start_pos);
             string path = request.substr(start_pos, end_pos - start_pos);
-            
-            string check = path.substr(1, 8);
-            /*
-            if (check == "callback") {
-                char* data = (char*) path.substr(9).c_str();
-                bool flag = 0;
-                int funcId = 0;
-                int* param;
-                int id = 0;
-                for (int i = 0; i < strlen(data); ++i) {
-                    
-                    
-
-                    switch (data[i]) {
-                        case ',':
-                            if (id == 0) {
-                                switch (id) {
-                                    case 1:
-                                        param = new int[1] {0};
-                                        break;
-                                }
-                            }
-                            id++;
-                            ++i;
-                            break;
-                    }
-
-
-                    if (id == 0) {
-                        funcId *= 10;
-                        funcId += data[i] - '0';
-                    }
-                    else {
-                        param[id] *= 10;
-                        param[id] += data[i] - '0';
-                    }
-
-                    
+            char* f = (char*) "/file\0";
+            bool laf = 1;
+            for (int i = 0; i < 4; i++) {
+                std::cout << path[i];
+                if (f[i] != path[i]) {
+                    laf = 0;
+                    break;
                 }
-                
             }
-            */
+
+            if (laf) {
+                std::ofstream out;
+                out.open("video/load.txt");
+                out << base64_decode(path.substr(6));
+                send(client_socket, "HTTP/1.1 200 OK", 15, 0);
+                continue;
+            }
+
             bool par = 0;
             if (path == "/") path = "/index.html";
             string file_path;

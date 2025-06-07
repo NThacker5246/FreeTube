@@ -1,11 +1,1 @@
-﻿  FreeTube2RU.cpp
-C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(25,13): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(94,23): warning C4244: инициализация: преобразование "SOCKET" в "int", возможна потеря данных
-C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(120,25): warning C4309: инициализация: усечение константного значения
-C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(123,31): warning C4244: =: преобразование "SOCKET" в "int", возможна потеря данных
-C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(243,68): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(270,68): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(271,49): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(311,68): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\nicol\source\repos\FreeTube2RU\FreeTube2RU\FreeTube2RU.cpp(312,48): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-  FreeTube2RU.vcxproj -> C:\Users\nicol\source\repos\FreeTube2RU\x64\Debug\FreeTube2RU.exe
+﻿  FreeTube2RU.vcxproj -> C:\Users\nicol\source\repos\FreeTube2RU\x64\Debug\FreeTube2RU.exe

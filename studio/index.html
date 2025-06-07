@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>FreeTube Creator Studio</title>
+</head>
+<body>
+	<div>
+		<input type="file" name="videoFile" id="file">
+		<button id="lb">Go</button>
+	</div>
+	<script type="text/javascript">
+		const file = document.getElementById("file");
+		function getFile() {
+			var reader = new FileReader();
+			reader.onload = function() {
+				var arrayBuffer = this.result,
+					array = new Uint8Array(arrayBuffer),
+					binaryString = btoa(String.fromCharCode.apply(null, array));
+				console.log(binaryString);
+				var xhr = new XMLHttpRequest();
+				xhr.open("GET", "../file=" + binaryString);
+				delete binaryString;
+				delete array;
+				delete arrayBuffer;
+				xhr.onreadystatechange = function() {
+					if(xhr.readyState == 4 && xhr.status == 200){
+						console.log("Succes");
+					}
+					delete xhr;
+				}
+				xhr.send();
+			}
+			reader.readAsArrayBuffer(file.files[0]);
+			//delete reader;
+		}
+		document.getElementById('lb').addEventListener("click", getFile);
+
+	</script>
+</body>
+</html>
