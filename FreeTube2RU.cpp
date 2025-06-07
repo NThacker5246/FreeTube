@@ -21,6 +21,12 @@ string getExtension(const string& path) {
     return path.substr(dot_pos + 1);
 }
 
+bool compare(char *str1, const char *str2) {
+    int len = strlen(str2);
+    for (int i = 0; i < len; ++i) if (str1[i] != str2[i]) return false;
+    return true;
+}
+
 std::map<string, string> mime_types = {
     {"html", "text/html"},
     {"css", "text/css"},
@@ -139,9 +145,82 @@ int main() {
             size_t start_pos = request.find(' ') + 1;
             size_t end_pos = request.find(' ', start_pos);
             string path = request.substr(start_pos, end_pos - start_pos);
+            
+            string check = path.substr(1, 8);
+            /*
+            if (check == "callback") {
+                char* data = (char*) path.substr(9).c_str();
+                bool flag = 0;
+                int funcId = 0;
+                int* param;
+                int id = 0;
+                for (int i = 0; i < strlen(data); ++i) {
+                    
+                    
 
+                    switch (data[i]) {
+                        case ',':
+                            if (id == 0) {
+                                switch (id) {
+                                    case 1:
+                                        param = new int[1] {0};
+                                        break;
+                                }
+                            }
+                            id++;
+                            ++i;
+                            break;
+                    }
+
+
+                    if (id == 0) {
+                        funcId *= 10;
+                        funcId += data[i] - '0';
+                    }
+                    else {
+                        param[id] *= 10;
+                        param[id] += data[i] - '0';
+                    }
+
+                    
+                }
+                
+            }
+            */
+            bool par = 0;
             if (path == "/") path = "/index.html";
-            string file_path = path.substr(1);
+            string file_path;
+            string params;
+            for (int i = 0; i < path.length(); ++i) {
+                if(path[i] == '?'){
+                    par = 1;
+                    file_path = path.substr(1, i-1);
+                    params = path.substr(i+1);
+                    break;
+                }
+                else if (i == path.length() - 1) {
+                    file_path = path.substr(1);
+                }
+                
+            }
+            std::cout << file_path << "\n";
+            std::cout << params << "\n";
+
+            int* param = new int[1] {0};
+            param[0] = 0;
+            int id = 0;
+            std::cout << params[0] - '0' << "\n";
+            for (int i = 0; i < params.length(); ++i) {
+                if (params[i] == '\0') break;
+                if (params[i] == ',') { 
+                    ++id; 
+                    ++i; 
+                }
+                param[id] *= 10;
+                param[id] += params[i] - '0';
+                std::cout << params[i] << "\n";
+            }
+            std::cout << param[0] << "\n";
 
             // Проверяем, есть ли заголовок Range
             bool is_range_request = (request.find("Range: bytes=") != string::npos);
@@ -196,7 +275,33 @@ int main() {
                 // Отправляем весь файл (200 OK)
                 char* file_data = new char[file_size];
                 file.read(file_data, file_size);
+                bool open = 0;
+                int k = 0;
+                if (par) {
+                    char* var = new char[5];
+                    for (int j = 0; j < strlen(file_data); ++j) {
+                        if (file_data[j] == '%') {
+                            open = !open;
+                            ++j;
+                            if (!open) {
+                                if (compare(var, "VIDEO")) {
 
+                                    for (int k = 0; k < 7; k++) {
+                                        file_data[j - k - 1] = (param[0] % 10) + '0';
+                                        param[0] /= 10;
+                                    }
+                                }
+                                delete[] var;
+                                break;
+                            }
+                        }
+                        if (open) {
+                            var[k] = file_data[j];
+                            ++k;
+                        }
+                    }
+                }
+                
                 response = "HTTP/1.1 200 OK\r\n"
                     "Content-Type: " + mime_types[getExtension(file_path)] + "\r\n"
                     "Content-Length: " + std::to_string(file_size) + "\r\n"
@@ -206,6 +311,7 @@ int main() {
                 send(client_socket, response.c_str(), response.size(), 0);
                 send(client_socket, file_data, file_size, 0);
                 delete[] file_data;
+                delete[] param;
             }
 
             file.close();
