@@ -319,18 +319,22 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 					<div class="videos">
 						<?php
 							// Write if script to check if user has videos
-							for ($i=0; $i < count($usr->videoCreated); $i++) { 
-							$conf = file_get_contents("./config/" . $usr->videoCreated[$i] . ".conf");
-							$kw = explode("!HCRGMKARS%!", $conf);
-							$name = explode("ALGSTD!24", $kw[0])[1];
-							echo "
-							<a class=\"card\" href=\"/watch.php?video=" . $usr->videoCreated[$i] . "\">
-								<div>
-									<img class=\"cardvid\" src=\"/preview/". $usr->videoCreated[$i] .".png\">
-									<div class=\"cardtext\">$name</div>
-								</div>
-							</a>";
+							if($usr->videoCreated == null) echo "У вас пока нет видео, загружайте скорее!";
+							else{
+								for ($i=0; $i < count($usr->videoCreated); $i++) { 
+									$conf = file_get_contents("./config/" . $usr->videoCreated[$i] . ".conf");
+									$kw = explode("!HCRGMKARS%!", $conf);
+									$name = explode("ALGSTD!24", $kw[0])[1];
+									echo "
+									<a class=\"card\" href=\"/watch.php?video=" . $usr->videoCreated[$i] . "\">
+										<div>
+											<img class=\"cardvid\" src=\"/preview/". $usr->videoCreated[$i] .".png\">
+											<div class=\"cardtext\">$name</div>
+										</div>
+									</a>";
+								}
 							}
+							
 						?>
 					</div>
 				</div>
