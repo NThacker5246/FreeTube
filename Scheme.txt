@@ -1,0 +1,8 @@
+/api/user
+GET - get user info
+POST - register user
+DELETE - delete user
+
+/api/video
+GET - get video
+POST - submit a video
