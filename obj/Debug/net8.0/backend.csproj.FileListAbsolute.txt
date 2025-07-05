@@ -1,0 +1,14 @@
+/backend/obj/Debug/net8.0/backend.GeneratedMSBuildEditorConfig.editorconfig
+/backend/obj/Debug/net8.0/backend.AssemblyInfoInputs.cache
+/backend/obj/Debug/net8.0/backend.AssemblyInfo.cs
+/backend/obj/Debug/net8.0/backend.csproj.CoreCompileInputs.cache
+/backend/bin/Debug/net8.0/backend
+/backend/bin/Debug/net8.0/backend.deps.json
+/backend/bin/Debug/net8.0/backend.runtimeconfig.json
+/backend/bin/Debug/net8.0/backend.dll
+/backend/bin/Debug/net8.0/backend.pdb
+/backend/obj/Debug/net8.0/backend.dll
+/backend/obj/Debug/net8.0/refint/backend.dll
+/backend/obj/Debug/net8.0/backend.pdb
+/backend/obj/Debug/net8.0/backend.genruntimeconfig.cache
+/backend/obj/Debug/net8.0/ref/backend.dll
