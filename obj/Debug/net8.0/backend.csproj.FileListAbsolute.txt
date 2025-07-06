@@ -12,3 +12,4 @@
 /backend/obj/Debug/net8.0/backend.pdb
 /backend/obj/Debug/net8.0/backend.genruntimeconfig.cache
 /backend/obj/Debug/net8.0/ref/backend.dll
+/backend/obj/Debug/net8.0/backend.sourcelink.json
