@@ -81,6 +81,13 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 			<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		</head>
 		<body>
+
+			<svg width="0" height="0" style="position:absolute">
+			<filter id="glass-border-distort" x="-20%" y="-20%" width="140%" height="140%">
+				<feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" seed="2" result="turb"/>
+				<feDisplacementMap in2="turb" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+			</filter>
+			</svg>
 				<div class="container">
 					<div class="header" id="header">
 						<a href="/" class="headerBubble">
@@ -207,6 +214,12 @@ $usr = json_decode(file_get_contents(WAY . $_GET['chan'] . ".conf"));
 			<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		</head>
 		<body>
+				<svg width="0" height="0" style="position:absolute">
+				  <filter id="glass-border-distort" x="-20%" y="-20%" width="140%" height="140%">
+					<feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" seed="2" result="turb"/>
+					<feDisplacementMap in2="turb" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+				  </filter>
+				</svg>
 				<div class="container">
 					<div class="header" id="header">
 						<a href="/" class="headerBubble">

@@ -207,7 +207,7 @@ html, body {
 	display: flex;
 	flex-direction: row;
 	background-color: rgba(255, 255, 255, 0.546);
-	border-radius: 6px;
+	border-radius: 28px;
 	backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 	position: relative;
@@ -216,6 +216,17 @@ html, body {
 	justify-content: center;
 	align-items: center;
 	width: fit-content;
+}
+
+.profileInfoLow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  z-index: -1;
+  box-shadow:
+    inset 6px 6px 0px -6px rgba(255, 255, 255, 0.7),
+    inset 0 0 8px 1px rgba(255, 255, 255, 0.7);
 }
 
 .card {

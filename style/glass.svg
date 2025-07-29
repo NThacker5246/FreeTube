@@ -1,0 +1,28 @@
+<filter id="displacementFilter">
+    <feImage 
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAMoElEQVRogZ1a3ZqjyI6MkBJc3XOz7/+g+53pMoq9kJQk2K6Zs0yNGzAG/YRCSgn+/r0PYpCD2IEH+SC/yIdZfj6MD9pu3M02cjMb5KC50cycNBoJ0kiCJKn8BEWCACgCAkAAIAhQAGAAIR..." 
+    preserveAspectRatio="none" 
+    />
+    <feDisplacementMap 
+    in="SourceGraphic" 
+    in2="turbulence" 
+    scale="200" 
+    xChannelSelector="R" 
+    yChannelSelector="G" 
+    />
+</filter>
+<filter id="turbulence-displacement"
+        x="0" y="0"
+        width="100%" height="100%">
+   <!-- Source -->
+   <feTurbulence type="turbulence"
+                 baseFrequency="0.05"
+                 numOctaves="2"
+                 result="noise" />
+   <!-- Combiner -->
+   <feDisplacementMap in="SourceGraphic"
+                      in2="noise"
+                      scale="20"
+                      xChannelSelector="R"
+                      yChannelSelector="G" />
+</filter>
