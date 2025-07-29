@@ -15,6 +15,14 @@ switch ($mode) {
 	case 'read':
 		echo file_get_contents("playlists/$video_ids");
 		break;
+
+	case 'write_add':
+		$fd = file_get_contents("playlists/$video_ids");
+		$fd .= "," . $video_ids;
+		$file = fopen("playlists/$video_ids", "w");
+		$fw = fwrite($file, $fd);
+		$fc = fclose($file);
+		break;
 	
 	default:
 		# code...

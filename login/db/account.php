@@ -18,7 +18,7 @@
 	function addUser($password, $name, $email, $phone)
 	{
 		$param = new Parameters();
-		$param->password = $password;
+		$param->password = hash("sha256", $password);
 		$param->name = $name;
 		$param->email = $email;
 		$param->phone = $phone;
@@ -38,7 +38,7 @@
 			$dt = json_decode(file_get_contents(WAY . $name . ".conf"));
 			var_dump($name);
 			var_dump($dt->name);
-			if ($dt->password == $password) {
+			if ($dt->password == hash("sha256", $password)) {
 				return $dt;
 			}
 			return false;
